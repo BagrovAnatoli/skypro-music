@@ -1,5 +1,6 @@
 import Controls from './Controls';
 import TrackPlay from './TrackPlay';
+import Volume from './Volume';
 
 function Bar() {
     return (
@@ -10,7 +11,7 @@ function Bar() {
                     <Controls />
                     <TrackPlay />
                 </div>
-                {/* <div className="bar__volume-block volume"></div> */}
+                <Volume />
             </div>
         </div>
     );
