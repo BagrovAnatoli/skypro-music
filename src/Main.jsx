@@ -1,6 +1,14 @@
+import Nav from './Nav'
+import CenterBlock from './CenterBlock'
+import Sidebar from './Sidebar'
+
 function Main() {
     return (
-        <p>main</p>
+        <div className="main">
+            <Nav />
+            <CenterBlock />
+            <Sidebar />
+        </div>
     );
 }
 
