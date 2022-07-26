@@ -1,7 +1,10 @@
+import PlaylistTitle from './PlaylistTitle';
+
 function Content() {
     return (
-        <div>
-            Content
+        <div className="centerblock__content">
+            <PlaylistTitle />
+            {/* <Playlist /> */}
         </div>
     );
 }
