@@ -23,7 +23,7 @@ function Sidebar() {
 
     for (let i = 0; i < sidebarDatas.length; i += 1) {
         sidebarItems.push(
-            <div className="sidebar__item">
+            <div className="sidebar__item" key={i}>
                 <a href={sidebarDatas[i].href} className="sidebar__link">
                     <img 
                         src={sidebarDatas[i].imgSrc} 

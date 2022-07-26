@@ -8,7 +8,7 @@ function Menu() {
     const listItems = [];
     for (let i = 0; i < menuItems.length; i += 1) {
         listItems.push(
-            <li className="menuIIitem">
+            <li className="menuIIitem" key={i}>
                 <a href={menuItems[i].href} className="menu__link">{menuItems[i].value}</a>
             </li>
         );

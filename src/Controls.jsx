@@ -63,11 +63,11 @@ function Controls() {
     };
     return (
         <>
-            <DivSvgUse attrs={btnPrevProps}/>
-            <DivSvgUse attrs={btnPlayProps}/>
-            <DivSvgUse attrs={btnNextProps}/>
-            <DivSvgUse attrs={btnRepeatProps}/>
-            <DivSvgUse attrs={btnShuffleProps}/>
+            <DivSvgUse attrs={btnPrevProps} key="1"/>
+            <DivSvgUse attrs={btnPlayProps} key="2"/>
+            <DivSvgUse attrs={btnNextProps} key="3"/>
+            <DivSvgUse attrs={btnRepeatProps} key="4"/>
+            <DivSvgUse attrs={btnShuffleProps} key="5"/>
         </>
     );
 }

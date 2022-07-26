@@ -27,8 +27,8 @@ function TrackPlay() {
     };
     return (
         <div className="track-play__like-dis">
-            <DivSvgUse attrs={likeComponentProps}/>
-            <DivSvgUse attrs={dislikeComponentProps}/>
+            <DivSvgUse attrs={likeComponentProps} key="1"/>
+            <DivSvgUse attrs={dislikeComponentProps} key="2"/>
         </div>
     );
 }
