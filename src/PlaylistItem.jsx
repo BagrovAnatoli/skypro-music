@@ -3,14 +3,14 @@ import TrackAuthor from "./TrackAuthor";
 import TrackAlbum from "./TrackAlbum";
 import TrackTime from "./TrackTime";
 
-function PlaylistItem () {
+function PlaylistItem ( {data} ) {
     return (
         <div className="playlist__item">
             <div className="playlist__track track">
-                <TrackTitle />
-                <TrackAuthor />
-                <TrackAlbum />
-                <TrackTime />
+                <TrackTitle data={data.title}/>
+                <TrackAuthor data={data.author}/>
+                <TrackAlbum data={data.album}/>
+                <TrackTime data={data.time}/>
             </div>
         </div>
     );
