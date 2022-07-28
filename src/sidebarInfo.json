@@ -1,0 +1,20 @@
+[
+    {
+        "href": "",
+        "imgSrc": "img/playlist01.png",
+        "imgAlt": "day's playlist",
+        "id": 0
+    },
+    {
+        "href": "",
+        "imgSrc": "img/playlist02.png",
+        "imgAlt": "day's playlist",
+        "id": 1
+    },
+    {
+        "href": "",
+        "imgSrc": "img/playlist03.png",
+        "imgAlt": "day's playlist",
+        "id": 2
+    }
+]

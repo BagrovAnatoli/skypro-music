@@ -1,39 +1,19 @@
 import Personal from './Personal';
+import sidebarDatas from './sidebarInfo.json';
 
 function Sidebar() {
-    const sidebarDatas = [
-        {
-            href: "",
-            imgSrc: "img/playlist01.png",
-            imgAlt: "day's playlist",
-        },
-        {
-            href: "",
-            imgSrc: "img/playlist02.png",
-            imgAlt: "day's playlist",
-        },
-        {
-            href: "",
-            imgSrc: "img/playlist03.png",
-            imgAlt: "day's playlist",
-        },
-    ]
 
-    const sidebarItems = [];
-
-    for (let i = 0; i < sidebarDatas.length; i += 1) {
-        sidebarItems.push(
-            <div className="sidebar__item" key={i}>
-                <a href={sidebarDatas[i].href} className="sidebar__link">
-                    <img 
-                        src={sidebarDatas[i].imgSrc} 
-                        alt={sidebarDatas[i].imgAlt} 
-                        className="sidebar__img" 
-                    />
-                </a>
-            </div>
-        );
-    }
+    const sidebarItems = sidebarDatas.map(({href, imgSrc, imgAlt, id}) => (
+        <div className="sidebar__item" key={id}>
+            <a href={href} className="sidebar__link">
+                <img 
+                    src={imgSrc} 
+                    alt={imgAlt} 
+                    className="sidebar__img" 
+                />
+            </a>
+        </div>
+    ));
 
     return (
         <div className="main__sidebar sidebar">
