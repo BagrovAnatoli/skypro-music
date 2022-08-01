@@ -1,13 +1,25 @@
+import React from 'react';
 import Logo from './Logo';
 import Burger from './Burger';
 import Menu from './Menu';
 
+const { useState } = React;
+
 function Nav() {
+
+    const [isMenuVisible, setMenuVisible] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuVisible(!isMenuVisible);
+    }
+
+    const menuComponent = isMenuVisible ? <Menu /> : undefined;
+
     return (
         <div className="main__nav nav">
             <Logo />
-            <Burger />
-            <Menu />
+            <Burger onClick={toggleMenu}/>
+            { menuComponent }
         </div>
     );
 }

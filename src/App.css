@@ -155,6 +155,10 @@ body {
   color: #181818;
 }
 
+.burger {
+  cursor: pointer;
+}
+
 .burger__line {
   display: inline-block;
   width: 100%;
@@ -164,6 +168,14 @@ body {
 
 .menu__list {
   padding: 18px 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
 }
 
 .menu__item {
@@ -176,6 +188,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  font-family: 'StratosSkyeng';
 }
 
 .centerblock__search {

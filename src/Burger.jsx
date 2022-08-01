@@ -1,10 +1,9 @@
-function Burger() {
-
+function Burger({onClick}) {
     // eslint-disable-next-line react/no-array-index-key
-    const lines = Array.from({lenght: 3}).map((element, index) => <span className="burger__line" key={index}/>);
+    const lines = [0,1,2].map((element) => <span className="burger__line" key={element}/>);
 
     return (
-        <div className="nav__burger burger">
+        <div className="nav__burger burger" onClick={onClick} aria-hidden="true">
             { lines }
         </div>
     );
