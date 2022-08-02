@@ -7,6 +7,7 @@ function Filter() {
 
     const [isPopupVisible, setPopupVisible] = useState(false);
     const [filterBy, setFilterBy] = useState();
+    const [popupCoords, setPopupCoords] = useState({top: 0, left: 0});
 
     const getFilterType = target => {
         if(target.classList.contains('button-author')){
@@ -24,16 +25,24 @@ function Filter() {
     const popupVisibleUpdate = filterType => {
         if(filterType === filterBy){
             setPopupVisible(!isPopupVisible);
-            console.log('isPopupVisible', isPopupVisible);
         } else {
             setPopupVisible(true);
         }
     }
 
+    const getPopupCoords = (element) => {
+        const left = element.offsetLeft;
+        const bottom = element.offsetTop + element.offsetHeight;
+        const space = 16;
+
+        const popupTop = `${ bottom + space }px`;
+        const popupLeft = `${ left }px`;
+        return {top: popupTop, left: popupLeft};
+    }
+
     const handleFilterClick = (event) => {
         const {target} = event;
-        console.log('Клик');
-        console.log(target);   
+        setPopupCoords(getPopupCoords(target));
         const filterType = getFilterType(target);
         setFilterBy(filterType);
         popupVisibleUpdate(filterType);     
@@ -47,7 +56,7 @@ function Filter() {
                 <div className="filter__button button-year _btn-text">году выпуска</div>
                 <div className="filter__button button-genre _btn-text">жанру</div>
             </div>
-            <FilterPopup />
+            <FilterPopup isPopupVisible={isPopupVisible} filterBy={filterBy} coords={popupCoords}/>
         </>
     );
 }
