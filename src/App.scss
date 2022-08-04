@@ -534,6 +534,10 @@ body {
         &:not(:last-child) {
             margin-bottom: 30px;
         }
+
+        &_loading {
+            background-color: #313131;
+        }
     }
 
     &__link {

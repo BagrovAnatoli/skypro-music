@@ -1,7 +1,18 @@
+import { useState } from 'react';
 import Personal from './Personal';
 import sidebarDatas from './sidebarInfo.json';
 
 function Sidebar() {
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 5000);
+
+    const loadingSidebarItems = [0,1,2].map((item) => (
+        <div className="sidebar__item sidebar__item_loading" key={item}/>
+    ));
 
     const sidebarItems = sidebarDatas.map(({href, imgSrc, imgAlt, id}) => (
         <div className="sidebar__item" key={id}>
@@ -20,7 +31,7 @@ function Sidebar() {
             <Personal name="Sergey.Ivanov"/>
             <div className="sidebar__block">
                 <div className="sidebar__list">
-                    {sidebarItems}
+                    {isLoading ? loadingSidebarItems : sidebarItems}
                 </div>
             </div>
         </div>
