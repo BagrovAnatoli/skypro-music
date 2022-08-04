@@ -25,7 +25,8 @@ function Filter() {
     const popupVisibleUpdate = filterType => {
         if(filterType === filterBy){
             setPopupVisible(!isPopupVisible);
-        } else {
+        }
+        else {
             setPopupVisible(true);
         }
     }
@@ -42,19 +43,22 @@ function Filter() {
 
     const handleFilterClick = (event) => {
         const {target} = event;
+        if (!target.classList.contains('filter__button')) return;
         setPopupCoords(getPopupCoords(target));
         const filterType = getFilterType(target);
         setFilterBy(filterType);
-        popupVisibleUpdate(filterType);     
+        popupVisibleUpdate(filterType);        
     }
+
+    const addActiveStyleFor = (filterType) => isPopupVisible && (filterBy === filterType) ? " _btn-text_active" : "";
 
     return (
         <>
             <div className="centerblock__filter filter" onClick={handleFilterClick} aria-hidden="true">
                 <div className="filter__title">Искать по:</div>
-                <div className="filter__button button-author _btn-text">исполнителю</div>
-                <div className="filter__button button-year _btn-text">году выпуска</div>
-                <div className="filter__button button-genre _btn-text">жанру</div>
+                <div className={`filter__button button-author _btn-text${addActiveStyleFor('author')}`}>исполнителю</div>
+                <div className={`filter__button button-year _btn-text${addActiveStyleFor('year')}`}>году выпуска</div>
+                <div className={`filter__button button-genre _btn-text${addActiveStyleFor('genre')}`}>жанру</div>
             </div>
             <FilterPopup isPopupVisible={isPopupVisible} filterBy={filterBy} coords={popupCoords}/>
         </>

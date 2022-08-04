@@ -68,7 +68,7 @@ body {
   cursor: pointer;
 }
 
-._btn-text:active {
+._btn-text:active, .filter ._btn-text_active {
   border-color: #AD61FF;
   color: #AD61FF;
   cursor: pointer;

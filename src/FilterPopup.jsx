@@ -2,7 +2,7 @@ import authorsData from './authorsData.json';
 import yearsData from './yearsData.json';
 import genresData from './genresData.json';
 
-function FilterPopup({ isPopupVisible, filterBy, coords }) {
+function FilterPopup({ isPopupVisible, filterBy, coords}) {
     let content = '';
 
     if(filterBy === 'author') {
@@ -14,6 +14,8 @@ function FilterPopup({ isPopupVisible, filterBy, coords }) {
     if(filterBy === 'genre') {
         content = genresData.map((genre) => <div className="popup__text" key={genre.id}>{genre.genre}</div>);
     }
+
+    
 
     const result = isPopupVisible ? (
         <div className="filter__popup" style={{top: coords.top, left: coords.left}}>
