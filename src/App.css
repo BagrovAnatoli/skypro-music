@@ -476,6 +476,12 @@ body {
   stroke: #4E4E4E;
 }
 
+.track__title-text_loading {
+  width: 356px;
+  height: 19px;
+  background-color: #313131;
+}
+
 .track__title-link {
   font-style: normal;
   font-weight: 400;
@@ -502,6 +508,12 @@ body {
           justify-content: flex-start;
 }
 
+.track__author_loading {
+  width: 271px;
+  height: 19px;
+  background-color: #313131;
+}
+
 .track__author-link {
   font-style: normal;
   font-weight: 400;
@@ -513,6 +525,12 @@ body {
 
 .track__album {
   width: 245px;
+}
+
+.track__album_loading {
+  width: 305px;
+  height: 19px;
+  background-color: #313131;
 }
 
 .track__album-link {
@@ -848,6 +866,12 @@ body {
   font-size: 13px;
   line-height: 24px;
   color: #FFFFFF;
+}
+
+.track-play__author_loading, .track-play__album_loading {
+  background-color: #313131;
+  width: 59px;
+  height: 15px;
 }
 
 .track-play__like-dis {
