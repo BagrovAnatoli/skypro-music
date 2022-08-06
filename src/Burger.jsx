@@ -1,6 +1,7 @@
+const emptyArray = Array.from({length: 3});
+
 function Burger({onClick}) {
-    // eslint-disable-next-line react/no-array-index-key
-    const lines = [0,1,2].map((element) => <span className="burger__line" key={element}/>);
+    const lines = emptyArray.map((_, index) => <span className="burger__line" key={`${index}_line`}/>);
 
     return (
         <div className="nav__burger burger" onClick={onClick} aria-hidden="true">
