@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DivSvgUse from './DivSvgUse';
+import isLoadingContain from './isLoadingContain';
 
 function Contain() {
 
@@ -8,14 +9,6 @@ function Contain() {
     setTimeout(() => {
         setIsLoading(false);
     }, 5000);
-
-    const isLoadingContain =  (
-        <div className="track-play__contain">
-            <div className="track-play__image" />
-            <div className="track-play__author track-play__author_loading"/>
-            <div className="track-play__album track-play__album_loading"/>
-        </div>
-    );
 
     const imageProps = {
         divProps: {
@@ -29,11 +22,9 @@ function Contain() {
             xlinkHref: "img/icon/sprite.svg#icon-note",
         },
     };
-    if (isLoading) {
-        return isLoadingContain;
-    }
 
     return (
+        isLoading ? isLoadingContain : 
         <div className="track-play__contain">
             <DivSvgUse attrs={imageProps}/>
             <div className="track-play__author">
