@@ -1,5 +1,4 @@
-function DivSvgUse(props) {
-    const { propsDiv, propsSvg, propsUse } = props;
+function DivSvgUse({ propsDiv, propsSvg, propsUse }) {
     return (
         <div className={propsDiv.className}>
             <svg className={propsSvg.className} alt={propsSvg.alt}>
