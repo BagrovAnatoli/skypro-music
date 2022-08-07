@@ -65,11 +65,11 @@ function Controls() {
     };
     return (
         <>
-            <DivSvgUse attrs={btnPrevProps} key="1"/>
-            <DivSvgUse attrs={btnPlayProps} key="2"/>
-            <DivSvgUse attrs={btnNextProps} key="3"/>
-            <DivSvgUse attrs={btnRepeatProps} key="4"/>
-            <DivSvgUse attrs={btnShuffleProps} key="5"/>
+            <DivSvgUse propsDiv={btnPrevProps.propsDiv} propsSvg={btnPrevProps.propsSvg} propsUse={btnPrevProps.propsUse} key="1"/>
+            <DivSvgUse propsDiv={btnPlayProps.propsDiv} propsSvg={btnPlayProps.propsSvg} propsUse={btnPlayProps.propsUse} key="2"/>
+            <DivSvgUse propsDiv={btnNextProps.propsDiv} propsSvg={btnNextProps.propsSvg} propsUse={btnNextProps.propsUse} key="3"/>
+            <DivSvgUse propsDiv={btnRepeatProps.propsDiv} propsSvg={btnRepeatProps.propsSvg} propsUse={btnRepeatProps.propsUse} key="4"/>
+            <DivSvgUse propsDiv={btnShuffleProps.propsDiv} propsSvg={btnShuffleProps.propsSvg} propsUse={btnShuffleProps.propsUse} key="5"/>
         </>
     );
 }

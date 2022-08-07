@@ -16,7 +16,7 @@ function Volume () {
     };
     return (
         <div className="bar__volume-block volume">
-            <DivSvgUse attrs={iconVolumeProps}/>
+            <DivSvgUse propsDiv={iconVolumeProps.propsDiv} propsSvg={iconVolumeProps.propsSvg} propsUse={iconVolumeProps.propsUse}/>
             <div className="volume__progress _btn">
                 <input className="volume__progress-line _btn" type="range" name="range" />
             </div>

@@ -1,22 +1,23 @@
 import DivSvgUse from './DivSvgUse';
+import {ICON_NOTE} from './constants';
 
 function TrackTitle ( {data} ) {
     const imgAlt = data.image ? data.image.alt : "music";
-    const imgPath = data.image ? data.image.path : "img/icon/sprite.svg#icon-note";
+    const imgPath = data.image ? data.image.path : ICON_NOTE;
     const text = data.text ? data.text : "";
     const link = data.link ? data.link : "http://";
 
     
     return (
         <div className="track__title">
-            <DivSvgUse attrs= {{
-                propsDiv: {className: "track__title-image"},
-                propsSvg: {
+            <DivSvgUse 
+                propsDiv={{className: "track__title-image"}}
+                propsSvg={{
                     className: "track__title-svg",
                     alt: imgAlt,
-                },
-                propsUse: {xlinkHref: imgPath},
-            }} />
+                }}
+                propsUse={{xlinkHref: imgPath}}
+            />
             <div className="track__title-text">
                 <a href={link} className="track__title-link">
                     {text} <span className="track__title-span"/>

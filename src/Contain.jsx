@@ -32,7 +32,8 @@ function Contain() {
     return (
         isLoading ? <IsLoadingContain /> : 
         <div className="track-play__contain">
-            <DivSvgUse attrs={imageProps}/>
+            <DivSvgUse propsDiv={imageProps.propsDiv} propsSvg={imageProps.propsSvg} propsUse={imageProps.propsUse}/>
+            {/* <DivSvgUse {...imageProps}/> */}
             <div className="track-play__author">
                 <a href="http://" className="track-play__author-link">Ты та...</a>
             </div>
