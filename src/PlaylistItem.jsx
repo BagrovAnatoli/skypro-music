@@ -32,7 +32,7 @@ function PlaylistItem ( {title, author, album, time} ) {
         <div className="playlist__track track">
             <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
             <TrackAuthor text={author.text} link={author.link}/>
-            <TrackAlbum data={album}/>
+            <TrackAlbum text={album.text} link={album.link}/>
             <TrackTime data={time}/>
         </div>
     );
