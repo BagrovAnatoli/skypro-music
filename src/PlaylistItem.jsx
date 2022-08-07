@@ -1,16 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TrackTitle from "./TrackTitle";
 import TrackAuthor from "./TrackAuthor";
 import TrackAlbum from "./TrackAlbum";
 import TrackTime from "./TrackTime";
 
-function PlaylistItem ( {data} ) {
+function PlaylistItem ( {title, author, album, time} ) {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 5000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timer);
+        };
+    },[]);
 
     const loadingTrack = (
         <div className="playlist__track track">
@@ -25,10 +30,10 @@ function PlaylistItem ( {data} ) {
 
     const loadedTrack = (
         <div className="playlist__track track">
-            <TrackTitle data={data.title}/>
-            <TrackAuthor data={data.author}/>
-            <TrackAlbum data={data.album}/>
-            <TrackTime data={data.time}/>
+            <TrackTitle data={title}/>
+            <TrackAuthor data={author}/>
+            <TrackAlbum data={album}/>
+            <TrackTime data={time}/>
         </div>
     );
 

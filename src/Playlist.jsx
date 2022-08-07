@@ -3,8 +3,8 @@ import tracks from './tracksInfo.json';
 
 function Playlist () {
 
-    const list = tracks.map(track => (
-        <PlaylistItem data={track} key={track.id}/>
+    const list = tracks.map(({title, author, album, time, id}) => (
+        <PlaylistItem title={title} author={author} album={album} time={time} key={id}/>
     ));
 
     return (
