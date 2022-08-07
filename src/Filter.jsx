@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
 import {useState} from 'react';
 import FilterPopup from './FilterPopup';
+import {BUTTON_POPUP_SPACE, TRACK_FILTERS} from './constants';
 
 
 function Filter() {
@@ -22,21 +22,11 @@ function Filter() {
         return undefined;
     }
 
-    const popupVisibleUpdate = filterType => {
-        if(filterType === filterBy){
-            setPopupVisible(!isPopupVisible);
-        }
-        else {
-            setPopupVisible(true);
-        }
-    }
-
     const getPopupCoords = (element) => {
         const left = element.offsetLeft;
         const bottom = element.offsetTop + element.offsetHeight;
-        const space = 16;
 
-        const popupTop = `${ bottom + space }px`;
+        const popupTop = `${ bottom + BUTTON_POPUP_SPACE }px`;
         const popupLeft = `${ left }px`;
         return {top: popupTop, left: popupLeft};
     }
@@ -47,18 +37,20 @@ function Filter() {
         setPopupCoords(getPopupCoords(target));
         const filterType = getFilterType(target);
         setFilterBy(filterType);
-        popupVisibleUpdate(filterType);        
+        setPopupVisible((prevState) => filterType !== filterBy || !prevState);    
     }
 
     const addActiveStyleFor = (filterType) => isPopupVisible && (filterBy === filterType) ? " _btn-text_active" : "";
+
+    const filtersElements = TRACK_FILTERS.map(({id, type, text}) => (
+        <div className={`filter__button button-${type} _btn-text ${addActiveStyleFor(type)}`} key={id}>{text}</div>
+    ));
 
     return (
         <>
             <div className="centerblock__filter filter" onClick={handleFilterClick} aria-hidden="true">
                 <div className="filter__title">Искать по:</div>
-                <div className={`filter__button button-author _btn-text${addActiveStyleFor('author')}`}>исполнителю</div>
-                <div className={`filter__button button-year _btn-text${addActiveStyleFor('year')}`}>году выпуска</div>
-                <div className={`filter__button button-genre _btn-text${addActiveStyleFor('genre')}`}>жанру</div>
+                {filtersElements}
             </div>
             <FilterPopup isPopupVisible={isPopupVisible} filterBy={filterBy} coords={popupCoords}/>
         </>
