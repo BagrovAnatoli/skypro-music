@@ -13,7 +13,7 @@ function Nav() {
         setMenuVisible(prevVisible => !prevVisible);
     }
 
-    const menuComponent = isMenuVisible ? <Menu /> : undefined;
+    const menuComponent = isMenuVisible ? <Menu /> : null;
 
     return (
         <div className="main__nav nav">

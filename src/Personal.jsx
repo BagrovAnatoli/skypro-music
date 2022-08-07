@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Personal(props) {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 5000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timer);
+        };
+    },[]);
 
     if(!isLoading) {
         return (
