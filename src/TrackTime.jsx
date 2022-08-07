@@ -1,5 +1,5 @@
-function TrackTime ( {data} ) {
-    const time = data.text ? data.text : '';
+function TrackTime ( {text} ) {
+    const time = text || '';
     return (
         <div className="track__time">
             <svg className="track__time-svg" alt="time">
