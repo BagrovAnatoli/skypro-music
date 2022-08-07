@@ -1,16 +1,17 @@
 import DivSvgUse from './DivSvgUse';
+import {ICON_VOLUME} from './constants';
 
 function Volume () {
     const iconVolumeProps = {
-        divProps: {
+        propsDiv: {
             className: "volume__image",
         },
-        svgProps: {
+        propsSvg: {
             className: "volume__svg",
             alt: "volume",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-volume",
+        propsUse: {
+            xlinkHref: ICON_VOLUME,
         },
     };
     return (

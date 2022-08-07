@@ -1,9 +1,9 @@
 function DivSvgUse(props) {
-    const { divProps, svgProps, useProps } = props.attrs;
+    const { propsDiv, propsSvg, propsUse } = props.attrs;
     return (
-        <div className={divProps.className}>
-            <svg className={svgProps.className} alt={svgProps.alt}>
-                <use xlinkHref={useProps.xlinkHref} />
+        <div className={propsDiv.className}>
+            <svg className={propsSvg.className} alt={propsSvg.alt}>
+                <use xlinkHref={propsUse.xlinkHref} />
             </svg>
         </div>
     );

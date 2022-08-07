@@ -1,64 +1,66 @@
 import DivSvgUse from './DivSvgUse';
+import {ICON_PREV, ICON_PLAY, ICON_NEXT, ICON_REPEAT, ICON_SHUFFLE} from './constants';
+
 
 function Controls() {
     const btnPrevProps = {
-        divProps: {
+        propsDiv: {
             className: "player__btn-prev",
         },
-        svgProps: {
+        propsSvg: {
             className: "player__btn-prev-svg",
             alt: "prev",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-prev",
+        propsUse: {
+            xlinkHref: ICON_PREV,
         },
     };
     const btnPlayProps = {
-        divProps: {
+        propsDiv: {
             className: "player__btn-play _btn",
         },
-        svgProps: {
+        propsSvg: {
             className: "player__btn-play-svg",
             alt: "play",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-play",
+        propsUse: {
+            xlinkHref: ICON_PLAY,
         },
     };
     const btnNextProps = {
-        divProps: {
+        propsDiv: {
             className: "player__btn-next",
         },
-        svgProps: {
+        propsSvg: {
             className: "player__btn-next-svg",
             alt: "next",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-next",
+        propsUse: {
+            xlinkHref: ICON_NEXT,
         },
     };
     const btnRepeatProps = {
-        divProps: {
+        propsDiv: {
             className: "player__btn-repeat _btn-icon",
         },
-        svgProps: {
+        propsSvg: {
             className: "player__btn-repeat-svg",
             alt: "repeat",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-repeat",
+        propsUse: {
+            xlinkHref: ICON_REPEAT,
         },
     };
     const btnShuffleProps = {
-        divProps: {
+        propsDiv: {
             className: "player__btn-shuffle _btn-icon",
         },
-        svgProps: {
+        propsSvg: {
             className: "player__btn-shuffle-svg",
             alt: "shuffle",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-shuffle",
+        propsUse: {
+            xlinkHref: ICON_SHUFFLE,
         },
     };
     return (

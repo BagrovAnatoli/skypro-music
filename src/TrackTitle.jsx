@@ -10,12 +10,12 @@ function TrackTitle ( {data} ) {
     return (
         <div className="track__title">
             <DivSvgUse attrs= {{
-                divProps: {className: "track__title-image"},
-                svgProps: {
+                propsDiv: {className: "track__title-image"},
+                propsSvg: {
                     className: "track__title-svg",
                     alt: imgAlt,
                 },
-                useProps: {xlinkHref: imgPath},
+                propsUse: {xlinkHref: imgPath},
             }} />
             <div className="track__title-text">
                 <a href={link} className="track__title-link">

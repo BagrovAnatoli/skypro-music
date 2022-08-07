@@ -1,4 +1,5 @@
 import DivSvgUse from './DivSvgUse';
+import {ICON_WATCH} from './constants';
 
 function PlaylistTitile () {
     return (
@@ -7,12 +8,12 @@ function PlaylistTitile () {
             <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
             <div className="playlist-title__col col03">АЛЬБОМ</div>
             <DivSvgUse attrs={{
-                divProps: {className: "playlist-title__col col04"},
-                svgProps: {
+                propsDiv: {className: "playlist-title__col col04"},
+                propsSvg: {
                     className: "playlist-title__svg",
                     alt: "time",
                 },
-                useProps: {xlinkHref: "img/icon/sprite.svg#icon-watch"},
+                propsUse: {xlinkHref: ICON_WATCH},
             }} />
         </div>
     );

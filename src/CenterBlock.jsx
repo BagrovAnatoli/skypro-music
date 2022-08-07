@@ -6,7 +6,6 @@ function CenterBlock() {
     return (
         <div className="main__centerblock centerblock">
             <Search />
-            {/* <h2 className="centerblock__h2">{filterBy} {isPopupVisible ? 'показать' : 'скрыть'}</h2> */}
             <h2 className="centerblock__h2">Треки</h2>
             <Filter />
             <Content />

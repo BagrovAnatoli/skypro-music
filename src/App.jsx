@@ -11,7 +11,6 @@ function App() {
           <footer/>
         </div>
       </div>
-      // <img src={logo} alt="logo" />
   );
 }
 

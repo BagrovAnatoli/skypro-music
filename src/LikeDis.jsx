@@ -1,28 +1,29 @@
 import DivSvgUse from './DivSvgUse';
+import {ICON_LIKE, ICON_DISLIKE} from './constants';
 
 function TrackPlay() {
     const likeComponentProps = {
-        divProps: {
+        propsDiv: {
             className: "track-play__like _btn-icon",
         },
-        svgProps: {
+        propsSvg: {
             className: "track-play__like-svg",
             alt: "like",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-like",
+        propsUse: {
+            xlinkHref: ICON_LIKE,
         },
     };
     const dislikeComponentProps = {
-        divProps: {
+        propsDiv: {
             className: "track-play__dislike _btn-icon",
         },
-        svgProps: {
+        propsSvg: {
             className: "track-play__dislike-svg",
             alt: "like",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-dislike",
+        propsUse: {
+            xlinkHref: ICON_DISLIKE,
         },
     };
     return (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import DivSvgUse from "./DivSvgUse";
 import IsLoadingContain from "./IsLoadingContain";
+import {ICON_NOTE} from './constants';
 
 function Contain() {
 
@@ -16,15 +17,15 @@ function Contain() {
     },[]);
 
     const imageProps = {
-        divProps: {
+        propsDiv: {
             className: "track-play__image",
         },
-        svgProps: {
+        propsSvg: {
             className: "track-play__svg",
             alt: "music",
         },
-        useProps: {
-            xlinkHref: "img/icon/sprite.svg#icon-note",
+        propsUse: {
+            xlinkHref: ICON_NOTE,
         },
     };
 
