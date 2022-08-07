@@ -13,6 +13,6 @@ export const BUTTON_POPUP_SPACE = 16;
 
 export const TRACK_FILTERS = [
     {id: 1, type: "author", text: "исполнителю"},
-    {id: 2, type: "yearr", text: "году выпуска"},
+    {id: 2, type: "year", text: "году выпуска"},
     {id: 3, type: "genre", text: "жанру"}
 ];
