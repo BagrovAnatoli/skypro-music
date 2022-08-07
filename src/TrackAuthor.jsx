@@ -1,9 +1,9 @@
-function TrackAuthor ( {data} ) {
-    const author = data.text ? data.text : '';
-    const link = data.link ? data.link : 'http://';
+function TrackAuthor ( {text, link} ) {
+    const author = text || '';
+    const linkAuthor = link || 'http://';
     return (
         <div className="track__author">
-            <a className="track__author-link" href={link}>{author}</a>
+            <a className="track__author-link" href={linkAuthor}>{author}</a>
         </div>
     );
 }
