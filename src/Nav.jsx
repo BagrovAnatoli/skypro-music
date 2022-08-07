@@ -10,7 +10,7 @@ function Nav() {
     const [isMenuVisible, setMenuVisible] = useState(false);
 
     const toggleMenu = () => {
-        setMenuVisible(!isMenuVisible);
+        setMenuVisible(prevVisible => !prevVisible);
     }
 
     const menuComponent = isMenuVisible ? <Menu /> : undefined;
