@@ -30,7 +30,7 @@ function PlaylistItem ( {title, author, album, time} ) {
 
     const loadedTrack = (
         <div className="playlist__track track">
-            <TrackTitle data={title}/>
+            <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
             <TrackAuthor data={author}/>
             <TrackAlbum data={album}/>
             <TrackTime data={time}/>

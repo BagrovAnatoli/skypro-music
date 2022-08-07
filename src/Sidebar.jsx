@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Personal from './Personal';
 import sidebarDatas from './sidebarInfo.json';
 
@@ -6,9 +6,14 @@ function Sidebar() {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 5000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timer);
+        };
+    },[]);
 
     const loadingSidebarItems = [0,1,2].map((item) => (
         <div className="sidebar__item sidebar__item_loading" key={item}/>
