@@ -1,14 +1,19 @@
-import { useState } from 'react';
-import DivSvgUse from './DivSvgUse';
-import isLoadingContain from './isLoadingContain';
+import { useState, useEffect } from "react";
+import DivSvgUse from "./DivSvgUse";
+import IsLoadingContain from "./IsLoadingContain";
 
 function Contain() {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 5000);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timer);
+        };
+    },[]);
 
     const imageProps = {
         divProps: {
@@ -24,7 +29,7 @@ function Contain() {
     };
 
     return (
-        isLoading ? isLoadingContain : 
+        isLoading ? <IsLoadingContain /> : 
         <div className="track-play__contain">
             <DivSvgUse attrs={imageProps}/>
             <div className="track-play__author">

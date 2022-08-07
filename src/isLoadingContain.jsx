@@ -1,4 +1,4 @@
-function isLoadingContain() {
+function IsLoadingContain() {
 
     return (
         <div className="track-play__contain">
@@ -9,4 +9,4 @@ function isLoadingContain() {
     );
 }
 
-export default isLoadingContain;
+export default IsLoadingContain;
