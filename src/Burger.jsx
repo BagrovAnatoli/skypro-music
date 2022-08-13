@@ -1,12 +1,14 @@
+import * as S from './styles';
+
 const emptyArray = Array.from({length: 3});
 
 function Burger({onClick}) {
-    const lines = emptyArray.map((_, index) => <span className="burger__line" key={`${index}_line`}/>);
+    const lines = emptyArray.map((_, index) => <S.BurgerLine key={`${index}_line`}/>);
 
     return (
-        <div className="nav__burger burger" onClick={onClick} aria-hidden="true">
+        <S.NavBurger onClick={onClick} aria-hidden="true">
             { lines }
-        </div>
+        </S.NavBurger>
     );
 }
 

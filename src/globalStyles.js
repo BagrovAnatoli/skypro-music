@@ -46,35 +46,9 @@ export const GlobalStyle = createGlobalStyle`
     color: #FFFFFF;
   }
   
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    overflow: hidden;
-    background-color: #383838;
-  }
-  
-  .container {
-    max-width: 1920px;
-    margin: 0 auto;
-    position: relative;
-    background-color: #181818;
-  }
-  
-  ._btn-text:hover {
-    border-color: #D9B6FF;
-    color: #D9B6FF;
-    cursor: pointer;
-  }
-  
   ._btn-icon:hover svg {
     fill: transparent;
     stroke: #ACACAC;
-    cursor: pointer;
-  }
-  
-  ._btn-text:active, .filter ._btn-text_active {
-    border-color: #AD61FF;
-    color: #AD61FF;
     cursor: pointer;
   }
   
@@ -91,83 +65,9 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   
-  .main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  
-  .main__nav {
-    width: 244px;
-    background-color: #181818;
-    padding: 20px 0 20px 36px;
-  }
-  
-  .main__centerblock {
-    width: auto;
-    -webkit-box-flex: 3;
-        -ms-flex-positive: 3;
-            flex-grow: 3;
-    padding: 20px 40px 20px 111px;
-  }
-  
   .main__sidebar {
     max-width: 418px;
     padding: 20px 90px 20px 78px;
-  }
-  
-  .nav__logo {
-    width: 113.33px;
-    height: 43px;
-    padding: 13px 0 13px 0;
-    background-color: transparent;
-    margin-bottom: 20px;
-  }
-  
-  .nav__burger {
-    width: 20px;
-    height: 36px;
-    padding: 13px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  
-  .nav__menu {
-    display: block;
-    visibility: visible;
-  }
-  
-  .logo__image {
-    width: 113.33px;
-    height: 17px;
-    color: #181818;
-  }
-  
-  .burger {
-    cursor: pointer;
-  }
-  
-  .burger__line {
-    display: inline-block;
-    width: 100%;
-    height: 1px;
-    background-color: #D3D3D3;
   }
   
   .menu__list {
@@ -193,77 +93,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 24px;
     font-family: 'StratosSkyeng';
-  }
-  
-  .centerblock__search {
-    width: 100%;
-    border-bottom: 1px solid #4E4E4E;
-    margin-bottom: 51px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
-  .centerblock__h2 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 72px;
-    letter-spacing: -0.8px;
-    margin-bottom: 45px;
-  }
-  
-  .centerblock__filter {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 51px;
-  }
-  
-  .centerblock__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  
-  .search__svg {
-    width: 17px;
-    height: 17px;
-    margin-right: 5px;
-    stroke: #FFFFFF;
-    fill: transparent;
-  }
-  
-  .search__text {
-    -webkit-box-flex: 100;
-        -ms-flex-positive: 100;
-            flex-grow: 100;
-    background-color: transparent;
-    border: none;
-    padding: 13px 10px 14px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
   }
   
   .search__text::-webkit-input-placeholder {
@@ -300,28 +129,6 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-  }
-  
-  .filter__title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin-right: 15px;
-  }
-  
-  .filter__button {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    border: 1px solid #FFFFFF;
-    border-radius: 60px;
-    padding: 6px 20px;
-  }
-  
-  .filter__button:not(:last-child) {
-    margin-right: 10px;
   }
   
   .filter__popup {

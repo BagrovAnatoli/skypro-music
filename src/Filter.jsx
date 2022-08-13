@@ -1,7 +1,8 @@
+// import styled from 'styled-components';
 import {useState} from 'react';
 import FilterPopup from './FilterPopup';
 import {BUTTON_POPUP_SPACE, TRACK_FILTERS} from './constants';
-
+import * as S from './styles';
 
 function Filter() {
 
@@ -40,18 +41,20 @@ function Filter() {
         setPopupVisible((prevState) => filterType !== filterBy || !prevState);    
     }
 
-    const addActiveStyleFor = (filterType) => isPopupVisible && (filterBy === filterType) ? " _btn-text_active" : "";
+    const getActive = (filterType) => !!(isPopupVisible && (filterBy === filterType));
 
     const filtersElements = TRACK_FILTERS.map(({id, type, text}) => (
-        <div className={`filter__button button-${type} _btn-text ${addActiveStyleFor(type)}`} key={id}>{text}</div>
+        <S.FilterButtonText className={`filter__button button-${type}`} $isActive={getActive(type)} key={id}>
+            {text}
+        </S.FilterButtonText>
     ));
 
     return (
         <>
-            <div className="centerblock__filter filter" onClick={handleFilterClick} aria-hidden="true">
-                <div className="filter__title">Искать по:</div>
+            <S.CenterBlockFilter onClick={handleFilterClick} aria-hidden="true">
+                <S.FilterTitle>Искать по:</S.FilterTitle>
                 {filtersElements}
-            </div>
+            </S.CenterBlockFilter>
             <FilterPopup isPopupVisible={isPopupVisible} filterBy={filterBy} coords={popupCoords}/>
         </>
     );

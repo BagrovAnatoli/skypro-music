@@ -1,14 +1,15 @@
 import Nav from './Nav'
 import CenterBlock from './CenterBlock'
 import Sidebar from './Sidebar'
+import * as S from './styles';
 
 function Main() {
     return (
-        <div className="main">
+        <S.Main>
             <Nav />
             <CenterBlock />
             <Sidebar />
-        </div>
+        </S.Main>
     );
 }
 

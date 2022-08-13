@@ -1,13 +1,14 @@
 import {ICON_SEARCH} from './constants';
+import * as S from './styles';
 
 function Search() {
     return (
-        <div className="centerblock__search search">
-            <svg className="search__svg">
+        <S.CenterBlockSearch>
+            <S.SearchSvg>
                 <use xlinkHref={ICON_SEARCH}/>
-            </svg>
-            <input className="search__text" type="search" placeholder="Поиск" name="search" />
-        </div>
+            </S.SearchSvg>
+            <S.SearchText type="search" placeholder="Поиск" name="search" />
+        </S.CenterBlockSearch>
     );
 }
 

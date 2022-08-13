@@ -1,15 +1,16 @@
 import Search from './Search';
 import Filter from './Filter';
 import Content from './Content';
+import * as S from './styles';
 
 function CenterBlock() {
     return (
-        <div className="main__centerblock centerblock">
+        <S.MainCenterBlock>
             <Search />
-            <h2 className="centerblock__h2">Треки</h2>
+            <S.CenterBlockH2>Треки</S.CenterBlockH2>
             <Filter />
             <Content />
-        </div>
+        </S.MainCenterBlock>
     );
 }
 

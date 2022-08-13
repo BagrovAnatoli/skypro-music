@@ -1,18 +1,20 @@
 import Main from './Main';
 import Bar from './Bar';
 import { GlobalStyle } from './globalStyles';
+import * as S from './styles';
+
 
 function App() {
   return (
       <>
         <GlobalStyle />
-        <div className="wrapper">
-          <div className="container">
+        <S.Wrapper>
+          <S.Container>
             <Main/>
             <Bar/>
             <footer/>
-          </div>
-        </div>
+          </S.Container>
+        </S.Wrapper>
       </>
   );
 }

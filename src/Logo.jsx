@@ -1,10 +1,11 @@
 import logo from './img/logo.png';
+import * as S from './styles';
 
 function Logo() {
     return (
-        <div className="nav__logo logo">
-            <img className="logo__image" src={logo} alt="logo" />
-        </div>
+        <S.NavLogo>
+            <S.LogoImage src={logo} alt="logo" />
+        </S.NavLogo>
     );
 }
   
