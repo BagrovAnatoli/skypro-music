@@ -1,5 +1,5 @@
-import DivSvgUse from './DivSvgUse';
 import {ICON_NOTE} from './constants';
+import * as S from './styles';
 
 function TrackTitle ( {image, text, link, spanText} ) {
     const imgAlt = image ? image.alt : "music";
@@ -9,21 +9,18 @@ function TrackTitle ( {image, text, link, spanText} ) {
 
     
     return (
-        <div className="track__title">
-            <DivSvgUse 
-                propsDiv={{className: "track__title-image"}}
-                propsSvg={{
-                    className: "track__title-svg",
-                    alt: imgAlt,
-                }}
-                propsUse={{xlinkHref: imgPath}}
-            />
-            <div className="track__title-text">
-                <a href={linkTitle} className="track__title-link">
-                    {textTitle} <span className="track__title-span">{spanText}</span>
-                </a>
+        <S.TrackTitle>
+            <S.TrackTitleImage>
+                <S.TrackTitleSvg alt={imgAlt}>
+                    <use xlinkHref={imgPath}/>
+                </S.TrackTitleSvg>
+            </S.TrackTitleImage>
+            <div>
+                <S.TrackTitleLink href={linkTitle}>
+                    {textTitle} <S.TrackTitleSpan>{spanText}</S.TrackTitleSpan>
+                </S.TrackTitleLink>
             </div>
-        </div>
+        </S.TrackTitle>
     );
 }
 

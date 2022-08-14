@@ -1,5 +1,6 @@
 import PlaylistItem from './PlaylistItem';
 import tracks from './tracksInfo.json';
+import * as S from './styles';
 
 function Playlist () {
 
@@ -8,9 +9,9 @@ function Playlist () {
     ));
 
     return (
-        <div className="content__playlist playlist">
+        <S.ContentPlaylist>
             {list}
-        </div>
+        </S.ContentPlaylist>
     );
 }
 

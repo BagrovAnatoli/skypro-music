@@ -3,6 +3,7 @@ import TrackTitle from "./TrackTitle";
 import TrackAuthor from "./TrackAuthor";
 import TrackAlbum from "./TrackAlbum";
 import TrackTime from "./TrackTime";
+import * as S from './styles';
 
 function PlaylistItem ( {title, author, album, time} ) {
 
@@ -18,29 +19,29 @@ function PlaylistItem ( {title, author, album, time} ) {
     },[]);
 
     const loadingTrack = (
-        <div className="playlist__track track">
-            <div className="track__title">
-                <div className="track__title-image track__title-image_loading"/>
-                <div className="track__title-text track__title-text_loading"/>
-            </div>
-            <div className="track__author track__author_loading"/>
-            <div className="track__album track__album_loading"/>
-        </div>
+        <S.PlaylistTrack>
+            <S.TrackTitle>
+                <S.TrackTitleImage/>
+                <S.TrackTitleTextLoading/>
+            </S.TrackTitle>
+            <S.TrackAuthor $isLoading/>
+            <S.TrackAlbum $isLoading/>
+        </S.PlaylistTrack>
     );
 
     const loadedTrack = (
-        <div className="playlist__track track">
+        <S.PlaylistTrack>
             <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
             <TrackAuthor text={author.text} link={author.link}/>
             <TrackAlbum text={album.text} link={album.link}/>
             <TrackTime text={time.text}/>
-        </div>
+        </S.PlaylistTrack>
     );
 
     return (
-        <div className="playlist__item">
+        <S.PlaylistItem>
             {isLoading ? loadingTrack : loadedTrack}
-        </div>
+        </S.PlaylistItem>
     );
 }
 
