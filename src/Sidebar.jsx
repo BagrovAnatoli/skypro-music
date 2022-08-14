@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Personal from './Personal';
 import sidebarDatas from './sidebarInfo.json';
+import * as S from './styles';
 
 function Sidebar() {
 
@@ -16,30 +17,29 @@ function Sidebar() {
     },[]);
 
     const loadingSidebarItems = [0,1,2].map((item) => (
-        <div className="sidebar__item sidebar__item_loading" key={item}/>
+        <S.SidebarItem $isLoading key={item}/>
     ));
 
     const sidebarItems = sidebarDatas.map(({href, imgSrc, imgAlt, id}) => (
-        <div className="sidebar__item" key={id}>
-            <a href={href} className="sidebar__link">
-                <img 
+        <S.SidebarItem key={id}>
+            <S.SidebarLink href={href}>
+                <S.SidebarImg
                     src={imgSrc} 
-                    alt={imgAlt} 
-                    className="sidebar__img" 
+                    alt={imgAlt}  
                 />
-            </a>
-        </div>
+            </S.SidebarLink>
+        </S.SidebarItem>
     ));
 
     return (
-        <div className="main__sidebar sidebar">
+        <S.MainSidebar>
             <Personal name="Sergey.Ivanov"/>
-            <div className="sidebar__block">
-                <div className="sidebar__list">
+            <S.SidebarBlock>
+                <S.SidebarList>
                     {isLoading ? loadingSidebarItems : sidebarItems}
-                </div>
-            </div>
-        </div>
+                </S.SidebarList>
+            </S.SidebarBlock>
+        </S.MainSidebar>
     );
 }
 

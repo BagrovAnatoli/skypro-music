@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import * as S from './styles';
 
 function Personal(props) {
 
@@ -15,12 +16,12 @@ function Personal(props) {
 
     if(!isLoading) {
         return (
-            <div className="sidebar__personal">
-                <p className="sidebar__personal-name">
+            <S.SidebarPersonal>
+                <S.SidebarPersonalName>
                     {props.name}
-                </p>
-                <div className="sidebar__avatar" />
-            </div>
+                </S.SidebarPersonalName>
+                <S.SidebarAvatar />
+            </S.SidebarPersonal>
         );
     }
 }
