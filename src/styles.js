@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import styled, {css} from 'styled-components';
+import {colsWidth} from './constants';
 
 export const Wrapper = styled.div`
     width: 100%;
@@ -198,4 +200,40 @@ export const SearchText = styled.input`
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
+`;
+
+export const ContentTitle = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 24px;
+`;
+
+export const PlaylistTitleCol = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    color: #696969;
+    text-transform: uppercase;
+    width: ${(props) => colsWidth[Number(props.$col)-1].width};
+    ${(props) => props.$col==="4" && `text-align: end;`}
+`;
+
+export const PlayistTitleSvg = styled.svg`
+    width: 12px;
+    height: 12px;
+    fill: transparent;
+    stroke: #696969;
 `;

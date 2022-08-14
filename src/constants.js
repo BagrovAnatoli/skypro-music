@@ -16,3 +16,10 @@ export const TRACK_FILTERS = [
     {id: 2, type: "year", text: "году выпуска"},
     {id: 3, type: "genre", text: "жанру"}
 ];
+
+export const colsWidth = [
+    {id: 1, width: "447px"},
+    {id: 2, width: "321px"},
+    {id: 3, width: "245px"},
+    {id: 4, width: "60px"},
+];

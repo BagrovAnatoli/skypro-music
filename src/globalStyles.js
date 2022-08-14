@@ -164,24 +164,7 @@ export const GlobalStyle = createGlobalStyle`
             font-feature-settings: 'pnum' on, 'lnum' on;
     color: #B672FF;
   }
-  
-  .content__title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-bottom: 24px;
-  }
-  
+    
   .content__playlist {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -191,23 +174,6 @@ export const GlobalStyle = createGlobalStyle`
         -ms-flex-direction: column;
             flex-direction: column;
     overflow-y: auto;
-  }
-  
-  .playlist-title__col {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 2px;
-    color: #696969;
-    text-transform: uppercase;
-  }
-  
-  .playlist-title__svg {
-    width: 12px;
-    height: 12px;
-    fill: transparent;
-    stroke: #696969;
   }
   
   .col01 {

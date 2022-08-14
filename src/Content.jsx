@@ -1,12 +1,13 @@
 import PlaylistTitle from './PlaylistTitle';
 import Playlist from './Playlist';
+import * as S from './styles';
 
 function Content() {
     return (
-        <div className="centerblock__content">
+        <S.CenterBlockContent>
             <PlaylistTitle />
             <Playlist />
-        </div>
+        </S.CenterBlockContent>
     );
 }
 
