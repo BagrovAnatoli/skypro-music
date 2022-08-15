@@ -2,6 +2,8 @@
 import styled, {css} from 'styled-components';
 import {colsWidth} from './constants';
 
+const cursorPointer = css`cursor: pointer;`;
+
 export const Wrapper = styled.div`
     width: 100%;
     min-height: 100%;
@@ -454,4 +456,140 @@ export const SidebarLink = styled.a`
 export const SidebarImg = styled.img`
     width: 100%;
     height: auto;
+`;
+
+export const BarContent = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+`;
+
+export const BarPlayerProgress = styled.div`
+    width: 100%;
+    height: 5px;
+    background: #2E2E2E;
+`;
+
+export const BarPlayerBlock = styled.div`
+    height: 73px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+`;
+
+export const BarPlayer = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+`;
+
+const getBtnStyle = (btnName) => {
+    const btnStyles = {
+        prev: css`
+            margin-right: 23px;
+        `,
+        play:  css`
+            margin-right: 23px;
+        `,
+        next:  css`
+            margin-right: 28px;
+            fill: #a53939;
+        `,
+        repeat: css`
+            margin-right: 24px;
+        `,
+        shuffle: css`
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        `
+    };
+    return btnStyles[btnName];
+}
+
+export const PlayerBtn = styled.div`
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    fill: #D9D9D9;
+    stroke: #FFFFFF;
+    ${({$btnName}) => getBtnStyle($btnName)}
+    ${({$cursor}) => $cursor && cursorPointer}
+    ${({$hoverIcon}) => $hoverIcon && `
+        &:hover svg{
+            fill: transparent;
+            stroke: #ACACAC;
+            cursor: pointer;
+        }
+        &:active svg {
+            fill: transparent;
+            stroke: #FFFFFF;
+            cursor: pointer;
+        }
+    `}
+`;
+
+const getBtnSvgStyle = (btnName) => {
+    const btnSvgStyles = {
+        prev: css`
+            width: 15px;
+            height: 14px;
+        `,
+        play:  css`
+            width: 22px;
+            height: 20px;
+            fill: #D9D9D9;
+        `,
+        next:  css`
+            width: 15px;
+            height: 14px;
+            fill: inherit;
+            stroke: #D9D9D9;
+        `,
+        repeat: css`
+            width: 18px;
+            height: 12px;
+            fill: transparent;
+            stroke: #696969;
+        `,
+        shuffle: css`
+            width: 19px;
+            height: 12px;
+            fill: transparent;
+            stroke: #696969;
+        `
+    };
+    return btnSvgStyles[btnName];
+}
+
+export const PlayerBtnSvg = styled.svg`
+    ${({$btnName}) => getBtnSvgStyle($btnName)}
 `;

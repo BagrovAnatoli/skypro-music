@@ -1,19 +1,20 @@
 import Controls from './Controls';
 import TrackPlay from './TrackPlay';
 import Volume from './Volume';
+import * as S from './styles';
 
 function Bar() {
     return (
-        <div className="bar__content">
-            <div className="bar__player-progress" />
-            <div className="bar__player-block">
-                <div className="bar__player player">
+        <S.BarContent>
+            <S.BarPlayerProgress />
+            <S.BarPlayerBlock>
+                <S.BarPlayer>
                     <Controls />
                     <TrackPlay />
-                </div>
+                </S.BarPlayer>
                 <Volume />
-            </div>
-        </div>
+            </S.BarPlayerBlock>
+        </S.BarContent>
     );
 }
 

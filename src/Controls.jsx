@@ -1,79 +1,24 @@
-import DivSvgUse from './DivSvgUse';
 import {ICON_PREV, ICON_PLAY, ICON_NEXT, ICON_REPEAT, ICON_SHUFFLE} from './constants';
-
+import * as S from './styles';
 
 function Controls() {
-    const btnPrevProps = {
-        propsDiv: {
-            className: "player__btn-prev",
-        },
-        propsSvg: {
-            className: "player__btn-prev-svg",
-            alt: "prev",
-        },
-        propsUse: {
-            xlinkHref: ICON_PREV,
-        },
-    };
-    const btnPlayProps = {
-        propsDiv: {
-            className: "player__btn-play _btn",
-        },
-        propsSvg: {
-            className: "player__btn-play-svg",
-            alt: "play",
-        },
-        propsUse: {
-            xlinkHref: ICON_PLAY,
-        },
-    };
-    const btnNextProps = {
-        propsDiv: {
-            className: "player__btn-next",
-        },
-        propsSvg: {
-            className: "player__btn-next-svg",
-            alt: "next",
-        },
-        propsUse: {
-            xlinkHref: ICON_NEXT,
-        },
-    };
-    const btnRepeatProps = {
-        propsDiv: {
-            className: "player__btn-repeat _btn-icon",
-        },
-        propsSvg: {
-            className: "player__btn-repeat-svg",
-            alt: "repeat",
-        },
-        propsUse: {
-            xlinkHref: ICON_REPEAT,
-        },
-    };
-    const btnShuffleProps = {
-        propsDiv: {
-            className: "player__btn-shuffle _btn-icon",
-        },
-        propsSvg: {
-            className: "player__btn-shuffle-svg",
-            alt: "shuffle",
-        },
-        propsUse: {
-            xlinkHref: ICON_SHUFFLE,
-        },
-    };
-
-    const buttonsProps = [
-        {id: 1, props: btnPrevProps},
-        {id: 2, props: btnPlayProps},
-        {id: 3, props: btnNextProps},
-        {id: 4, props: btnRepeatProps},
-        {id: 5, props: btnShuffleProps},
+    const controlBtnsValues = [
+        {name: "prev", alt: "prev", xlinkHref: ICON_PREV},
+        {name: "play", alt: "play", xlinkHref: ICON_PLAY, cursor: true},
+        {name: "next", alt: "next", xlinkHref: ICON_NEXT},
+        {name: "repeat", alt: "repeat", xlinkHref: ICON_REPEAT, hoverIcon: true},
+        {name: "shuffle", alt: "shuffle", xlinkHref: ICON_SHUFFLE, hoverIcon: true}
     ];
+
     return (
         <>
-            {buttonsProps.map(({id, props}) => <DivSvgUse propsDiv={props.propsDiv} propsSvg={props.propsSvg} propsUse={props.propsUse} key={id}/>)}
+            {controlBtnsValues.map(({name, alt, xlinkHref, cursor, hoverIcon}) => (
+                <S.PlayerBtn $btnName={name} $cursor={cursor} $hoverIcon={hoverIcon}>
+                    <S.PlayerBtnSvg $btnName={name} alt={alt}>
+                        <use xlinkHref={xlinkHref}/>
+                    </S.PlayerBtnSvg>
+                </S.PlayerBtn>
+            ))}
         </>
     );
 }
