@@ -46,18 +46,6 @@ export const GlobalStyle = createGlobalStyle`
     color: #FFFFFF;
   }
   
-  // ._btn-icon:hover svg {
-  //   fill: transparent;
-  //   stroke: #ACACAC;
-  //   cursor: pointer;
-  // }
-  
-  ._btn-icon:active svg {
-    fill: transparent;
-    stroke: #FFFFFF;
-    cursor: pointer;
-  }
-  
   ._btn-icon:active .track-play__like-svg,
   ._btn-icon:active .track-play__dislike-svg {
     fill: #696969;
@@ -176,14 +164,6 @@ export const GlobalStyle = createGlobalStyle`
     text-align: right;
     color: #696969;
   }
-  
-  .bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(28, 28, 28, 0.5);
-  }
       
   .bar__volume-block {
     width: auto;
@@ -205,106 +185,6 @@ export const GlobalStyle = createGlobalStyle`
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 0 27px 0 31px;
-  }
-  
-  .player__track-play {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  
-  .track-play__contain {
-    width: auto;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto 1fr;
-        grid-template-columns: auto 1fr;
-        grid-template-areas: "image author" "image album";
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
-  .track-play__image {
-    width: 51px;
-    height: 51px;
-    background-color: #313131;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-right: 12px;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    grid-area: image;
-  }
-  
-  .track-play__svg {
-    width: 18px;
-    height: 17px;
-    fill: transparent;
-    stroke: #4E4E4E;
-  }
-  
-  .track-play__author {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: author;
-    min-width: 49px;
-  }
-  
-  .track-play__author-link {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    white-space: nowrap;
-  }
-  
-  .track-play__album {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: album;
-    min-width: 49px;
-  }
-  
-  .track-play__album-link {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 24px;
-    color: #FFFFFF;
-  }
-  
-  .track-play__author_loading, .track-play__album_loading {
-    background-color: #313131;
-    width: 59px;
-    height: 15px;
-  }
-  
-  .track-play__like-dis {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 26%;
   }
   
   .track-play__like, .track-play__dislike {

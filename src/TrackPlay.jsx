@@ -1,12 +1,13 @@
 import Contain from './Contain'
 import LikeDis from './LikeDis'
+import * as S from './styles';
 
 function TrackPlay() {
     return (
-        <div className="player__track-play track-play">
+        <S.TrackPlay>
             <Contain/>
             <LikeDis/>
-        </div>
+        </S.TrackPlay>
     );
 }
 

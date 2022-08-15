@@ -1,36 +1,20 @@
-import DivSvgUse from './DivSvgUse';
 import {ICON_LIKE, ICON_DISLIKE} from './constants';
+import * as S from './styles';
 
 function TrackPlay() {
-    const likeComponentProps = {
-        propsDiv: {
-            className: "track-play__like _btn-icon",
-        },
-        propsSvg: {
-            className: "track-play__like-svg",
-            alt: "like",
-        },
-        propsUse: {
-            xlinkHref: ICON_LIKE,
-        },
-    };
-    const dislikeComponentProps = {
-        propsDiv: {
-            className: "track-play__dislike _btn-icon",
-        },
-        propsSvg: {
-            className: "track-play__dislike-svg",
-            alt: "like",
-        },
-        propsUse: {
-            xlinkHref: ICON_DISLIKE,
-        },
-    };
     return (
-        <div className="track-play__like-dis">
-            <DivSvgUse propsDiv={likeComponentProps.propsDiv} propsSvg={likeComponentProps.propsSvg} propsUse={likeComponentProps.propsUse} key="1"/>
-            <DivSvgUse propsDiv={dislikeComponentProps.propsDiv} propsSvg={dislikeComponentProps.propsSvg} propsUse={dislikeComponentProps.propsUse} key="2"/>
-        </div>
+        <S.TrackPlayLikeDis>
+            <S.TrackPlayLike>
+                <S.TrackPlayLikeSvg alt="like">
+                    <use xlinkHref={ICON_LIKE}/>
+                </S.TrackPlayLikeSvg>
+            </S.TrackPlayLike>
+            <S.TrackPlayDislike>
+                <S.TrackPlayDislikeSvg alt="dislike">
+                    <use xlinkHref={ICON_DISLIKE}/>
+                </S.TrackPlayDislikeSvg>
+            </S.TrackPlayDislike>
+        </S.TrackPlayLikeDis>
     );
 }
 

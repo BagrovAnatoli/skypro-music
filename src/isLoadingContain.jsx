@@ -1,11 +1,13 @@
+import * as S from './styles';
+
 function IsLoadingContain() {
 
     return (
-        <div className="track-play__contain">
-            <div className="track-play__image" />
-            <div className="track-play__author track-play__author_loading"/>
-            <div className="track-play__album track-play__album_loading"/>
-        </div>
+        <S.TrackPlayContain>
+            <S.TrackPlayImage/>
+            <S.TrackPlayAuthor $isLoading/>
+            <S.TrackPlayAlbum $isLoading/>
+        </S.TrackPlayContain>
     );
 }
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import DivSvgUse from "./DivSvgUse";
 import IsLoadingContain from "./IsLoadingContain";
 import {ICON_NOTE} from './constants';
+import * as S from './styles';
 
 function Contain() {
 
@@ -16,31 +16,21 @@ function Contain() {
         };
     },[]);
 
-    const imageProps = {
-        propsDiv: {
-            className: "track-play__image",
-        },
-        propsSvg: {
-            className: "track-play__svg",
-            alt: "music",
-        },
-        propsUse: {
-            xlinkHref: ICON_NOTE,
-        },
-    };
-
     return (
         isLoading ? <IsLoadingContain /> : 
-        <div className="track-play__contain">
-            <DivSvgUse propsDiv={imageProps.propsDiv} propsSvg={imageProps.propsSvg} propsUse={imageProps.propsUse}/>
-            {/* <DivSvgUse {...imageProps}/> */}
-            <div className="track-play__author">
-                <a href="http://" className="track-play__author-link">Ты та...</a>
-            </div>
-            <div className="track-play__album">
-                <a href="http://" className="track-play__album-link">Баста</a>
-            </div>
-        </div>
+        <S.TrackPlayContain>
+            <S.TrackPlayImage>
+                <S.TrackPlaySvg alt="music">
+                    <use xlinkHref={ICON_NOTE}/>
+                </S.TrackPlaySvg>
+            </S.TrackPlayImage>
+            <S.TrackPlayAuthor>
+                <S.TrackPlayAuthorLink href="http://">Ты та...</S.TrackPlayAuthorLink>
+            </S.TrackPlayAuthor>
+            <S.TrackPlayAlbum>
+                <S.TrackPlayAlbumLink href="http://">Баста</S.TrackPlayAlbumLink>
+            </S.TrackPlayAlbum>
+        </S.TrackPlayContain>
     );
 }
 
