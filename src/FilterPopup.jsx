@@ -1,19 +1,20 @@
 import authorsData from './authorsData.json';
 import yearsData from './yearsData.json';
 import genresData from './genresData.json';
+import * as S from './styles';
 
 function FilterPopup({ isPopupVisible, filterBy, coords}) {
     let content = '';
 
     switch ( filterBy ) {
         case 'author':
-            content = authorsData.map((author) => <div className="popup__text" key={author.id}>{author.author}</div>);
+            content = authorsData.map((author) => <S.PopupText key={author.id}>{author.author}</S.PopupText>);
             break;
         case 'year':
-            content = yearsData.map((year) => <div className="popup__text" key={year.id}>{year.year}</div>);
+            content = yearsData.map((year) => <S.PopupText key={year.id}>{year.year}</S.PopupText>);
             break;
         case 'genre':
-            content = genresData.map((genre) => <div className="popup__text" key={genre.id}>{genre.genre}</div>);
+            content = genresData.map((genre) => <S.PopupText key={genre.id}>{genre.genre}</S.PopupText>);
             break;
         default:
             content = 'Пусто';
@@ -21,9 +22,9 @@ function FilterPopup({ isPopupVisible, filterBy, coords}) {
     }
 
     return isPopupVisible ? (
-        <div className="filter__popup" style={{top: coords.top, left: coords.left}}>
+        <S.FilterPopup $top={coords.top} $left={coords.left}>
             { content }
-        </div>
+        </S.FilterPopup>
         ) : null;
     }
 

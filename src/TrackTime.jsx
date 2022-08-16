@@ -1,11 +1,13 @@
+import * as S from './styles';
+
 function TrackTime ( {text} ) {
     const time = text || '';
     return (
-        <div className="track__time">
-            <svg className="track__time-svg" alt="time">
+        <div>
+            <S.TrackTimeSvg alt="time">
                 <use xlinkHref="img/icon/sprite.svg#icon-like"/>
-            </svg>
-            <span className="track__time-text">{time}</span>
+            </S.TrackTimeSvg>
+            <S.TrackTimeText>{time}</S.TrackTimeText>
         </div>
     );
 }

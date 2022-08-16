@@ -1,6 +1,6 @@
 import Main from './Main';
 import Bar from './Bar';
-import { GlobalStyle } from './globalStyles';
+import GlobalStyle from './globalStyles';
 import * as S from './styles';
 
 

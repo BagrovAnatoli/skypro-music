@@ -172,6 +172,43 @@ export const FilterButtonText = styled(FilterButton)`
     }
 `;
 
+export const FilterPopup = styled.div`
+    position: absolute;
+    top: ${({$top}) => $top};
+    left: ${({$left}) => $left};
+    width: 424px;
+    background: #313131;
+    border-radius: 12px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 34px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 34px;
+`;
+
+export const PopupText = styled.div`
+    &{
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        cursor: pointer;
+    }
+    &:hover {
+        -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+        -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+                font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #B672FF;
+    }
+`;
+
 export const CenterBlockContent = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
@@ -191,17 +228,54 @@ export const SearchSvg = styled.svg`
 `;
 
 export const SearchText = styled.input`
-    -webkit-box-flex: 100;
-    -ms-flex-positive: 100;
-        flex-grow: 100;
-    background-color: transparent;
-    border: none;
-    padding: 13px 10px 14px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
+    &{
+        -webkit-box-flex: 100;
+        -ms-flex-positive: 100;
+            flex-grow: 100;
+        background-color: transparent;
+        border: none;
+        padding: 13px 10px 14px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+    &::-webkit-input-placeholder {
+        background-color: transparent;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+      
+    &:-ms-input-placeholder {
+        background-color: transparent;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+      
+    &::-ms-input-placeholder {
+        background-color: transparent;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+      
+    &::placeholder {
+        background-color: transparent;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
 `;
 
 export const ContentTitle = styled.div`
@@ -795,4 +869,21 @@ export const MenuLink = styled.a`
     font-size: 16px;
     line-height: 24px;
     font-family: 'StratosSkyeng';
+`;
+
+export const TrackTimeSvg = styled.svg`
+    width: 14px;
+    height: 12px;
+    margin-right: 17px;
+    fill: transparent;
+    stroke: #696969;
+`;
+
+export const TrackTimeText = styled.span`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #696969;
 `;
