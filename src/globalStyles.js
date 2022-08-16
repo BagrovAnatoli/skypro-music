@@ -46,38 +46,6 @@ export const GlobalStyle = createGlobalStyle`
     color: #FFFFFF;
   }
   
-  ._btn-icon:active .track-play__like-svg,
-  ._btn-icon:active .track-play__dislike-svg {
-    fill: #696969;
-    stroke: #FFFFFF;
-    cursor: pointer;
-  }
-  
-  .menu__list {
-    padding: 18px 0 10px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 20px;
-  }
-  
-  .menu__item {
-    padding: 5px 0;
-    margin-bottom: 16px;
-  }
-  
-  .menu__link {
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    font-family: 'StratosSkyeng';
-  }
-  
   .search__text::-webkit-input-placeholder {
     background-color: transparent;
     color: #FFFFFF;
@@ -164,54 +132,6 @@ export const GlobalStyle = createGlobalStyle`
     text-align: right;
     color: #696969;
   }
-  
-  .player__controls {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 0 27px 0 31px;
-  }
-  
-  .track-play__like, .track-play__dislike {
-    padding: 5px;
-  }
-  
-  .track-play__like-svg {
-    width: 14px;
-    height: 12px;
-    fill: transparent;
-    stroke: #696969;
-  }
-  
-  .track-play__dislike {
-    margin-left: 28.5px;
-  }
-  
-  .track-play__dislike-svg {
-    width: 14.34px;
-    height: 13px;
-    fill: transparent;
-    stroke: #696969;
-  }
-  
-  .volume__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-  }
+
   /*# sourceMappingURL=App.css.map */
 `;

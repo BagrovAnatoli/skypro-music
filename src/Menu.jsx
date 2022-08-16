@@ -1,18 +1,19 @@
 import menu from "./menuInfo.json";
+import * as S from './styles';
 
 function Menu() {
 
     const listItems = menu.map(({value, href, id}) => (
-            <li className="menu_item" key={id}>
-                <a href={href} className="menu__link">{value}</a>
-            </li>
+            <S.MenuItem key={id}>
+                <S.MenuLink href={href}>{value}</S.MenuLink>
+            </S.MenuItem>
         ))
 
     return (
-        <div className="nav__menu menu">
-            <ul className="menu__list">
+        <div>
+            <S.MenuList>
             { listItems }
-            </ul>
+            </S.MenuList>
         </div>
     );
 }
