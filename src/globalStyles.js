@@ -164,17 +164,6 @@ export const GlobalStyle = createGlobalStyle`
     text-align: right;
     color: #696969;
   }
-      
-  .bar__volume-block {
-    width: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0 92px 0 0;
-  }
   
   .player__controls {
     display: -webkit-box;
@@ -223,26 +212,6 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
-  }
-  
-  .volume__image {
-    width: 13px;
-    height: 18px;
-    margin-right: 17px;
-  }
-  
-  .volume__svg {
-    width: 13px;
-    height: 18px;
-    fill: transparent;
-  }
-  
-  .volume__progress {
-    width: 109px;
-  }
-  
-  .volume__progress-line {
-    width: 109px;
   }
   /*# sourceMappingURL=App.css.map */
 `;
