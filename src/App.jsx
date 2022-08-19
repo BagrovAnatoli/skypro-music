@@ -1,5 +1,5 @@
-import Main from './Main';
-import Bar from './Bar';
+import Main from './components/Main';
+import Bar from './components/Bar';
 import GlobalStyle from './globalStyles';
 import * as S from './styles';
 
