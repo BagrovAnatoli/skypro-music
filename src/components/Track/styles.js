@@ -1,12 +1,12 @@
 import styled, {css} from 'styled-components';
 
-const trackPlayLoading = css`
+const playLoading = css`
     background-color: #313131;
     width: 59px;
     height: 15px;
 `;
 
-export const TrackPlayContain = styled.div`
+export const PlayContain = styled.div`
     width: auto;
     display: -ms-grid;
     display: grid;
@@ -18,7 +18,7 @@ export const TrackPlayContain = styled.div`
             align-items: center;
 `;
 
-export const TrackPlayImage = styled.div`
+export const PlayImage = styled.div`
     width: 51px;
     height: 51px;
     background-color: #313131;
@@ -38,22 +38,22 @@ export const TrackPlayImage = styled.div`
     grid-area: image;
 `;
 
-export const TrackPlaySvg = styled.svg`
+export const PlaySvg = styled.svg`
     width: 18px;
     height: 17px;
     fill: transparent;
     stroke: #4E4E4E;
 `;
 
-export const TrackPlayAuthor = styled.div`
+export const PlayAuthor = styled.div`
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: author;
     min-width: 49px;
-    ${({$isLoading}) => $isLoading && trackPlayLoading}
+    ${({$isLoading}) => $isLoading && playLoading}
 `;
 
-export const TrackPlayAuthorLink = styled.a`
+export const PlayAuthorLink = styled.a`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -62,15 +62,15 @@ export const TrackPlayAuthorLink = styled.a`
     white-space: nowrap;
 `;
 
-export const TrackPlayAlbum = styled.div`
+export const PlayAlbum = styled.div`
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: album;
     min-width: 49px;
-    ${({$isLoading}) => $isLoading && trackPlayLoading}
+    ${({$isLoading}) => $isLoading && playLoading}
 `;
 
-export const TrackPlayAlbumLink = styled.a`
+export const PlayAlbumLink = styled.a`
     font-style: normal;
     font-weight: 400;
     font-size: 13px;

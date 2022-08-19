@@ -1,11 +1,11 @@
-import Contain from '../Contain';
+import Track from '../Track';
 import LikeDis from '../LikeDislike';
 import * as S from './styles';
 
 function TrackPlay() {
     return (
         <S.TrackPlay>
-            <Contain/>
+            <Track/>
             <LikeDis/>
         </S.TrackPlay>
     );
