@@ -7,7 +7,7 @@ function CenterBlock() {
     return (
         <S.MainCenterBlock>
             <Search />
-            <S.CenterBlockH2>Треки</S.CenterBlockH2>
+            <S.CenterBlockHead>Треки</S.CenterBlockHead>
             <Filter />
             <Content />
         </S.MainCenterBlock>

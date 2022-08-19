@@ -5,7 +5,7 @@ function Volume () {
     return (
         <S.BarVolume>
             <S.VolumeImage>
-                <S.VolumeSvg alt="volume">
+                <S.VolumeSvg alt="громкость">
                     <use xlinkHref={ICON_VOLUME}/>
                 </S.VolumeSvg>
             </S.VolumeImage>

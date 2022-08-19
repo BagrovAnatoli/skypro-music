@@ -12,7 +12,6 @@ function App() {
           <S.Container>
             <Main/>
             <Bar/>
-            <footer/>
           </S.Container>
         </S.Wrapper>
       </>

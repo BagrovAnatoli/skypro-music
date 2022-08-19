@@ -4,7 +4,7 @@ function TrackTime ( {text} ) {
     const time = text || '';
     return (
         <div>
-            <S.TrackTimeSvg alt="time">
+            <S.TrackTimeSvg alt="седечко">
                 <use xlinkHref="img/icon/sprite.svg#icon-like"/>
             </S.TrackTimeSvg>
             <S.TrackTimeText>{time}</S.TrackTimeText>

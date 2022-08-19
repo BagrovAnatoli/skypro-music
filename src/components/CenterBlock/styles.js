@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CenterBlockH2 = styled.div`
+export const CenterBlockHead = styled.h2`
     font-style: normal;
     font-weight: 400;
     font-size: 64px;

@@ -8,7 +8,7 @@ function PlaylistTitile () {
             <S.PlaylistTitleCol $col="2">ИСПОЛНИТЕЛЬ</S.PlaylistTitleCol>
             <S.PlaylistTitleCol $col="3">АЛЬБОМ</S.PlaylistTitleCol>
             <S.PlaylistTitleCol $col="4">
-                <S.PlaylistTitleSvg alt="time">
+                <S.PlaylistTitleSvg alt="часики">
                     <use xlinkHref={ICON_WATCH}/>
                 </S.PlaylistTitleSvg>
             </S.PlaylistTitleCol>

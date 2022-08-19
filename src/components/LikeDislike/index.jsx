@@ -5,12 +5,12 @@ function TrackPlay() {
     return (
         <S.TrackPlayLikeDis>
             <S.TrackPlayLike>
-                <S.TrackPlayLikeSvg alt="like">
+                <S.TrackPlayLikeSvg alt="Нравится">
                     <use xlinkHref={ICON_LIKE}/>
                 </S.TrackPlayLikeSvg>
             </S.TrackPlayLike>
             <S.TrackPlayDislike>
-                <S.TrackPlayDislikeSvg alt="dislike">
+                <S.TrackPlayDislikeSvg alt="Не нравится">
                     <use xlinkHref={ICON_DISLIKE}/>
                 </S.TrackPlayDislikeSvg>
             </S.TrackPlayDislike>

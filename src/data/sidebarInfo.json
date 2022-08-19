@@ -2,19 +2,19 @@
     {
         "href": "",
         "imgSrc": "img/playlist01.png",
-        "imgAlt": "day's playlist",
+        "imgAlt": "плейлист дня",
         "id": 0
     },
     {
         "href": "",
         "imgSrc": "img/playlist02.png",
-        "imgAlt": "day's playlist",
+        "imgAlt": "плейлист дня",
         "id": 1
     },
     {
         "href": "",
         "imgSrc": "img/playlist03.png",
-        "imgAlt": "day's playlist",
+        "imgAlt": "плейлист дня",
         "id": 2
     }
 ]

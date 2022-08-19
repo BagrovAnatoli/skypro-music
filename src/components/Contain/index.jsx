@@ -20,7 +20,7 @@ function Contain() {
         isLoading ? <IsLoadingContain /> : 
         <S.TrackPlayContain>
             <S.TrackPlayImage>
-                <S.TrackPlaySvg alt="music">
+                <S.TrackPlaySvg alt="Музыка">
                     <use xlinkHref={ICON_NOTE}/>
                 </S.TrackPlaySvg>
             </S.TrackPlayImage>
