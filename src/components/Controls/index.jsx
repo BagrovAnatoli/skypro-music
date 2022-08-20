@@ -1,5 +1,5 @@
 import {ICON_PREV, ICON_PLAY, ICON_NEXT, ICON_REPEAT, ICON_SHUFFLE} from '../../constants';
-import * as S from './styles';
+import PlayerBtn from '../PlayerBtn';
 
 function Controls() {
     const controlBtnsValues = [
@@ -13,11 +13,7 @@ function Controls() {
     return (
         <>
             {controlBtnsValues.map(({name, alt, xlinkHref, cursor, hoverIcon}) => (
-                <S.PlayerBtn $btnName={name} $cursor={cursor} $hoverIcon={hoverIcon} key={name}>
-                    <S.PlayerBtnSvg $btnName={name} alt={alt}>
-                        <use xlinkHref={xlinkHref}/>
-                    </S.PlayerBtnSvg>
-                </S.PlayerBtn>
+                <PlayerBtn name={name} alt={alt} xlinkHref={xlinkHref} cursor={cursor} hoverIcon={hoverIcon} key={name}/>
             ))}
         </>
     );
