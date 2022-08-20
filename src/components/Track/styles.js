@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-const playLoading = css`
+const playSkeleton = css`
     background-color: #313131;
     width: 59px;
     height: 15px;
@@ -50,7 +50,7 @@ export const PlayAuthor = styled.div`
     -ms-grid-column: 2;
     grid-area: author;
     min-width: 49px;
-    ${({$isLoading}) => $isLoading && playLoading}
+    ${({$isLoading}) => $isLoading && playSkeleton}
 `;
 
 export const PlayAuthorLink = styled.a`
@@ -67,7 +67,7 @@ export const PlayAlbum = styled.div`
     -ms-grid-column: 2;
     grid-area: album;
     min-width: 49px;
-    ${({$isLoading}) => $isLoading && playLoading}
+    ${({$isLoading}) => $isLoading && playSkeleton}
 `;
 
 export const PlayAlbumLink = styled.a`

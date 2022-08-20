@@ -18,7 +18,7 @@ function PlaylistItem ( {title, author, album, time} ) {
         };
     },[]);
 
-    const loadingTrack = (
+    const trackSkeleton = (
         <S.PlaylistTrack>
             <S.TrackTitle>
                 <S.TrackTitleImage/>
@@ -29,7 +29,7 @@ function PlaylistItem ( {title, author, album, time} ) {
         </S.PlaylistTrack>
     );
 
-    const loadedTrack = (
+    const track = (
         <S.PlaylistTrack>
             <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
             <TrackAuthor text={author.text} link={author.link}/>
@@ -40,7 +40,7 @@ function PlaylistItem ( {title, author, album, time} ) {
 
     return (
         <S.PlaylistItem>
-            {isLoading ? loadingTrack : loadedTrack}
+            {isLoading ? trackSkeleton : track}
         </S.PlaylistItem>
     );
 }

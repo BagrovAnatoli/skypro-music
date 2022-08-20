@@ -16,11 +16,11 @@ function Sidebar() {
         };
     },[]);
 
-    const loadingSidebarItems = [0,1,2].map((item) => (
+    const itemsSkeleton = [0,1,2].map((item) => (
         <S.SidebarItem $isLoading key={item}/>
     ));
 
-    const sidebarItems = sidebarDatas.map(({href, imgSrc, imgAlt, id}) => (
+    const items = sidebarDatas.map(({href, imgSrc, imgAlt, id}) => (
         <S.SidebarItem key={id}>
             <S.SidebarLink href={href}>
                 <S.SidebarImg
@@ -36,7 +36,7 @@ function Sidebar() {
             <Personal name="Sergey.Ivanov"/>
             <S.SidebarBlock>
                 <S.SidebarList>
-                    {isLoading ? loadingSidebarItems : sidebarItems}
+                    {isLoading ? itemsSkeleton : items}
                 </S.SidebarList>
             </S.SidebarBlock>
         </S.MainSidebar>
