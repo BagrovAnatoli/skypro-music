@@ -1,9 +1,13 @@
+/* eslint-disable no-console */
 import authorsData from '../../data/authorsData.json';
 import yearsData from '../../data/yearsData.json';
 import genresData from '../../data/genresData.json';
 import * as S from './styles';
 
-function FilterPopup({ isPopupVisible, filterBy, coords}) {
+function FilterPopup({ isPopupVisible, filterBy}) {
+
+    console.log(isPopupVisible);
+
     let content = '';
 
     switch ( filterBy ) {
@@ -22,7 +26,7 @@ function FilterPopup({ isPopupVisible, filterBy, coords}) {
     }
 
     return isPopupVisible ? (
-        <S.FilterPopup $top={coords.top} $left={coords.left}>
+        <S.FilterPopup>
             { content }
         </S.FilterPopup>
         ) : null;

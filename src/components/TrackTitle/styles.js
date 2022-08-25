@@ -16,7 +16,7 @@ export const TrackTitleLink = styled.a`
     color: #FFFFFF;
 `;
 
-export const TrackTitleSpan = styled.a`
+export const TrackTitleSpan = styled.span`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

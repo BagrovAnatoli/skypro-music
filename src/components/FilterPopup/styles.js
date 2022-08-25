@@ -21,8 +21,7 @@ export const PopupText = styled.div`
 
 export const FilterPopup = styled.div`
     position: absolute;
-    top: ${({$top}) => $top};
-    left: ${({$left}) => $left};
+    top: 50px;
     width: 424px;
     background: #313131;
     border-radius: 12px;
@@ -37,3 +36,6 @@ export const FilterPopup = styled.div`
             align-items: center;
     padding: 34px;
 `;
+
+// top: ${({top}) => top};
+// left: ${({left}) => left};

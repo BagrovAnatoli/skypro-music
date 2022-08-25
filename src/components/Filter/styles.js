@@ -1,34 +1,20 @@
 import styled, {css} from 'styled-components';
 
-export const FilterButtonTextActiveMixin = css`
+export const FilterWrapper = styled.div`
+    position: relative;
+    
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+`;
+
+export const ButtonTextActiveMixin = css`
     border-color: #AD61FF;
     color: #AD61FF;
     cursor: pointer;
 `;
 
-export const CenterBlockFilter = styled.div`
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 51px;
-`;
-
-export const FilterTitle = styled.div`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin-right: 15px;
-`;
-
-export const FilterButton = styled.div`
+export const FilterButton = styled.button`
     & {
         font-style: normal;
         font-weight: 400;
@@ -37,15 +23,10 @@ export const FilterButton = styled.div`
         border: 1px solid #FFFFFF;
         border-radius: 60px;
         padding: 6px 20px;
+        color: inherit;
+        background-color: inherit;
+        ${(props) => props.$isActive ? `${ButtonTextActiveMixin}` : ``}
     }
-  
-    &:not(:last-child) {
-        margin-right: 10px;
-    }
-`;
-
-export const FilterButtonText = styled(FilterButton)`
-    ${(props) => props.$isActive ? `${FilterButtonTextActiveMixin}` : ``}
 
     &:hover {
         border-color: #D9B6FF;
@@ -54,6 +35,6 @@ export const FilterButtonText = styled(FilterButton)`
     }
 
     &:active {
-        ${FilterButtonTextActiveMixin}
+        ${ButtonTextActiveMixin}
     }
 `;

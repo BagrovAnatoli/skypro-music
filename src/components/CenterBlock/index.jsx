@@ -1,5 +1,5 @@
 import Search from '../Search';
-import Filter from '../Filter';
+import Filters from '../Filters';
 import Content from '../Content';
 import * as S from './styles';
 
@@ -8,7 +8,7 @@ function CenterBlock() {
         <S.MainCenterBlock>
             <Search />
             <S.CenterBlockHead>Треки</S.CenterBlockHead>
-            <Filter />
+            <Filters />
             <Content />
         </S.MainCenterBlock>
     );
