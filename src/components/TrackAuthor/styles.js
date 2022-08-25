@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import * as S from '../PlaylistItem/styles';
 
-export const TrackAuthorLink = styled.a`
+export const Link = styled.a`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -10,4 +10,4 @@ export const TrackAuthorLink = styled.a`
     text-align: left;
 `;
 
-export const {TrackAuthor} = S;
+export const {Author} = S;

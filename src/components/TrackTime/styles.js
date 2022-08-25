@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TrackTimeSvg = styled.svg`
+export const Svg = styled.svg`
     width: 14px;
     height: 12px;
     margin-right: 17px;
@@ -8,7 +8,7 @@ export const TrackTimeSvg = styled.svg`
     stroke: #696969;
 `;
 
-export const TrackTimeText = styled.span`
+export const Text = styled.span`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

@@ -9,18 +9,18 @@ function TrackTitle ( {image, text, link, spanText} ) {
 
     
     return (
-        <S.TrackTitle>
-            <S.TrackTitleImage>
-                <S.TrackTitleSvg alt={imgAlt}>
+        <S.Title>
+            <S.TitleImage>
+                <S.Svg alt={imgAlt}>
                     <use xlinkHref={imgPath}/>
-                </S.TrackTitleSvg>
-            </S.TrackTitleImage>
+                </S.Svg>
+            </S.TitleImage>
             <div>
-                <S.TrackTitleLink href={linkTitle}>
-                    {textTitle} <S.TrackTitleSpan>{spanText}</S.TrackTitleSpan>
-                </S.TrackTitleLink>
+                <S.Link href={linkTitle}>
+                    {textTitle} <S.Span>{spanText}</S.Span>
+                </S.Link>
             </div>
-        </S.TrackTitle>
+        </S.Title>
     );
 }
 

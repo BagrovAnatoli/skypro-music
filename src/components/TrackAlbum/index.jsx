@@ -4,9 +4,9 @@ function TrackAlbum ( {text, link} ) {
     const album = text || '';
     const linkAlbum = link || 'http://';
     return (
-        <S.TrackAlbum>
-            <S.TrackAlbumLink href={linkAlbum}>{album}</S.TrackAlbumLink>
-        </S.TrackAlbum>
+        <S.Album>
+            <S.AlbumLink href={linkAlbum}>{album}</S.AlbumLink>
+        </S.Album>
     );
 }
 

@@ -20,12 +20,12 @@ function PlaylistItem ( {title, author, album, time} ) {
     },[]);
 
     const track = (
-        <S.PlaylistTrack>
+        <S.Track>
             <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
             <TrackAuthor text={author.text} link={author.link}/>
             <TrackAlbum text={album.text} link={album.link}/>
             <TrackTime text={time.text}/>
-        </S.PlaylistTrack>
+        </S.Track>
     );
 
     return (

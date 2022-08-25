@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import * as S from '../PlaylistItem/styles';
 
-export const TrackTitleSvg = styled.svg`
+export const Svg = styled.svg`
     width: 18px;
     height: 17px;
     fill: transparent;
     stroke: #4E4E4E;
 `;
 
-export const TrackTitleLink = styled.a`
+export const Link = styled.a`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -16,7 +16,7 @@ export const TrackTitleLink = styled.a`
     color: #FFFFFF;
 `;
 
-export const TrackTitleSpan = styled.span`
+export const Span = styled.span`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -24,5 +24,5 @@ export const TrackTitleSpan = styled.span`
     color: #4E4E4E;
 `;
 
-export const {TrackTitle} = S;
-export const {TrackTitleImage} = S;
+export const {Title} = S;
+export const {TitleImage} = S;

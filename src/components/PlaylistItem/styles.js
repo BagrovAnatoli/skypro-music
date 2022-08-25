@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PlaylistTrack = styled.div`
+export const Track = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -16,7 +16,7 @@ export const PlaylistTrack = styled.div`
             align-items: center;
 `;
 
-export const TrackTitle = styled.div`
+export const Title = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -30,7 +30,7 @@ export const TrackTitle = styled.div`
     width: 447px;
 `;
 
-export const TrackTitleImage = styled.div`
+export const TitleImage = styled.div`
     width: 51px;
     height: 51px;
     padding: 16px;
@@ -48,13 +48,13 @@ export const TrackTitleImage = styled.div`
 `;
 
 
-export const TrackTitleTextLoading = styled.svg`
+export const TitleSkeleton = styled.svg`
     width: 356px;
     height: 19px;
     background-color: #313131;
 `;
 
-export const TrackAuthor = styled.div`
+export const Author = styled.div`
     width: 321px;
     ${(props) => props.$isLoading ?
         `height: 19px;
@@ -67,7 +67,7 @@ export const TrackAuthor = styled.div`
             justify-content: flex-start;`}
 `;
 
-export const TrackAlbum = styled.div`
+export const Album = styled.div`
     width: 245px;
     ${(props) => props.$isLoading &&
         `height: 19px;

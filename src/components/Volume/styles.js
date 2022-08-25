@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {cursorPointer} from '../../styles';
 
-export const BarVolume = styled.div`
+export const Bar = styled.div`
     width: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -12,24 +12,24 @@ export const BarVolume = styled.div`
     padding: 0 92px 0 0;
 `;
 
-export const VolumeImage = styled.div`
+export const Image = styled.div`
     width: 13px;
     height: 18px;
     margin-right: 17px;
 `;
 
-export const VolumeSvg = styled.svg`
+export const Svg = styled.svg`
     width: 13px;
     height: 18px;
     fill: transparent;
 `;
 
-export const VolumeProgress = styled.div`
+export const Progress = styled.div`
     width: 109px;
     ${cursorPointer}
 `;
 
-export const VolumeProgressLine = styled.input`
+export const ProgressLine = styled.input`
     width: 109px;
     ${cursorPointer}
 `;

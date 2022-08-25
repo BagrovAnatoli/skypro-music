@@ -4,10 +4,10 @@ function TrackTime ( {text} ) {
     const time = text || '';
     return (
         <div>
-            <S.TrackTimeSvg alt="седечко">
+            <S.Svg alt="сердечко">
                 <use xlinkHref="img/icon/sprite.svg#icon-like"/>
-            </S.TrackTimeSvg>
-            <S.TrackTimeText>{time}</S.TrackTimeText>
+            </S.Svg>
+            <S.Text>{time}</S.Text>
         </div>
     );
 }

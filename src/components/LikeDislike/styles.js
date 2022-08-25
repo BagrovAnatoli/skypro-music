@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-export const TrackPlayLikeDis = styled.div`
+export const LikeDislike = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -15,7 +15,7 @@ export const TrackPlayLikeDis = styled.div`
 `;
 
 
-const likeDislikeActive = css`
+const active = css`
     &:active svg{
         fill: #696969;
         stroke: #FFFFFF;
@@ -23,7 +23,7 @@ const likeDislikeActive = css`
     }
 `;
 
-const likeDislikeHover = css`
+const hover = css`
     &:hover svg{
         fill: transparent;
         stroke: #ACACAC;
@@ -31,27 +31,27 @@ const likeDislikeHover = css`
     }
 `;
 
-export const TrackPlayLike = styled.div`
+export const Like = styled.div`
     padding: 5px;
-    ${likeDislikeHover}
-    ${likeDislikeActive}
+    ${hover}
+    ${active}
 `;
 
-export const TrackPlayDislike = styled.div`
+export const Dislike = styled.div`
     padding: 5px;
     margin-left: 28.5px;
-    ${likeDislikeHover}
-    ${likeDislikeActive}
+    ${hover}
+    ${active}
 `;
 
-export const TrackPlayLikeSvg = styled.svg`
+export const LikeSvg = styled.svg`
     width: 14px;
     height: 12px;
     fill: transparent;
     stroke: #696969;
 `;
 
-export const TrackPlayDislikeSvg = styled.svg`
+export const DislikeSvg = styled.svg`
     width: 14.34px;
     height: 13px;
     fill: transparent;
