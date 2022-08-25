@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CenterBlockHead = styled.h2`
+export const Head = styled.h2`
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -9,7 +9,7 @@ export const CenterBlockHead = styled.h2`
     margin-bottom: 45px;
 `;
 
-export const MainCenterBlock = styled.div`
+export const Container = styled.div`
     width: auto;
     -webkit-box-flex: 3;
         -ms-flex-positive: 3;

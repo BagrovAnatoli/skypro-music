@@ -4,10 +4,10 @@ import * as S from './styles';
 
 function Content() {
     return (
-        <S.CenterBlockContent>
+        <S.Container>
             <PlaylistTitle />
             <Playlist />
-        </S.CenterBlockContent>
+        </S.Container>
     );
 }
 

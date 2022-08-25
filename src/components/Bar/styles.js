@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BarContent = styled.div`
+export const Content = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,13 +10,13 @@ export const BarContent = styled.div`
             flex-direction: column;
 `;
 
-export const BarPlayerProgress = styled.div`
+export const PlayerProgress = styled.div`
     width: 100%;
     height: 5px;
     background: #2E2E2E;
 `;
 
-export const BarPlayerBlock = styled.div`
+export const PlayerBlock = styled.div`
     height: 73px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -30,7 +30,7 @@ export const BarPlayerBlock = styled.div`
             justify-content: space-between;
 `;
 
-export const BarPlayer = styled.div`
+export const Player = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

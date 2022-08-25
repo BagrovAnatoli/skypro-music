@@ -1,5 +1,5 @@
 import * as S from './styles';
-import FilterPopup from '../FilterPopup';
+import Popup from '../FilterPopup';
 
 function Filter({type, visible, callback, children}) {
 
@@ -10,10 +10,10 @@ function Filter({type, visible, callback, children}) {
 
 
     return (
-        <S.FilterWrapper>
-            <S.FilterButton onClick={clickHandler} $isActive={visible}>{children}</S.FilterButton>
-            <FilterPopup filterBy={type} isPopupVisible={visible}/>
-        </S.FilterWrapper>
+        <S.Wrapper>
+            <S.Button onClick={clickHandler} $isActive={visible}>{children}</S.Button>
+            <Popup filterBy={type} isPopupVisible={visible}/>
+        </S.Wrapper>
     );
 }
 

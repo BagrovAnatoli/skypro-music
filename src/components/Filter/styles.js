@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-export const FilterWrapper = styled.div`
+export const Wrapper = styled.div`
     position: relative;
     
     &:not(:last-child) {
@@ -14,7 +14,7 @@ export const ButtonTextActiveMixin = css`
     cursor: pointer;
 `;
 
-export const FilterButton = styled.button`
+export const Button = styled.button`
     & {
         font-style: normal;
         font-weight: 400;

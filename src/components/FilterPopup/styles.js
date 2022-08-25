@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-
-export const PopupText = styled.div`
+export const Text = styled.div`
     &{
         font-family: 'StratosSkyeng';
         font-style: normal;
@@ -19,7 +18,7 @@ export const PopupText = styled.div`
     }
 `;
 
-export const FilterPopup = styled.div`
+export const Popup = styled.div`
     position: absolute;
     top: 50px;
     width: 424px;
@@ -36,6 +35,3 @@ export const FilterPopup = styled.div`
             align-items: center;
     padding: 34px;
 `;
-
-// top: ${({top}) => top};
-// left: ${({left}) => left};

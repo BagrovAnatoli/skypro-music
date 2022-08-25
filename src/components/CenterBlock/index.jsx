@@ -5,12 +5,12 @@ import * as S from './styles';
 
 function CenterBlock() {
     return (
-        <S.MainCenterBlock>
+        <S.Container>
             <Search />
-            <S.CenterBlockHead>Треки</S.CenterBlockHead>
+            <S.Head>Треки</S.Head>
             <Filters />
             <Content />
-        </S.MainCenterBlock>
+        </S.Container>
     );
 }
 

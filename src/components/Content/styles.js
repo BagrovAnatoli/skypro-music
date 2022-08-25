@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CenterBlockContent = styled.div`
+export const Container = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,4 +10,4 @@ export const CenterBlockContent = styled.div`
             flex-direction: column;
 `;
 
-export default CenterBlockContent;
+export default Container;

@@ -12,13 +12,13 @@ function FilterPopup({ isPopupVisible, filterBy}) {
 
     switch ( filterBy ) {
         case 'author':
-            content = authorsData.map((author) => <S.PopupText key={author.id}>{author.author}</S.PopupText>);
+            content = authorsData.map((author) => <S.Text key={author.id}>{author.author}</S.Text>);
             break;
         case 'year':
-            content = yearsData.map((year) => <S.PopupText key={year.id}>{year.year}</S.PopupText>);
+            content = yearsData.map((year) => <S.Text key={year.id}>{year.year}</S.Text>);
             break;
         case 'genre':
-            content = genresData.map((genre) => <S.PopupText key={genre.id}>{genre.genre}</S.PopupText>);
+            content = genresData.map((genre) => <S.Text key={genre.id}>{genre.genre}</S.Text>);
             break;
         default:
             content = 'Пусто';
@@ -26,9 +26,9 @@ function FilterPopup({ isPopupVisible, filterBy}) {
     }
 
     return isPopupVisible ? (
-        <S.FilterPopup>
+        <S.Popup>
             { content }
-        </S.FilterPopup>
+        </S.Popup>
         ) : null;
     }
 

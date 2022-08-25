@@ -5,16 +5,16 @@ import * as S from './styles';
 
 function Bar() {
     return (
-        <S.BarContent>
-            <S.BarPlayerProgress />
-            <S.BarPlayerBlock>
-                <S.BarPlayer>
+        <S.Content>
+            <S.PlayerProgress />
+            <S.PlayerBlock>
+                <S.Player>
                     <Controls />
                     <TrackPlay />
-                </S.BarPlayer>
+                </S.Player>
                 <Volume />
-            </S.BarPlayerBlock>
-        </S.BarContent>
+            </S.PlayerBlock>
+        </S.Content>
     );
 }
 
