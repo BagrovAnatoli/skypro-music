@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TrackSkeleton from '../TrackSkeleton';
+import PlaySkeleton from '../PlaySkeleton';
 import {ICON_NOTE} from '../../constants';
 import * as S from './styles';
 
@@ -17,7 +17,7 @@ function Track() {
     },[]);
 
     return (
-        isLoading ? <TrackSkeleton /> : 
+        isLoading ? <PlaySkeleton /> : 
         <S.PlayContain>
             <S.PlayImage>
                 <S.PlaySvg alt="Музыка">

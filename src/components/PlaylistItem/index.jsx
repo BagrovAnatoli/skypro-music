@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import TrackSkeleton from "../TrackSkeleton";
 import TrackTitle from "../TrackTitle";
 import TrackAuthor from "../TrackAuthor";
 import TrackAlbum from "../TrackAlbum";
@@ -18,17 +19,6 @@ function PlaylistItem ( {title, author, album, time} ) {
         };
     },[]);
 
-    const trackSkeleton = (
-        <S.PlaylistTrack>
-            <S.TrackTitle>
-                <S.TrackTitleImage/>
-                <S.TrackTitleTextLoading/>
-            </S.TrackTitle>
-            <S.TrackAuthor $isLoading/>
-            <S.TrackAlbum $isLoading/>
-        </S.PlaylistTrack>
-    );
-
     const track = (
         <S.PlaylistTrack>
             <TrackTitle image={title.image} text={title.text} link={title.link} spanText={title.spanText}/>
@@ -40,7 +30,7 @@ function PlaylistItem ( {title, author, album, time} ) {
 
     return (
         <S.PlaylistItem>
-            {isLoading ? trackSkeleton : track}
+            {isLoading ? <TrackSkeleton /> : track}
         </S.PlaylistItem>
     );
 }

@@ -1,13 +1,15 @@
-import * as S from '../Track/styles';
+import * as S from '../PlaylistItem/styles';
 
-function TrackSkeleton() {
-
+function TrackSkeleton () {
     return (
-        <S.PlayContain>
-            <S.PlayImage/>
-            <S.PlayAuthor $isLoading/>
-            <S.PlayAlbum $isLoading/>
-        </S.PlayContain>
+        <S.PlaylistTrack>
+            <S.TrackTitle>
+                <S.TrackTitleImage/>
+                <S.TrackTitleTextLoading/>
+            </S.TrackTitle>
+            <S.TrackAuthor $isLoading/>
+            <S.TrackAlbum $isLoading/>
+        </S.PlaylistTrack>
     );
 }
 
