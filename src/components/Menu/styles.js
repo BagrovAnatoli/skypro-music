@@ -2,13 +2,8 @@ import styled from 'styled-components';
 
 export const MenuList = styled.ul`
     padding: 18px 0 10px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 20px;
 `;
 

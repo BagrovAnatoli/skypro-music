@@ -1,32 +1,16 @@
 import styled from 'styled-components';
 
 export const Track = styled.div`
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const Title = styled.div`
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    align-items: center;
     width: 447px;
 `;
 
@@ -35,15 +19,9 @@ export const TitleImage = styled.div`
     height: 51px;
     padding: 16px;
     background: #313131;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     margin-right: 17px;
 `;
 
@@ -59,12 +37,8 @@ export const Author = styled.div`
     ${(props) => props.$isLoading ?
         `height: 19px;
         background-color: #313131;` :
-        `display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;`}
+        `display: flex;
+        justify-content: flex-start;`}
 `;
 
 export const Album = styled.div`

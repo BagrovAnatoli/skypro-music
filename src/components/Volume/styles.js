@@ -3,12 +3,8 @@ import {cursorPointer} from '../../styles';
 
 export const Bar = styled.div`
     width: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     padding: 0 92px 0 0;
 `;
 

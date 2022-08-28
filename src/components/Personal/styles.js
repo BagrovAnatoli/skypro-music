@@ -2,19 +2,10 @@ import styled from 'styled-components';
 
 
 export const SidebarPersonal = styled.div`
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     padding: 12px 0 15px 0;
 `;
 

@@ -18,12 +18,8 @@ const getBtnStyle = (btnName) => {
             margin-right: 24px;
         `,
         shuffle: css`
-            display: -webkit-box;
-            display: -ms-flexbox;
             display: flex;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
+            align-items: center;
         `
     };
     return btnStyles[btnName];
@@ -64,12 +60,8 @@ const getBtnSvgStyle = (btnName) => {
 
 export const PlayerBtn = styled.div`
     padding: 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     fill: #D9D9D9;
     stroke: #FFFFFF;
     ${({$btnName}) => getBtnStyle($btnName)}
