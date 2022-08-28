@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Head = styled.h2`
+export const Head = styled.h1`
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
