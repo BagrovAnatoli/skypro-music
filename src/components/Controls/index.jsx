@@ -1,4 +1,4 @@
-import {ICON_PREV, ICON_PLAY, ICON_NEXT, ICON_REPEAT, ICON_SHUFFLE} from '../../constants';
+import {ICON_PREV, ICON_PLAY, ICON_NEXT, ICON_REPEAT, ICON_SHUFFLE, CONTROLS_SIZES} from '../../constants';
 import PlayerBtn from '../PlayerBtn';
 
 function Controls() {
@@ -13,7 +13,15 @@ function Controls() {
     return (
         <>
             {controlBtnsValues.map(({name, alt, xlinkHref, cursor, hoverIcon}) => (
-                <PlayerBtn name={name} alt={alt} xlinkHref={xlinkHref} cursor={cursor} hoverIcon={hoverIcon} key={name}/>
+                <PlayerBtn
+                    name={name}
+                    alt={alt}
+                    xlinkHref={xlinkHref}
+                    width={CONTROLS_SIZES[name].width}
+                    heght={CONTROLS_SIZES[name].height}
+                    cursor={cursor}
+                    hoverIcon={hoverIcon}
+                    key={name}/>
             ))}
         </>
     );

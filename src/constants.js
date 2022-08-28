@@ -11,6 +11,14 @@ export const ICON_SEARCH = "img/icon/sprite.svg#icon-search";
 export const ICON_WATCH = "img/icon/sprite.svg#icon-watch";
 export const BUTTON_POPUP_SPACE = 16;
 
+export const CONTROLS_SIZES = {
+    prev: { width: '15px', height: '14px' },
+    play: { width: '22px', height: '20px'},
+    next: { width: '15px', height: '14px' },
+    repeat: { width: '18px', height: '12px' },
+    shuffle: { width: '19px', height: '12px' }
+};
+
 export const TRACK_FILTERS = [
     {id: 1, type: "author", text: "исполнителю"},
     {id: 2, type: "year", text: "году выпуска"},

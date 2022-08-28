@@ -27,30 +27,19 @@ const getBtnStyle = (btnName) => {
 
 const getBtnSvgStyle = (btnName) => {
     const btnSvgStyles = {
-        prev: css`
-            width: 15px;
-            height: 14px;
-        `,
         play:  css`
-            width: 22px;
-            height: 20px;
             fill: #D9D9D9;
         `,
         next:  css`
-            width: 15px;
-            height: 14px;
             fill: inherit;
             stroke: #D9D9D9;
         `,
         repeat: css`
-            width: 18px;
-            height: 12px;
+
             fill: transparent;
             stroke: #696969;
         `,
         shuffle: css`
-            width: 19px;
-            height: 12px;
             fill: transparent;
             stroke: #696969;
         `
@@ -64,6 +53,8 @@ export const PlayerBtn = styled.div`
     align-items: center;
     fill: #D9D9D9;
     stroke: #FFFFFF;
+    width: ${({width}) => width};
+    width: ${({height}) => height};
     ${({$btnName}) => getBtnStyle($btnName)}
     ${({$cursor}) => $cursor && cursorPointer}
     ${({$hoverIcon}) => $hoverIcon && `
