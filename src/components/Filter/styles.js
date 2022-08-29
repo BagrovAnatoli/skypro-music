@@ -1,40 +1,40 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-    position: relative;
-    
-    &:not(:last-child) {
-        margin-right: 10px;
-    }
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 `;
 
-export const ButtonTextActiveMixin = css`
-    border-color: #AD61FF;
-    color: #AD61FF;
-    cursor: pointer;
+const ButtonTextActiveMixin = css`
+  border-color: #ad61ff;
+  color: #ad61ff;
+  cursor: pointer;
 `;
 
 export const Button = styled.button`
-    & {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        border: 1px solid #FFFFFF;
-        border-radius: 60px;
-        padding: 6px 20px;
-        color: inherit;
-        background-color: inherit;
-        ${(props) => props.$isActive ? `${ButtonTextActiveMixin}` : ``}
-    }
+  & {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #ffffff;
+    border-radius: 60px;
+    padding: 6px 20px;
+    color: inherit;
+    background-color: inherit;
+    ${(props) => (props.$isActive ? `${ButtonTextActiveMixin}` : ``)}
+  }
 
-    &:hover {
-        border-color: #D9B6FF;
-        color: #D9B6FF;
-        cursor: pointer;
-    }
+  &:hover {
+    border-color: #d9b6ff;
+    color: #d9b6ff;
+    cursor: pointer;
+  }
 
-    &:active {
-        ${ButtonTextActiveMixin}
-    }
+  &:active {
+    ${ButtonTextActiveMixin}
+  }
 `;

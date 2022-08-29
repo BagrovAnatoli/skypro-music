@@ -1,30 +1,29 @@
 import styled from 'styled-components';
-import {colsWidth} from '../../constants';
+import { colsWidth } from '../../constants';
 
 export const ContentTitle = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 `;
 
-
 export const PlaylistTitleCol = styled.div`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 2px;
-    color: #696969;
-    text-transform: uppercase;
-    width: ${(props) => colsWidth[Number(props.$col)-1].width};
-    ${(props) => props.$col==="4" && `text-align: end;`}
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #696969;
+  text-transform: uppercase;
+  width: ${(props) => colsWidth[Number(props.$col) - 1].width};
+  ${(props) => props.$col === '4' && `text-align: end;`}
 `;
 
 export const PlaylistTitleSvg = styled.svg`
-    width: 12px;
-    height: 12px;
-    fill: transparent;
-    stroke: #696969;
+  width: 12px;
+  height: 12px;
+  fill: transparent;
+  stroke: #696969;
 `;

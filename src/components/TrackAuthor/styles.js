@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import * as S from '../PlaylistItem/styles';
 
 export const Link = styled.a`
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: left;
 `;
 
-export const {Author} = S;
+export const { Author } = S;

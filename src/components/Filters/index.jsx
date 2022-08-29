@@ -1,26 +1,32 @@
-/* eslint-disable no-console */
-import {useState} from 'react';
+import { useState } from 'react';
 import Filter from '../Filter';
 import * as S from './styles';
-import {TRACK_FILTERS} from '../../constants';
+import { TRACK_FILTERS } from '../../constants';
 
 function Filters() {
+  const [clickedType, setClickedType] = useState(null);
 
-    const [clickedType, setClickedType] = useState(null);
+  const saveType = (type) => {
+    setClickedType((prevType) => (prevType === type ? null : type));
+  };
 
-    const saveType = (type) => {
-        setClickedType((prevType) => prevType === type ? null : type);
-    }
+  const calcVisible = (type) => type === clickedType;
 
-    const calcVisible = (type) => type === clickedType;
-
-
-    return (
-            <S.Filters>
-                <S.FilterTitle>Искать по:</S.FilterTitle>
-                {TRACK_FILTERS.map(({id, type, text}) => (<Filter key={id} callback={saveType} type={type} visible={calcVisible(type)}>{text}</Filter>))}
-            </S.Filters>
-    );
+  return (
+    <S.Filters>
+      <S.FilterTitle>Искать по:</S.FilterTitle>
+      {TRACK_FILTERS.map(({ id, type, text }) => (
+        <Filter
+          key={id}
+          callback={saveType}
+          type={type}
+          visible={calcVisible(type)}
+        >
+          {text}
+        </Filter>
+      ))}
+    </S.Filters>
+  );
 }
 
 export default Filters;
