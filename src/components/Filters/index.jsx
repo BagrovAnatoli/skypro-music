@@ -15,11 +15,12 @@ function Filters() {
   return (
     <S.Filters>
       <S.FilterTitle>Искать по:</S.FilterTitle>
-      {TRACK_FILTERS.map(({ id, type, text }) => (
+      {TRACK_FILTERS.map(({ id, type, text, content }) => (
         <Filter
           key={id}
           callback={saveType}
           type={type}
+          content={content}
           visible={calcVisible(type)}
         >
           {text}

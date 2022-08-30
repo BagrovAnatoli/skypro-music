@@ -1,7 +1,7 @@
 import * as S from './styles';
 import Popup from '../FilterPopup';
 
-function Filter({ type, visible, callback, children }) {
+function Filter({ type, visible, content, callback, children }) {
   const clickHandler = () => {
     callback(type);
   };
@@ -11,7 +11,7 @@ function Filter({ type, visible, callback, children }) {
       <S.Button onClick={clickHandler} $isActive={visible}>
         {children}
       </S.Button>
-      <Popup filterBy={type} isPopupVisible={visible} />
+      <Popup filterBy={type} content={content} isPopupVisible={visible} />
     </S.Wrapper>
   );
 }

@@ -1,3 +1,7 @@
+import authorsData from './data/authorsData.json';
+import yearsData from './data/yearsData.json';
+import genresData from './data/genresData.json';
+
 export const ICON_NOTE = 'img/icon/sprite.svg#icon-note';
 export const ICON_PREV = 'img/icon/sprite.svg#icon-prev';
 export const ICON_PLAY = 'img/icon/sprite.svg#icon-play';
@@ -20,9 +24,9 @@ export const CONTROLS_SIZES = {
 };
 
 export const TRACK_FILTERS = [
-  { id: 1, type: 'author', text: 'исполнителю' },
-  { id: 2, type: 'year', text: 'году выпуска' },
-  { id: 3, type: 'genre', text: 'жанру' },
+  { id: 1, type: 'author', text: 'исполнителю', content: authorsData },
+  { id: 2, type: 'year', text: 'году выпуска', content: yearsData },
+  { id: 3, type: 'genre', text: 'жанру', content: genresData },
 ];
 
 export const colsWidth = [

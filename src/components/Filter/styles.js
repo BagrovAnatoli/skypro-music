@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const ButtonTextActiveMixin = css`
+const buttonTextActiveMixin = css`
   border-color: #ad61ff;
   color: #ad61ff;
   cursor: pointer;
@@ -25,7 +25,7 @@ export const Button = styled.button`
     padding: 6px 20px;
     color: inherit;
     background-color: inherit;
-    ${(props) => (props.$isActive ? `${ButtonTextActiveMixin}` : ``)}
+    ${(props) => (props.$isActive ? `${buttonTextActiveMixin}` : ``)}
   }
 
   &:hover {
@@ -35,6 +35,6 @@ export const Button = styled.button`
   }
 
   &:active {
-    ${ButtonTextActiveMixin}
+    ${buttonTextActiveMixin}
   }
 `;
