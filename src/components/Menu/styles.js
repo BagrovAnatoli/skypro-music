@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const MenuList = styled.ul`
   padding: 18px 0 10px 0;
@@ -13,7 +14,7 @@ export const MenuItem = styled.li`
 `;
 
 export const MenuLink = styled.a`
-  color: #ffffff;
+  color: ${COLORS.mainColor};
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

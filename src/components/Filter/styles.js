@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -9,8 +10,8 @@ export const Wrapper = styled.div`
 `;
 
 const buttonTextActiveMixin = css`
-  border-color: #ad61ff;
-  color: #ad61ff;
+  border-color: ${COLORS.filterButtonActive};
+  color: ${COLORS.filterButtonActive};
   cursor: pointer;
 `;
 
@@ -20,17 +21,17 @@ export const Button = styled.button`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    border: 1px solid #ffffff;
+    border: 1px solid ${COLORS.filterButtonRegular};
     border-radius: 60px;
     padding: 6px 20px;
-    color: inherit;
+    // color: inherit;
     background-color: inherit;
     ${(props) => (props.$isActive ? `${buttonTextActiveMixin}` : ``)}
   }
 
   &:hover {
-    border-color: #d9b6ff;
-    color: #d9b6ff;
+    border-color: ${COLORS.filterButtonHover};
+    color: ${COLORS.filterButtonHover};
     cursor: pointer;
   }
 

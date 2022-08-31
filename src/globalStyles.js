@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import * as COLORS from './colors';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -41,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     font-family: 'StratosSkyeng', sans-serif;
-    color: #FFFFFF;
+    color: ${COLORS.mainColor};
   }
 `;
 

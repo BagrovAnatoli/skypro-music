@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
+import * as COLORS from '../../colors';
 
 const playSkeleton = css`
-  background-color: #313131;
+  background-color: ${COLORS.sceleton};
   width: 59px;
   height: 15px;
 `;
@@ -17,7 +18,7 @@ export const PlayContain = styled.div`
 export const PlayImage = styled.div`
   width: 51px;
   height: 51px;
-  background-color: #313131;
+  background-color: ${COLORS.sceleton};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +30,7 @@ export const PlaySvg = styled.svg`
   width: 18px;
   height: 17px;
   fill: transparent;
-  stroke: #4e4e4e;
+  stroke: ${COLORS.additionalText};
 `;
 
 export const PlayAuthor = styled.div`
@@ -43,7 +44,7 @@ export const PlayAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${COLORS.mainColor};
   white-space: nowrap;
 `;
 
@@ -58,5 +59,6 @@ export const PlayAlbumLink = styled.a`
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${COLORS.mainColor};
+
 `;

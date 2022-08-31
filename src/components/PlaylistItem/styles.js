@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const Track = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ export const TitleImage = styled.div`
   width: 51px;
   height: 51px;
   padding: 16px;
-  background: #313131;
+  background: ${COLORS.sceleton};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +29,7 @@ export const TitleImage = styled.div`
 export const TitleSkeleton = styled.svg`
   width: 356px;
   height: 19px;
-  background-color: #313131;
+  background-color: ${COLORS.sceleton};
 `;
 
 export const Author = styled.div`
@@ -36,7 +37,7 @@ export const Author = styled.div`
   ${(props) =>
     props.$isLoading
       ? `height: 19px;
-        background-color: #313131;`
+        background-color: ${COLORS.sceleton};`
       : `display: flex;
         justify-content: flex-start;`}
 `;
@@ -46,7 +47,7 @@ export const Album = styled.div`
   ${(props) =>
     props.$isLoading &&
     `height: 19px;
-        background-color: #313131;`}
+        background-color: ${COLORS.sceleton};`}
 `;
 
 export const PlaylistItem = styled.div`

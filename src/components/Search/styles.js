@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const CenterBlockSearch = styled.div`
   width: 100%;
-  border-bottom: 1px solid #4e4e4e;
+  border-bottom: 1px solid ${COLORS.additionalText};
   margin-bottom: 51px;
   display: flex;
   flex-direction: row;
@@ -13,7 +14,7 @@ export const SearchSvg = styled.svg`
   width: 17px;
   height: 17px;
   margin-right: 5px;
-  stroke: #ffffff;
+  stroke: ${COLORS.mainColor};
   fill: transparent;
 `;
 
@@ -27,12 +28,12 @@ export const SearchText = styled.input`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${COLORS.mainColor};
   }
 
   &::placeholder {
     background-color: transparent;
-    color: #ffffff;
+    color: ${COLORS.mainColor};
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

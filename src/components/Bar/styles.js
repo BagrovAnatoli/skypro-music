@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const Content = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const Content = styled.div`
 export const PlayerProgress = styled.div`
   width: 100%;
   height: 5px;
-  background: #2e2e2e;
+  background: ${COLORS.line};
 `;
 
 export const PlayerBlock = styled.div`

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colsWidth } from '../../constants';
+import * as COLORS from '../../colors';
 
 export const ContentTitle = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ export const PlaylistTitleCol = styled.div`
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 2px;
-  color: #696969;
+  color: ${COLORS.controlButtonRegular};
   text-transform: uppercase;
   width: ${(props) => colsWidth[Number(props.$col) - 1].width};
   ${(props) => props.$col === '4' && `text-align: end;`}
@@ -25,5 +26,5 @@ export const PlaylistTitleSvg = styled.svg`
   width: 12px;
   height: 12px;
   fill: transparent;
-  stroke: #696969;
+  stroke: ${COLORS.controlButtonRegular};
 `;

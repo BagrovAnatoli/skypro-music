@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../colors';
 
 export const SidebarItem = styled.div`
   & {
@@ -9,7 +10,7 @@ export const SidebarItem = styled.div`
     margin-bottom: 30px;
   }
 
-  ${(props) => props.$isLoading && 'background-color: #313131;'}
+  ${(props) => props.$isLoading && `background-color: ${COLORS.sceleton};`}
 `;
 
 export const SidebarLink = styled.a`

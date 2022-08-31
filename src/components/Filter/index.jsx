@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
 import * as S from './styles';
 import Popup from '../FilterPopup';
 
 function Filter({ type, visible, content, callback, children }) {
   const clickHandler = () => {
+    console.log('visible', visible);
     callback(type);
   };
 
