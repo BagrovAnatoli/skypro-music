@@ -13,14 +13,17 @@ function Personal(props) {
     };
   }, []);
 
-  if (!isLoading) {
-    return (
-      <S.SidebarPersonal>
-        <S.SidebarPersonalName>{props.name}</S.SidebarPersonalName>
-        <S.SidebarAvatar />
-      </S.SidebarPersonal>
-    );
+  if (isLoading) {
+    return null;
   }
+
+  return (
+    <S.SidebarPersonal>
+      <S.SidebarPersonalName>{props.name}</S.SidebarPersonalName>
+      <S.SidebarAvatar />
+    </S.SidebarPersonal>
+  );
+  
 }
 
 export default Personal;
