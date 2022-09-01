@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as S from './styles';
 
-function Personal(props) {
+function Personal({name}) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Personal(props) {
 
   return (
     <S.SidebarPersonal>
-      <S.SidebarPersonalName>{props.name}</S.SidebarPersonalName>
+      <S.SidebarPersonalName>{name}</S.SidebarPersonalName>
       <S.SidebarAvatar />
     </S.SidebarPersonal>
   );
