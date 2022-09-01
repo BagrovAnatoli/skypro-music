@@ -5,7 +5,7 @@ export const LikeDislike = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 26%;
+  margin-left: 26px;
 `;
 
 const active = css`
@@ -32,7 +32,7 @@ export const Like = styled.div`
 
 export const Dislike = styled.div`
   padding: 5px;
-  margin-left: 28.5px;
+  margin-left: 29px;
   ${hover}
   ${active}
 `;
@@ -45,7 +45,7 @@ export const LikeSvg = styled.svg`
 `;
 
 export const DislikeSvg = styled.svg`
-  width: 14.34px;
+  width: 15px;
   height: 13px;
   fill: transparent;
   stroke: ${COLORS.controlButtonRegular};
