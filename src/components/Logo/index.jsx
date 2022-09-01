@@ -4,7 +4,9 @@ import * as S from './styles';
 function Logo() {
   return (
     <S.NavLogo>
-      <S.LogoImage src={logo} alt="логотип" />
+      <a href="/">
+        <S.LogoImage src={logo} alt="логотип" />
+      </a>
     </S.NavLogo>
   );
 }

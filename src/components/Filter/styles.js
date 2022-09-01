@@ -24,9 +24,9 @@ export const Button = styled.button`
     border: 1px solid ${COLORS.filterButtonRegular};
     border-radius: 60px;
     padding: 6px 20px;
-    // color: inherit;
+    color: inherit;
     background-color: inherit;
-    ${(props) => (props.$isActive ? `${buttonTextActiveMixin}` : ``)}
+    ${(props) => (props.$isActive ? buttonTextActiveMixin : ``)}
   }
 
   &:hover {
