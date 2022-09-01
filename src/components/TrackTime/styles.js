@@ -7,7 +7,6 @@ export const Svg = styled.svg`
   margin-right: 17px;
   fill: transparent;
   stroke: ${COLORS.controlButtonRegular};
-
 `;
 
 export const Text = styled.span`

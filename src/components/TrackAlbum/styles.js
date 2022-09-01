@@ -8,7 +8,6 @@ export const AlbumLink = styled.a`
   font-size: 16px;
   line-height: 24px;
   color: ${COLORS.controlButtonRegular};
-
 `;
 
 export const { Album } = S;

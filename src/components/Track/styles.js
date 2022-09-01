@@ -60,5 +60,4 @@ export const PlayAlbumLink = styled.a`
   font-size: 13px;
   line-height: 24px;
   color: ${COLORS.mainColor};
-
 `;

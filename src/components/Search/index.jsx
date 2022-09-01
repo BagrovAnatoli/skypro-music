@@ -7,7 +7,7 @@ function Search() {
       <S.SearchSvg>
         <use xlinkHref={ICON_SEARCH} />
       </S.SearchSvg>
-      <S.SearchText type="search" placeholder="Поиск" name="search" />
+      <S.Input type="search" placeholder="Поиск" name="search" />
     </S.CenterBlockSearch>
   );
 }

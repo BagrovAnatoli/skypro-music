@@ -19,7 +19,9 @@ export const PlaylistTitleCol = styled.div`
   color: ${COLORS.controlButtonRegular};
   text-transform: uppercase;
   width: ${(props) => colsWidth[Number(props.$col) - 1].width};
-  ${(props) => props.$col === '4' && `text-align: end;`}
+  &:last-of-type {
+    text-align: end;
+  }
 `;
 
 export const PlaylistTitleSvg = styled.svg`

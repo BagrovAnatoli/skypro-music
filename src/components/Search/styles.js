@@ -18,7 +18,7 @@ export const SearchSvg = styled.svg`
   fill: transparent;
 `;
 
-export const SearchText = styled.input`
+export const Input = styled.input`
   & {
     flex-grow: 100;
     background-color: transparent;

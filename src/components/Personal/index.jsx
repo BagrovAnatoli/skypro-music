@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as S from './styles';
 
-function Personal({name}) {
+function Personal({ name }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,6 @@ function Personal({name}) {
       <S.SidebarAvatar />
     </S.SidebarPersonal>
   );
-  
 }
 
 export default Personal;

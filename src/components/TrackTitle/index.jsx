@@ -1,11 +1,16 @@
 import { ICON_NOTE } from '../../constants';
 import * as S from './styles';
 
-function TrackTitle({ image, text, link, spanText }) {
-  const imgAlt = image ? image.alt : 'музыка';
-  const imgPath = image ? image.path : ICON_NOTE;
-  const textTitle = text || '';
-  const linkTitle = link || 'http://';
+function TrackTitle({
+  image = { alt: 'музыка', path: ICON_NOTE },
+  text = '',
+  link = 'http://',
+  spanText,
+}) {
+  const imgAlt = image.alt;
+  const imgPath = image.path;
+  const textTitle = text;
+  const linkTitle = link;
 
   return (
     <S.Title>
