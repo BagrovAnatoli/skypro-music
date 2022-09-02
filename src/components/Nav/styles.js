@@ -6,5 +6,3 @@ export const MainNav = styled.div`
   background-color: ${COLORS.background1};
   padding: 20px 0 20px 36px;
 `;
-
-export default MainNav;

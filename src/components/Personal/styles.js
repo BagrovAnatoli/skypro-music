@@ -21,6 +21,6 @@ export const SidebarPersonalName = styled.p`
 export const SidebarAvatar = styled.div`
   width: 43px;
   height: 43px;
-  background-color: ${COLORS.sceleton};
+  background-color: ${COLORS.skeleton};
   border-radius: 50%;
 `;

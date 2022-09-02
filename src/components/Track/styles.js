@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import * as COLORS from '../../colors';
 
 const playSkeleton = css`
-  background-color: ${COLORS.sceleton};
+  background-color: ${COLORS.skeleton};
   width: 59px;
   height: 15px;
 `;
@@ -18,7 +18,7 @@ export const PlayContain = styled.div`
 export const PlayImage = styled.div`
   width: 51px;
   height: 51px;
-  background-color: ${COLORS.sceleton};
+  background-color: ${COLORS.skeleton};
   display: flex;
   align-items: center;
   justify-content: center;

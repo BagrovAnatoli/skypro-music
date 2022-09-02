@@ -19,6 +19,6 @@ export const controlButtonRegular = '#696969';
 export const controlButtonHover = '#ACACAC';
 export const controlButtonActive = '#FFFFFF';
 export const placeholder = '#E1E1E1';
-export const sceleton = '#313131';
+export const skeleton = '#313131';
 export const additionalText = '#4E4E4E';
 export const line = '#2E2E2E';

@@ -21,7 +21,7 @@ export const Popup = styled.div`
   position: absolute;
   top: 50px;
   width: 424px;
-  background: ${COLORS.sceleton};
+  background: ${COLORS.skeleton};
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;

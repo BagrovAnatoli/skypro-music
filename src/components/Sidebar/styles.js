@@ -10,7 +10,7 @@ export const SidebarItem = styled.div`
     margin-bottom: 30px;
   }
 
-  ${(props) => props.$isLoading && `background-color: ${COLORS.sceleton};`}
+  ${(props) => props.$isLoading && `background-color: ${COLORS.skeleton};`}
 `;
 
 export const SidebarLink = styled.a`

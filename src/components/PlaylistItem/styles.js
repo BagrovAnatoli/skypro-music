@@ -19,7 +19,7 @@ export const TitleImage = styled.div`
   width: 51px;
   height: 51px;
   padding: 16px;
-  background: ${COLORS.sceleton};
+  background: ${COLORS.skeleton};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ export const TitleImage = styled.div`
 export const TitleSkeleton = styled.svg`
   width: 356px;
   height: 19px;
-  background-color: ${COLORS.sceleton};
+  background-color: ${COLORS.skeleton};
 `;
 
 export const Author = styled.div`
@@ -37,7 +37,7 @@ export const Author = styled.div`
   ${(props) =>
     props.$isLoading
       ? `height: 19px;
-        background-color: ${COLORS.sceleton};`
+        background-color: ${COLORS.skeleton};`
       : `display: flex;
         justify-content: flex-start;`}
 `;
@@ -47,7 +47,7 @@ export const Album = styled.div`
   ${(props) =>
     props.$isLoading &&
     `height: 19px;
-        background-color: ${COLORS.sceleton};`}
+        background-color: ${COLORS.skeleton};`}
 `;
 
 export const PlaylistItem = styled.div`
