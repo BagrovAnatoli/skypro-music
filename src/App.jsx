@@ -1,16 +1,19 @@
-import './App.css';
-import Main from './Main';
-import Bar from './Bar';
+import Main from './components/Main';
+import Bar from './components/Bar';
+import GlobalStyle from './globalStyles';
+import * as S from './styles';
 
 function App() {
   return (
-      <div className="wrapper">
-        <div className="container">
-          <Main/>
-          <Bar/>
-          <footer/>
-        </div>
-      </div>
+    <>
+      <GlobalStyle />
+      <S.Wrapper>
+        <S.Container>
+          <Main />
+          <Bar />
+        </S.Container>
+      </S.Wrapper>
+    </>
   );
 }
 
