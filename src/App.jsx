@@ -1,6 +1,5 @@
-import Main from './components/Main';
-import Bar from './components/Bar';
 import GlobalStyle from './globalStyles';
+import { AppRoutes } from './routes';
 import * as S from './styles';
 
 function App() {
@@ -8,10 +7,7 @@ function App() {
     <>
       <GlobalStyle />
       <S.Wrapper>
-        <S.Container>
-          <Main />
-          <Bar />
-        </S.Container>
+        <AppRoutes />
       </S.Wrapper>
     </>
   );
