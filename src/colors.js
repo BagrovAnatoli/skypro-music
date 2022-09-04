@@ -1,9 +1,11 @@
 export const lightGray = '#F5F5F5';
 export const blackOpacity85 = '#000000DA';
 export const mainColor = '#FFFFFF';
+export const formColor = '#FFFFFF';
 export const background1 = '#181818';
 export const background2 = '#1C1C1C';
 export const background3 = '#383838';
+export const background4 = '#F5F5F5';
 export const grey = '#D0CECE';
 export const primeButtonRegular = '#580EA2';
 export const primeButtonHover = '#3F007D';

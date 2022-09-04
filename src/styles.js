@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: ${COLORS.background3};
+  background-color: ${COLORS.background4};
 `;
 
 // export const NavMenu = styled.div`

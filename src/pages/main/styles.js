@@ -5,5 +5,5 @@ export const Container = styled.div`
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
-  background-color: ${COLORS.background1};
+  background-color: ${COLORS.blackOpacity85};
 `;

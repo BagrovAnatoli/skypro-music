@@ -26,6 +26,7 @@ export const SidebarImg = styled.img`
 export const MainSidebar = styled.div`
   max-width: 418px;
   padding: 20px 90px 20px 78px;
+  background-color: ${COLORS.background1};
 `;
 
 export const SidebarBlock = styled.div`
