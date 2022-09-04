@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const Main = styled.div`
+export const Page = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
 
-export default Main;
+export default Page;

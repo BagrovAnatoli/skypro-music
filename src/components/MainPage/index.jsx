@@ -5,11 +5,11 @@ import * as S from './styles';
 
 function Main() {
   return (
-    <S.Main>
+    <S.Page>
       <Nav />
       <CenterBlock />
       <Sidebar />
-    </S.Main>
+    </S.Page>
   );
 }
 

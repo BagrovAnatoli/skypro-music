@@ -1,14 +1,14 @@
-import Main from '../../components/Main';
+import MainPage from '../../components/MainPage';
 import Bar from '../../components/Bar';
 import * as S from './styles';
 
-function MainPage() {
+function Main() {
   return (
     <S.Container>
-        <Main />
+        <MainPage />
         <Bar />
     </S.Container>
   );
 }
 
-export default MainPage;
+export default Main;

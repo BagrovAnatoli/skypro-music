@@ -4,13 +4,13 @@ import Filters from '../Filters';
 import Content from '../Content';
 import * as S from './styles';
 
-function CenterBlock() {
+function CenterBlock({ playlistId }) {
   return (
     <S.Container>
       <Search />
       <Head>Треки</Head>
       <Filters />
-      <Content />
+      <Content playlistId={playlistId}/>
     </S.Container>
   );
 }
