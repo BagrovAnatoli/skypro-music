@@ -7,20 +7,23 @@ import * as S from './styles';
 
 function Content({ playlistId }) {
 
-  let tracks;
-  if (playlistId >= 0) {
-    const playlist = PLAYLISTS.find((list) => list.id === playlistId);
-    tracks = playlist.content;
-  } else {
-    tracks = allTracks;
+  function getTracksByPlylistId(id) {
+    if (id >= 0) {
+      const playlist = PLAYLISTS.find((list) => list.id === id);
+      if(playlist) {
+        return playlist.content;
+      }
+    }
+
+    return allTracks;
   }
 
-
-
+  const tracks = getTracksByPlylistId(playlistId);
+ 
   return (
     <S.Container>
       <PlaylistTitle />
-      <Playlist tracks={tracks}/>
+      <Playlist tracks={tracks} />
     </S.Container>
   );
 }

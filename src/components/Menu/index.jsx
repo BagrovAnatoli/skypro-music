@@ -4,7 +4,7 @@ import * as S from './styles';
 function Menu() {
   const listItems = menu.map(({ value, href, id }) => (
     <S.MenuItem key={id}>
-      <S.MenuLink href={href}>{value}</S.MenuLink>
+      <S.MenuLink to={href}>{value}</S.MenuLink>
     </S.MenuItem>
   ));
 

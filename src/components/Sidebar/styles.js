@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import * as COLORS from '../../colors';
 
-export const SidebarItem = styled.div`
+export const SidebarItem = styled.li`
   & {
     width: 250px;
     height: 150px;
@@ -13,7 +14,7 @@ export const SidebarItem = styled.div`
   ${(props) => props.$isLoading && `background-color: ${COLORS.skeleton};`}
 `;
 
-export const SidebarLink = styled.a`
+export const SidebarLink = styled(Link)`
   width: 100%;
   height: 100%;
 `;
@@ -39,7 +40,7 @@ export const SidebarBlock = styled.div`
   justify-content: flex-start;
 `;
 
-export const SidebarList = styled.div`
+export const SidebarList = styled.ul`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
