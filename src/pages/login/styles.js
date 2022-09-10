@@ -37,10 +37,7 @@ export const Input = styled.input`
     padding-bottom: 8px;
     border: none;
     border-bottom: 2px solid ${COLORS.grey};
-    &::-webkit-input-placeholder {
-        color: ${COLORS.grey};
-    }
-    &:-moz-placeholder {
+    &::placeholder {
         color: ${COLORS.grey};
     }
 `;

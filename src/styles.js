@@ -11,8 +11,3 @@ export const Wrapper = styled.div`
   overflow: hidden;
   background-color: ${COLORS.background4};
 `;
-
-// export const NavMenu = styled.div`
-//   display: block;
-//   visibility: visible;
-// `;
