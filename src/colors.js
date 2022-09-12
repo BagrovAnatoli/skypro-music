@@ -24,3 +24,4 @@ export const placeholder = '#E1E1E1';
 export const skeleton = '#313131';
 export const additionalText = '#4E4E4E';
 export const line = '#2E2E2E';
+export const progressLine = '#6256A5';

@@ -6,11 +6,18 @@ export const Content = styled.div`
   flex-direction: column;
 `;
 
-export const PlayerProgress = styled.div`
+export const PlayerProgressWrap = styled.div`
   width: 100%;
   height: 5px;
   background: ${COLORS.line};
 `;
+
+export const PlayerProgress = styled.div`
+  width: ${(props) => props.width}%;
+  height: 100%;
+  background: ${COLORS.progressLine};
+`;
+
 
 export const PlayerBlock = styled.div`
   height: 73px;

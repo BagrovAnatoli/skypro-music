@@ -58,7 +58,9 @@ const getBtnSvgStyle = (btnName) => {
   return btnSvgStyles[btnName];
 };
 
-export const PlayerBtn = styled.div`
+export const PlayerBtn = styled.button`
+  background: none;
+  border: none;
   padding: 5px;
   display: flex;
   align-items: center;
