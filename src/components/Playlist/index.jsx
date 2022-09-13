@@ -1,8 +1,7 @@
 import PlaylistItem from '../PlaylistItem';
-import tracks from '../../data/tracksInfo.json';
 import * as S from './styles';
 
-function Playlist() {
+function Playlist({ tracks }) {
   const list = tracks.map(({ title, author, album, time, id }) => (
     <PlaylistItem
       title={title}

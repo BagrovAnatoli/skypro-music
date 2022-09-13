@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import * as COLORS from '../../colors';
 
 export const MenuList = styled.ul`
@@ -13,7 +14,7 @@ export const MenuItem = styled.li`
   margin-bottom: 16px;
 `;
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
   color: ${COLORS.mainColor};
   font-weight: 400;
   font-size: 16px;

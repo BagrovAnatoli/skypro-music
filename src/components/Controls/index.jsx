@@ -8,10 +8,10 @@ import {
 } from '../../constants';
 import PlayerBtn from '../PlayerBtn';
 
-function Controls() {
+function Controls({togglePlay}) {
   const controlBtnsValues = [
     { name: 'prev', alt: 'предыдущий трек', xlinkHref: ICON_PREV },
-    { name: 'play', alt: 'проигрывать', xlinkHref: ICON_PLAY, cursor: true },
+    { name: 'play', alt: 'проигрывать', xlinkHref: ICON_PLAY, cursor: true, onClick: togglePlay},
     { name: 'next', alt: 'следующий трек', xlinkHref: ICON_NEXT },
     {
       name: 'repeat',
@@ -29,7 +29,7 @@ function Controls() {
 
   return (
     <>
-      {controlBtnsValues.map(({ name, alt, xlinkHref, cursor, hoverIcon }) => (
+      {controlBtnsValues.map(({ name, alt, xlinkHref, cursor, hoverIcon, onClick }) => (
         <PlayerBtn
           name={name}
           alt={alt}
@@ -38,6 +38,7 @@ function Controls() {
           heght={CONTROLS_SIZES[name].height}
           cursor={cursor}
           hoverIcon={hoverIcon}
+          onClick={onClick}
           key={name}
         />
       ))}

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as COLORS from '../../colors';
 
 export const NavLogo = styled.div`
   width: 114px;
@@ -12,5 +11,4 @@ export const NavLogo = styled.div`
 export const LogoImage = styled.img`
   width: 114px;
   height: 17px;
-  color: ${COLORS.background1};
 `;

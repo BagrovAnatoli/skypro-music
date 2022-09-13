@@ -21,7 +21,7 @@ function Sidebar() {
 
   const items = sidebarDatas.map(({ href, imgSrc, imgAlt, id }) => (
     <S.SidebarItem key={id}>
-      <S.SidebarLink href={href}>
+      <S.SidebarLink to={href}>
         <S.SidebarImg src={imgSrc} alt={imgAlt} />
       </S.SidebarLink>
     </S.SidebarItem>
