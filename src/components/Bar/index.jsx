@@ -12,11 +12,17 @@ function Bar() {
   const [currentTime, setCurrentTime] = useState(0);
   const [trackDuration, setTrackDuration] = useState(120);
   const [progressWidth, setProgressWidth] = useState(0);
+  const [progressClick, setProgressClick] = useState(0);
   const audioRef = useRef(null);
 
   useEffect(() => {
     setProgressWidth((currentTime / trackDuration) * 100);
-  }, [currentTime]);
+  },[currentTime, trackDuration]);
+
+  useEffect(() => {
+    audioRef.current.currentTime = progressClick * trackDuration;
+    setProgressWidth(progressClick * 100);
+  },[progressClick, trackDuration]);
 
   const handleStart = () => {
     console.log('start');
@@ -26,6 +32,11 @@ function Bar() {
       const time = audioRef.current.currentTime;
       setCurrentTime(time);
       console.log(time);
+      console.log(audioRef.current.ended);
+      if(audioRef.current.ended) {
+        clearInterval(newIntervalId);
+        setIsPlaying(false);
+      }
     },1000);
     setIntervalId(newIntervalId);
 
@@ -44,15 +55,31 @@ function Bar() {
 
   const togglePlay = isPlaying ? handleStop : handleStart;
 
+  const handleMove = (event) => {
+    // console.log(event);
+    // console.log('clientX', event.clientX);
+    // console.log('movementX', event.movementX);
+    // console.log('pageX', event.pageX);
+    // console.log('screenX', event.screenX);
+    // console.log('clientWidth', event.target.clientWidth);
+    // console.log('offsetWidth', event.target.offsetWidth);
+    // console.log('getBoundingClientRect', event.target.getBoundingClientRect());
+    const rect = event.currentTarget.getBoundingClientRect();
+    const {left, width} = rect;
+    const leftClick = event.clientX;
+    setProgressClick((leftClick - left) / width);
+    setProgressWidth((currentTime / trackDuration) * 100);
+  }
+
 
   return (
     <>
-      <audio controls ref={audioRef}>
+      <S.Audio controls ref={audioRef}>
           <track kind="captions"/>
           <source src="/music/song.mp3" type="audio/mpeg" />
-      </audio>
+      </S.Audio>
       <S.Content>
-        <S.PlayerProgressWrap>
+        <S.PlayerProgressWrap onClick={handleMove}>
         <S.PlayerProgress width={progressWidth} />
         </S.PlayerProgressWrap>
         <S.PlayerBlock>

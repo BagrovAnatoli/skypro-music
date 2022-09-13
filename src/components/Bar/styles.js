@@ -18,6 +18,9 @@ export const PlayerProgress = styled.div`
   background: ${COLORS.progressLine};
 `;
 
+export const Audio = styled.audio`
+  display: none;
+`;
 
 export const PlayerBlock = styled.div`
   height: 73px;
