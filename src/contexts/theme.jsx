@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { css } from 'styled-components';
 
+// ${COLORS.}
+
 export const themes = {
   light: css`
     --lightGray: #F5F5F5;
