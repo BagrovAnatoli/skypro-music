@@ -18,6 +18,10 @@ export const ICON_DISLIKE = 'img/icon/sprite.svg#icon-dislike';
 export const ICON_VOLUME = 'img/icon/sprite.svg#icon-volume';
 export const ICON_SEARCH = 'img/icon/sprite.svg#icon-search';
 export const ICON_WATCH = 'img/icon/sprite.svg#icon-watch';
+export const ICON_MOON = '/img/icon/moon.svg';
+export const ICON_SUN = '/img/icon/sun.svg';
+
+
 export const BUTTON_POPUP_SPACE = 16;
 
 export const CONTROLS_SIZES = {
