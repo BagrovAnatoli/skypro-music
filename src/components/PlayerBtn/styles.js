@@ -10,6 +10,9 @@ const getBtnStyle = (btnName) => {
     play: css`
       margin-right: 23px;
     `,
+    pause: css`
+      margin-right: 23px;
+    `,
     next: css`
       margin-right: 28px;
       fill: #a53939;
@@ -27,30 +30,22 @@ const getBtnStyle = (btnName) => {
 
 const getBtnSvgStyle = (btnName) => {
   const btnSvgStyles = {
-    prev: css`
-      width: 15px;
-      height: 14px;
-    `,
+    prev: css``,
     play: css`
-      width: 22px;
-      height: 20px;
+      fill: ${COLORS.controlButton};
+    `,
+    pause: css`
       fill: ${COLORS.controlButton};
     `,
     next: css`
-      width: 15px;
-      height: 14px;
       fill: inherit;
       stroke: ${COLORS.controlButton};
     `,
     repeat: css`
-      width: 18px;
-      height: 12px;
       fill: transparent;
       stroke: ${COLORS.controlButtonRegular};
     `,
     shuffle: css`
-      width: 19px;
-      height: 12px;
       fill: transparent;
       stroke: ${COLORS.controlButtonRegular};
     `,
@@ -86,4 +81,6 @@ export const PlayerBtn = styled.button`
 
 export const PlayerBtnSvg = styled.svg`
   ${({ $btnName }) => getBtnSvgStyle($btnName)}
+  width: ${p => p.$width};
+  height: ${p => p.$height};
 `;

@@ -71,7 +71,7 @@ function Bar() {
         </S.PlayerProgressWrap>
         <S.PlayerBlock>
           <S.Player>
-            <Controls togglePlay={togglePlay}/>
+            <Controls togglePlay={togglePlay} isPlaying={isPlaying}/>
             <TrackPlay />
           </S.Player>
           <Volume />

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import * as COLORS from '../../colors';
 
 export const Content = styled.div`
   display: flex;
@@ -9,13 +8,13 @@ export const Content = styled.div`
 export const PlayerProgressWrap = styled.div`
   width: 100%;
   height: 5px;
-  background: ${COLORS.line};
+  background: var(--line);
 `;
 
 export const PlayerProgress = styled.div`
   width: ${(props) => props.width}%;
   height: 100%;
-  background: ${COLORS.progressLine};
+  background: var(--progressLine);
 `;
 
 export const Audio = styled.audio`

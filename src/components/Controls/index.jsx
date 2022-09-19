@@ -1,6 +1,7 @@
 import {
   ICON_PREV,
   ICON_PLAY,
+  ICON_PAUSE,
   ICON_NEXT,
   ICON_REPEAT,
   ICON_SHUFFLE,
@@ -8,10 +9,15 @@ import {
 } from '../../constants';
 import PlayerBtn from '../PlayerBtn';
 
-function Controls({togglePlay}) {
+function Controls({togglePlay, isPlaying}) {
+  const playPauseBtn = isPlaying
+  ? { name: 'pause', alt: 'пауза', xlinkHref: ICON_PAUSE, cursor: true, onClick: togglePlay}
+  : { name: 'play', alt: 'проигрывать', xlinkHref: ICON_PLAY, cursor: true, onClick: togglePlay};
+
+
   const controlBtnsValues = [
     { name: 'prev', alt: 'предыдущий трек', xlinkHref: ICON_PREV },
-    { name: 'play', alt: 'проигрывать', xlinkHref: ICON_PLAY, cursor: true, onClick: togglePlay},
+    playPauseBtn,
     { name: 'next', alt: 'следующий трек', xlinkHref: ICON_NEXT },
     {
       name: 'repeat',

@@ -9,6 +9,7 @@ import playlist3 from './data/playlist-3.json';
 export const ICON_NOTE = 'img/icon/sprite.svg#icon-note';
 export const ICON_PREV = 'img/icon/sprite.svg#icon-prev';
 export const ICON_PLAY = 'img/icon/sprite.svg#icon-play';
+export const ICON_PAUSE = 'img/icon/sprite.svg#icon-pause';
 export const ICON_NEXT = 'img/icon/sprite.svg#icon-next';
 export const ICON_REPEAT = 'img/icon/sprite.svg#icon-repeat';
 export const ICON_SHUFFLE = 'img/icon/sprite.svg#icon-shuffle';
@@ -22,6 +23,7 @@ export const BUTTON_POPUP_SPACE = 16;
 export const CONTROLS_SIZES = {
   prev: { width: '15px', height: '14px' },
   play: { width: '22px', height: '20px' },
+  pause: { width: '15px', height: '19px' },
   next: { width: '15px', height: '14px' },
   repeat: { width: '18px', height: '12px' },
   shuffle: { width: '19px', height: '12px' }
