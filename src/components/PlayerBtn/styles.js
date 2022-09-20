@@ -27,30 +27,83 @@ const getBtnStyle = (btnName) => {
   return btnStyles[btnName];
 };
 
-const getBtnSvgStyle = (btnName) => {
+const getBtnSvgRegular = (btnName) => {
   const btnSvgStyles = {
-    prev: css``,
+    prev: css`
+      fill: var(--CtrlBtnReg3);
+    `,
     play: css`
-      fill: var(--controlButton);
+      fill: var(--CtrlBtnReg3);
     `,
     pause: css`
-      fill: var(--controlButton);
+      fill: var(--CtrlBtnReg3);
     `,
     next: css`
-      fill: inherit;
-      stroke: var(--controlButton);
+      fill: var(--CtrlBtnReg3);
     `,
     repeat: css`
-      fill: transparent;
-      stroke: var(--controlButtonRegular);
+      stroke: var(--CtrlBtnReg1);
     `,
     shuffle: css`
-      fill: transparent;
-      stroke: var(--controlButtonRegular);
+      stroke: var(--CtrlBtnReg1);
     `,
   };
   return btnSvgStyles[btnName];
 };
+
+const getBtnSvgHover = (btnName) => {
+  const btnSvgStyles = {
+    prev: css`
+      fill: var(--CtrlBtnHvr3);
+    `,
+    play: css`
+      fill: var(--CtrlBtnHvr3);
+    `,
+    pause: css`
+      fill: var(--CtrlBtnHvr3);
+    `,
+    next: css`
+      fill: var(--CtrlBtnHvr3);
+    `,
+    repeat: css`
+      stroke: var(--CtrlBtnHvr1);
+    `,
+    shuffle: css`
+      stroke: var(--CtrlBtnHvr1);
+    `,
+  };
+  return btnSvgStyles[btnName];
+};
+
+const getBtnSvgActive = (btnName) => {
+  const btnSvgStyles = {
+    prev: css`
+      fill: var(--CtrlBtnAct3);
+    `,
+    play: css`
+      fill: var(--CtrlBtnAct3);
+    `,
+    pause: css`
+      fill: var(--CtrlBtnAct3);
+    `,
+    next: css`
+      fill: var(--CtrlBtnAct3);
+    `,
+    repeat: css`
+      stroke: var(--CtrlBtnAct1);
+    `,
+    shuffle: css`
+      stroke: var(--CtrlBtnAct1);
+    `,
+  };
+  return btnSvgStyles[btnName];
+};
+
+export const PlayerBtnSvg = styled.svg`
+  ${({ $btnName }) => getBtnSvgRegular($btnName)}
+  width: ${p => p.$width};
+  height: ${p => p.$height};
+`;
 
 export const PlayerBtn = styled.button`
   background: none;
@@ -58,28 +111,14 @@ export const PlayerBtn = styled.button`
   padding: 5px;
   display: flex;
   align-items: center;
-  fill: var(--controlButton);
-  stroke: var(--controlButtonActive);
   ${({ $btnName }) => getBtnStyle($btnName)}
   ${({ $cursor }) => $cursor && cursorPointer}
-    ${({ $hoverIcon }) =>
-    $hoverIcon &&
-    `
-        &:hover svg{
-            fill: transparent;
-            stroke: var(--controlButtonHover);
-            cursor: pointer;
-        }
-        &:active svg {
-            fill: transparent;
-            stroke: var(--controlButtonActive);
-            cursor: pointer;
-        }
-    `}
-`;
-
-export const PlayerBtnSvg = styled.svg`
-  ${({ $btnName }) => getBtnSvgStyle($btnName)}
-  width: ${p => p.$width};
-  height: ${p => p.$height};
+  &:hover svg{
+    ${({ $btnName }) => getBtnSvgHover($btnName)}
+    cursor: pointer;
+  }
+  &:active svg {
+    ${({ $btnName }) => getBtnSvgActive($btnName)}
+    cursor: pointer;
+  }
 `;

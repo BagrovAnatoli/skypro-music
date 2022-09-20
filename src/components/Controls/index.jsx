@@ -23,19 +23,17 @@ function Controls({togglePlay, isPlaying}) {
       name: 'repeat',
       alt: 'повторить',
       xlinkHref: ICON_REPEAT,
-      hoverIcon: true,
     },
     {
       name: 'shuffle',
       alt: 'перемешать',
       xlinkHref: ICON_SHUFFLE,
-      hoverIcon: true,
     },
   ];
 
   return (
     <>
-      {controlBtnsValues.map(({ name, alt, xlinkHref, cursor, hoverIcon, onClick }) => (
+      {controlBtnsValues.map(({ name, alt, xlinkHref, cursor, onClick }) => (
         <PlayerBtn
           name={name}
           alt={alt}
@@ -43,7 +41,6 @@ function Controls({togglePlay, isPlaying}) {
           width={CONTROLS_SIZES[name].width}
           heght={CONTROLS_SIZES[name].height}
           cursor={cursor}
-          hoverIcon={hoverIcon}
           onClick={onClick}
           key={name}
         />

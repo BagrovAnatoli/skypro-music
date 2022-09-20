@@ -1,11 +1,10 @@
 import * as S from './styles';
 
-function PlayerBtn({ name, alt, xlinkHref, width, height, cursor, hoverIcon, onClick }) {
+function PlayerBtn({ name, alt, xlinkHref, width, height, cursor, onClick }) {
   return (
     <S.PlayerBtn
       $btnName={name}
       $cursor={cursor}
-      $hoverIcon={hoverIcon}
       key={name}
       onClick={onClick}
     >

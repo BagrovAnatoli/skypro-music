@@ -9,16 +9,16 @@ export const LikeDislike = styled.div`
 
 const active = css`
   &:active svg {
-    fill: var(--controlButtonRegular);
-    stroke: var(--controlButtonActive);
+    fill: var(--CtrlBtnAct2);
+    stroke: var(--CtrlBtnAct1);
     cursor: pointer;
   }
 `;
 
 const hover = css`
   &:hover svg {
-    fill: transparent;
-    stroke: var(--controlButtonHover);
+    fill: var(--CtrlBtnHvr2);
+    stroke: var(--CtrlBtnHvr1);
     cursor: pointer;
   }
 `;
@@ -39,13 +39,13 @@ export const Dislike = styled.div`
 export const LikeSvg = styled.svg`
   width: 14px;
   height: 12px;
-  fill: transparent;
-  stroke: var(--controlButtonRegular);
+  fill: var(--CtrlBtnReg2);
+  stroke: var(--CtrlBtnReg1);
 `;
 
 export const DislikeSvg = styled.svg`
   width: 15px;
   height: 13px;
-  fill: transparent;
-  stroke: var(--controlButtonRegular);
+  fill: var(--CtrlBtnReg2);
+  stroke: var(--CtrlBtnReg1);
 `;
