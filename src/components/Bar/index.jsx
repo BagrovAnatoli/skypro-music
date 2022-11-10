@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ /* eslint-disable no-console */
 import { useRef, useState, useEffect } from 'react';
 import Controls from '../Controls';
 import TrackPlay from '../TrackPlay';

@@ -9,8 +9,9 @@ export function Signup() {
                 <S.Form>
                     <S.LogoImage src={logo} alt="логотип" />
                     <S.Input type="text" placeholder="Логин" />
-                    <S.Input type="text" placeholder="Пароль" />
-                    <S.Input type="text" placeholder="Повторите пароль" />
+                    <S.Input type="text" placeholder="Email" />
+                    <S.Input type="password" placeholder="Пароль" />
+                    <S.Input type="password" placeholder="Повторите пароль" />
                     <S.PrimeButton>Зарегистрироваться</S.PrimeButton>
                 </S.Form>
             </S.FullHight>

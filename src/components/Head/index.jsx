@@ -1,7 +1,7 @@
 import * as S from './styles';
 
-function CenterBlock({ children }) {
+function Head({ children }) {
   return <S.Head>{children}</S.Head>;
 }
 
-export default CenterBlock;
+export default Head;
