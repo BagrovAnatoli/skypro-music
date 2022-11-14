@@ -73,4 +73,13 @@ export const SimpleButton = styled.button`
     }
 `;
 
+export const Loading = styled.p`
+    color: black;
+`;
+
+export const Error = styled.p`
+    color: red;
+    font-size: 12px;
+`;
+
 export default Container;

@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import {
     signupStartAC, signupSuccessAC, signupErrorAC,
     loginStartAC, loginSuccessAC, loginErrorAC,
@@ -13,7 +14,6 @@ export const signup = (username, email, password) => async (dispatch) => {
 
     try {
         const { response } = await userAPI.signup(username, email, password);
-
         dispatch(signupSuccessAC(response));
     } catch (error) {
         dispatch(signupErrorAC(error));

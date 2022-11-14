@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import {
     SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR,
     LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
@@ -10,10 +11,13 @@ export const signupStartAC = () => ({
     type: SIGNUP_START,
 });
 
-export const signupSuccessAC = (response) => ({
-    type: SIGNUP_SUCCESS,
-    response,
-});
+export const signupSuccessAC = (response) => {
+    debugger;
+    return {
+        type: SIGNUP_SUCCESS,
+        response,
+    }
+};
 
 export const signupErrorAC = (error) => ({
     type: SIGNUP_ERROR,

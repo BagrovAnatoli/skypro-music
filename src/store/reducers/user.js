@@ -1,0 +1,66 @@
+/* eslint-disable no-debugger */
+/* eslint-disable default-param-last */
+/* eslint-disable prefer-destructuring */
+import {
+    SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR,
+    // LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
+    // LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR,
+    // GET_TOKEN_START, GET_TOKEN_SUCCESS, GET_TOKEN_ERROR,
+    // TOKEN_REFRESH_START, TOKEN_REFRESH_SUCCESS, TOKEN_REFRESH_ERROR
+} from '../actions/types/user';
+
+const initialState = {
+    loading: false,
+    error: null,
+    id: null,
+    username: "myUserName",
+    firstName: "Name",
+    lastName: "Sirname",
+    email: null,
+    password: null,
+    token: {
+        refresh: "",
+        access: "",
+    },
+};
+
+export default function userReducer(state = initialState, action) {
+    switch (action.type) {
+        case SIGNUP_START: {
+            return {
+                ...state,
+                loading: true,
+            };
+        }
+
+        case SIGNUP_SUCCESS: {
+            debugger;
+            const id = action.response.data.id;
+            const username = action.response.data.username;
+            const firstName = action.response.data.first_name || "Name";
+            const lastName = action.response.data.last_name || "Sirname";
+            const email = action.response.data.email;
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                id,
+                username,
+                firstName,
+                lastName,
+                email,
+            };
+        }
+
+        case SIGNUP_ERROR: {
+            return {
+                ...state,
+                loading: false,
+                error: action.error,
+            };
+        }
+
+        default:
+            return state;
+    }
+};
