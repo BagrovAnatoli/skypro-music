@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 
 const instance = axios.create({
@@ -9,12 +10,14 @@ export const userAPI = {
         return instance.post(`/user/signup/`, { username, email, password });
     },
     login(email, password) {
+        
         return instance.post(`/user/login/`, { email, password });
     },
     logout() {
         return instance.delete(`/user/login/`);
     },
     getToken(email, password) {
+        
         return instance.post(`/user/token/`, { email, password });
     },
     tokenRefresh(refresh) {

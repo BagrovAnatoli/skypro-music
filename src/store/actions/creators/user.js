@@ -11,13 +11,10 @@ export const signupStartAC = () => ({
     type: SIGNUP_START,
 });
 
-export const signupSuccessAC = (response) => {
-    debugger;
-    return {
+export const signupSuccessAC = (response) => ({
         type: SIGNUP_SUCCESS,
         response,
-    }
-};
+    });
 
 export const signupErrorAC = (error) => ({
     type: SIGNUP_ERROR,
@@ -30,9 +27,9 @@ export const loginStartAC = () => ({
 });
 
 export const loginSuccessAC = (response) => ({
-    type: LOGIN_SUCCESS,
-    response,
-});
+        type: LOGIN_SUCCESS,
+        response,
+    })
 
 export const loginErrorAC = (error) => ({
     type: LOGIN_ERROR,
@@ -59,10 +56,13 @@ export const getTokenStartAC = () => ({
     type: GET_TOKEN_START,
 });
 
-export const getTokenSuccessAC = (response) => ({
-    type: GET_TOKEN_SUCCESS,
-    response,
-});
+export const getTokenSuccessAC = (response) => {
+    console.log('getTokenSuccessAC');    
+    return {
+        type: GET_TOKEN_SUCCESS,
+        response,
+    }
+};
 
 export const getTokenErrorAC = (error) => ({
     type: GET_TOKEN_ERROR,

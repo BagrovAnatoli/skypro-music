@@ -16,3 +16,9 @@ export const allErrorsSelector = (store) => {
     const data = userErrorResponseDataSelector(store);
     return data ? objValuesToArray(data) : [];
 }
+
+export const userIdSelector = (store) => userSelector(store)?.id;
+
+export const userTokenSelector = (store) => userSelector(store)?.token;
+
+export const userAccessSelector = (store) => userTokenSelector(store)?.access;
