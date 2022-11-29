@@ -1,6 +1,8 @@
+/* eslint-disable no-debugger */
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
 import Container, * as S from './styles';
 import logo from '../../img/logo-black.png';
 import { userSelector,
@@ -23,7 +25,24 @@ export function Login() {
     const errorData = useSelector(userErrorResponseDataSelector);
     const errorDescriptions = useSelector(allErrorsSelector);
 
-    console.log(user);
+    console.log("login component");
+    console.log(user.id);
+
+    const navigate = useNavigate();
+
+    // const redirectToHome = () => {
+    //     navigate("/");
+    // };
+
+    // useEffect(() => {
+    //     console.log('login useEffect');
+    //     if (user.id) {
+    //         console.log("no user.id redirect...");
+    //         // redirectToHome();
+    //         navigate("/");
+    //     }
+    // });
+    
 
     const onEmailChange = (e) => {
         setEmail(e.target.value);
@@ -33,14 +52,14 @@ export function Login() {
         setPassword(e.target.value);
     }
 
-    const navigate = useNavigate();
-    
-    const onFormSubmit = (e) => {
+    const onFormSubmit = async (e) => {
         e.preventDefault();
+        console.log(`form submit`);
         console.log(`email: ${email} пароль: ${password}`);
-        dispatch(login(email, password));
-        setEmail('');
-        setPassword('');
+        await dispatch(login(email, password));
+        // setEmail('');
+        // setPassword('');
+        navigate("/"); // "You should call navigate() in a React.useEffect(), not when your component is first rendered."
     }
 
     const redirectToSignin = () => {

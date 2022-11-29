@@ -13,9 +13,6 @@ export const userAPI = {
         
         return instance.post(`/user/login/`, { email, password });
     },
-    logout() {
-        return instance.delete(`/user/login/`);
-    },
     getToken(email, password) {
         
         return instance.post(`/user/token/`, { email, password });

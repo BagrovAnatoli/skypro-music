@@ -2,7 +2,7 @@
 import {
     SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR,
     LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
-    LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR,
+    LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR, LOGOUT,
     GET_TOKEN_START, GET_TOKEN_SUCCESS, GET_TOKEN_ERROR,
     TOKEN_REFRESH_START, TOKEN_REFRESH_SUCCESS, TOKEN_REFRESH_ERROR
 } from '../types/user';
@@ -37,13 +37,16 @@ export const loginErrorAC = (error) => ({
 });
 
 
+export const logoutAC = () => ({
+    type: LOGOUT,
+});
+
 export const logoutStartAC = () => ({
     type: LOGOUT_START,
 });
 
-export const logoutSuccessAC = (response) => ({
+export const logoutSuccessAC = () => ({
     type: LOGOUT_SUCCESS,
-    response,
 });
 
 export const logoutErrorAC = (error) => ({

@@ -4,7 +4,7 @@
 import {
     SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR,
     LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
-    // LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR,
+    LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR, LOGOUT,
     GET_TOKEN_START, GET_TOKEN_SUCCESS, GET_TOKEN_ERROR,
     // TOKEN_REFRESH_START, TOKEN_REFRESH_SUCCESS, TOKEN_REFRESH_ERROR
 } from '../actions/types/user';
@@ -87,6 +87,39 @@ export default function userReducer(state = initialState, action) {
         }
 
         case LOGIN_ERROR: {
+            return {
+                ...state,
+                loading: false,
+                error: action.error,
+            };
+        }
+
+        case LOGOUT: {
+            return {
+                ...initialState,
+                token: {
+                    ...initialState.token,
+                }
+            };
+        }
+
+        case LOGOUT_START: {
+            return {
+                ...state,
+                loading: true,
+            };
+        }
+
+        case LOGOUT_SUCCESS: {
+            return {
+                ...initialState,
+                token: {
+                    ...initialState.token,
+                }
+            };
+        }
+
+        case LOGOUT_ERROR: {
             return {
                 ...state,
                 loading: false,

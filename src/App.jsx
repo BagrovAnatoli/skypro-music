@@ -4,14 +4,14 @@ import { themes, ThemeContext } from './contexts/theme';
 import GlobalStyle from './globalStyles';
 import * as S from './styles';
 import { AppRoutes } from './routes';
-import checkCookie from './utils/check-cookie';
+import {cookies} from './utils/cookies';
 
 function App() {
 
   const [currentTheme, setCurrentTheme] = useState(themes.dark);
   const [themeName, setThemeName] = useState('dark');
 
-  const cookie = checkCookie('token');
+  const cookie = cookies.check('token');
 
   const toggleTheme = () => {
     if (currentTheme === themes.dark) {
