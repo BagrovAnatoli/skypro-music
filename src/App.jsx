@@ -4,14 +4,14 @@ import { themes, ThemeContext } from './contexts/theme';
 import GlobalStyle from './globalStyles';
 import * as S from './styles';
 import { AppRoutes } from './routes';
-import {cookies} from './utils/cookies';
+// import {cookies} from './utils/cookies';
 
 function App() {
 
   const [currentTheme, setCurrentTheme] = useState(themes.dark);
   const [themeName, setThemeName] = useState('dark');
 
-  const cookie = cookies.check('token');
+  // const cookie = cookies.check('token');
 
   const toggleTheme = () => {
     if (currentTheme === themes.dark) {
@@ -28,7 +28,7 @@ function App() {
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <GlobalStyle theme={currentTheme}/>
       <S.Wrapper>
-        <AppRoutes cookie={cookie}/>
+        <AppRoutes/>
       </S.Wrapper>
     </ThemeContext.Provider>
   );

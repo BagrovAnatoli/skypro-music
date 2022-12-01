@@ -25,6 +25,7 @@ const initialState = {
 };
 
 export default function userReducer(state = initialState, action) {
+    console.log(`reducer. action: ${action.type}`);
     switch (action.type) {
         case SIGNUP_START: {
             return {

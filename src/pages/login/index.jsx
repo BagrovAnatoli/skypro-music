@@ -1,8 +1,7 @@
 /* eslint-disable no-debugger */
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
 import Container, * as S from './styles';
 import logo from '../../img/logo-black.png';
 import { userSelector,
@@ -12,8 +11,9 @@ import { userSelector,
     userErrorResponseDataSelector,
     allErrorsSelector } from '../../store/selectors/user';
 import {login} from '../../store/actions/thunks/user';
+import {cookies} from '../../utils/cookies';
 
-export function Login() {
+export function Login({setIsAllowedHandler}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const EMAIL_FIELD_NAME = 'email';
@@ -34,14 +34,15 @@ export function Login() {
     //     navigate("/");
     // };
 
-    // useEffect(() => {
-    //     console.log('login useEffect');
-    //     if (user.id) {
-    //         console.log("no user.id redirect...");
-    //         // redirectToHome();
-    //         navigate("/");
-    //     }
-    // });
+    useEffect(() => {
+        console.log('login useEffect');
+        if (cookies.check("token")) {
+            console.log("Login. token exist. redirect to '/'");
+            // redirectToHome();
+            setIsAllowedHandler();
+            navigate("/");
+        }
+    },[user]);
     
 
     const onEmailChange = (e) => {
@@ -59,7 +60,7 @@ export function Login() {
         await dispatch(login(email, password));
         // setEmail('');
         // setPassword('');
-        navigate("/"); // "You should call navigate() in a React.useEffect(), not when your component is first rendered."
+        // navigate("/"); // "You should call navigate() in a React.useEffect(), not when your component is first rendered."
     }
 
     const redirectToSignin = () => {

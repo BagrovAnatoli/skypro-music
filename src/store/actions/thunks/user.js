@@ -22,6 +22,7 @@ export const signup = (username, email, password) => async (dispatch) => {
 }
 
 export const getToken = (email, password) => async (dispatch, getState) => {
+    console.log("getTokenThunk");
     
     dispatch(getTokenStartAC());
 
@@ -38,6 +39,7 @@ export const getToken = (email, password) => async (dispatch, getState) => {
 }
 
 export const login = (email, password ) => async (dispatch) => {
+    console.log("loginThunk");
     dispatch(loginStartAC());
 
     try {

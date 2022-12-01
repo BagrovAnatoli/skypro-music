@@ -26,10 +26,13 @@ export const loginStartAC = () => ({
     type: LOGIN_START,
 });
 
-export const loginSuccessAC = (response) => ({
+export const loginSuccessAC = (response) => {
+    console.log("loginSuccessAC");
+    return {
         type: LOGIN_SUCCESS,
         response,
-    })
+    };
+}
 
 export const loginErrorAC = (error) => ({
     type: LOGIN_ERROR,
