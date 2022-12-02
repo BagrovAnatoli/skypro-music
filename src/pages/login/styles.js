@@ -22,8 +22,8 @@ export const Form = styled.form`
 `;
 
 export const LogoImage = styled.img`
-  width: 140px;
-  height: 21 px;
+    width: 140px;
+    height: 21 px;
 `;
 
 export const Input = styled.input`

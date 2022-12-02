@@ -2,10 +2,19 @@
 /* eslint-disable default-param-last */
 /* eslint-disable prefer-destructuring */
 import {
-    SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR,
-    LOGIN_START, LOGIN_SUCCESS, LOGIN_ERROR,
-    LOGOUT_START, LOGOUT_SUCCESS, LOGOUT_ERROR, LOGOUT,
-    GET_TOKEN_START, GET_TOKEN_SUCCESS, GET_TOKEN_ERROR,
+    SIGNUP_START,
+    SIGNUP_SUCCESS,
+    SIGNUP_ERROR,
+    LOGIN_START,
+    LOGIN_SUCCESS,
+    LOGIN_ERROR,
+    LOGOUT_START,
+    LOGOUT_SUCCESS,
+    LOGOUT_ERROR,
+    LOGOUT,
+    GET_TOKEN_START,
+    GET_TOKEN_SUCCESS,
+    GET_TOKEN_ERROR,
     // TOKEN_REFRESH_START, TOKEN_REFRESH_SUCCESS, TOKEN_REFRESH_ERROR
 } from '../actions/types/user';
 
@@ -13,14 +22,14 @@ const initialState = {
     loading: false,
     error: null,
     id: null,
-    username: "myUserName",
-    firstName: "Name",
-    lastName: "Sirname",
+    username: 'myUserName',
+    firstName: 'Name',
+    lastName: 'Sirname',
     email: null,
     password: null,
     token: {
-        refresh: "",
-        access: "",
+        refresh: '',
+        access: '',
     },
 };
 
@@ -35,11 +44,10 @@ export default function userReducer(state = initialState, action) {
         }
 
         case SIGNUP_SUCCESS: {
-            
             const id = action.response.data.id;
             const username = action.response.data.username;
-            const firstName = action.response.data.first_name || "Name";
-            const lastName = action.response.data.last_name || "Sirname";
+            const firstName = action.response.data.first_name || 'Name';
+            const lastName = action.response.data.last_name || 'Sirname';
             const email = action.response.data.email;
             return {
                 ...state,
@@ -69,11 +77,10 @@ export default function userReducer(state = initialState, action) {
         }
 
         case LOGIN_SUCCESS: {
-            
             const id = action.response.data.id;
             const username = action.response.data.username;
-            const firstName = action.response.data.first_name || "Name";
-            const lastName = action.response.data.last_name || "Sirname";
+            const firstName = action.response.data.first_name || 'Name';
+            const lastName = action.response.data.last_name || 'Sirname';
             const email = action.response.data.email;
             return {
                 ...state,
@@ -100,7 +107,7 @@ export default function userReducer(state = initialState, action) {
                 ...initialState,
                 token: {
                     ...initialState.token,
-                }
+                },
             };
         }
 
@@ -116,7 +123,7 @@ export default function userReducer(state = initialState, action) {
                 ...initialState,
                 token: {
                     ...initialState.token,
-                }
+                },
             };
         }
 
@@ -136,7 +143,6 @@ export default function userReducer(state = initialState, action) {
         }
 
         case GET_TOKEN_SUCCESS: {
-            
             const access = action.response.data.access;
             const refresh = action.response.data.refresh;
             return {
@@ -146,7 +152,7 @@ export default function userReducer(state = initialState, action) {
                 token: {
                     access,
                     refresh,
-                }
+                },
             };
         }
 
@@ -161,4 +167,4 @@ export default function userReducer(state = initialState, action) {
         default:
             return state;
     }
-};
+}

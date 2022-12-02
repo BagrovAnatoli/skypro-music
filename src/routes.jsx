@@ -3,19 +3,18 @@ import { Routes, Route } from 'react-router-dom';
 import Main from './pages/main';
 import { Login } from './pages/login';
 import { Signup } from './pages/signup';
-import { Playlist }from './pages/playlist';
+import { Playlist } from './pages/playlist';
 import { NotFound } from './pages/not-found';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import {cookies} from './utils/cookies';
+import { cookies } from './utils/cookies';
 // import { authAPI } from './api/api';
 
 export function AppRoutes() {
-
-    const [isAllowed, setIsAllowed] = useState(cookies.check("token"));
+    const [isAllowed, setIsAllowed] = useState(cookies.check('token'));
     const setIsAllowedHandler = () => {
-        console.log("setIsAllowedHandler");
-        setIsAllowed(cookies.check("token"));
-    }
+        console.log('setIsAllowedHandler');
+        setIsAllowed(cookies.check('token'));
+    };
 
     // const isAllowed = () => {
     //     console.log("is allowed check. return true");
@@ -32,16 +31,26 @@ export function AppRoutes() {
 
     return (
         <Routes>
-            <Route path="/login" element={<Login setIsAllowedHandler={setIsAllowedHandler}/>} />
+            <Route
+                path="/login"
+                element={<Login setIsAllowedHandler={setIsAllowedHandler} />}
+            />
             <Route path="/signup" element={<Signup />} />
 
-            <Route element={<ProtectedRoute redirectPath = "/login" isAllowed={isAllowed} />}>
+            <Route
+                element={
+                    <ProtectedRoute
+                        redirectPath="/login"
+                        isAllowed={isAllowed}
+                    />
+                }
+            >
                 <Route path="/" element={<Main />} />
                 <Route path="/my-tracks" element={<Playlist id="0" />} />
                 <Route path="/playlist/:id" element={<Playlist />} />
             </Route>
-            
+
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
-} 
+}

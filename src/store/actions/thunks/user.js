@@ -1,14 +1,22 @@
 /* eslint-disable no-debugger */
 import {
-    signupStartAC, signupSuccessAC, signupErrorAC,
-    loginStartAC, loginSuccessAC, loginErrorAC,
+    signupStartAC,
+    signupSuccessAC,
+    signupErrorAC,
+    loginStartAC,
+    loginSuccessAC,
+    loginErrorAC,
     logoutAC,
-    getTokenStartAC, getTokenSuccessAC, getTokenErrorAC,
-    tokenRefreshStartAC, tokenRefreshSuccessAC, tokenRefreshErrorAC,
-} from "../creators/user";
+    getTokenStartAC,
+    getTokenSuccessAC,
+    getTokenErrorAC,
+    tokenRefreshStartAC,
+    tokenRefreshSuccessAC,
+    tokenRefreshErrorAC,
+} from '../creators/user';
 
 import { userAPI } from '../../../api/api';
-import { cookies } from "../../../utils/cookies";
+import { cookies } from '../../../utils/cookies';
 
 export const signup = (username, email, password) => async (dispatch) => {
     dispatch(signupStartAC());
@@ -19,15 +27,14 @@ export const signup = (username, email, password) => async (dispatch) => {
     } catch (error) {
         dispatch(signupErrorAC(error));
     }
-}
+};
 
 export const getToken = (email, password) => async (dispatch, getState) => {
-    console.log("getTokenThunk");
-    
+    console.log('getTokenThunk');
+
     dispatch(getTokenStartAC());
 
     try {
-        
         const response = await userAPI.getToken(email, password);
 
         dispatch(getTokenSuccessAC(response));
@@ -36,29 +43,27 @@ export const getToken = (email, password) => async (dispatch, getState) => {
     } catch (error) {
         dispatch(getTokenErrorAC(error));
     }
-}
+};
 
-export const login = (email, password ) => async (dispatch) => {
-    console.log("loginThunk");
+export const login = (email, password) => async (dispatch) => {
+    console.log('loginThunk');
     dispatch(loginStartAC());
 
     try {
-        
         const loginResponse = await userAPI.login(email, password);
 
         dispatch(loginSuccessAC(loginResponse));
-        
-        dispatch(getToken(email, password));
 
+        dispatch(getToken(email, password));
     } catch (error) {
         dispatch(loginErrorAC(error));
     }
-}
+};
 
 export const logout = () => (dispatch) => {
     dispatch(logoutAC());
     cookies.delete('token');
-}
+};
 
 export const tokenRefresh = (refresh) => async (dispatch) => {
     dispatch(tokenRefreshStartAC());
@@ -70,4 +75,4 @@ export const tokenRefresh = (refresh) => async (dispatch) => {
     } catch (error) {
         dispatch(tokenRefreshErrorAC(error));
     }
-}
+};

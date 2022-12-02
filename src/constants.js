@@ -21,34 +21,33 @@ export const ICON_WATCH = 'img/icon/sprite.svg#icon-watch';
 export const ICON_MOON = '/img/icon/moon.svg';
 export const ICON_SUN = '/img/icon/sun.svg';
 
-
 export const BUTTON_POPUP_SPACE = 16;
 
 export const CONTROLS_SIZES = {
-  prev: { width: '15px', height: '14px' },
-  play: { width: '22px', height: '20px' },
-  pause: { width: '15px', height: '19px' },
-  next: { width: '15px', height: '14px' },
-  repeat: { width: '18px', height: '12px' },
-  shuffle: { width: '19px', height: '12px' }
+    prev: { width: '15px', height: '14px' },
+    play: { width: '22px', height: '20px' },
+    pause: { width: '15px', height: '19px' },
+    next: { width: '15px', height: '14px' },
+    repeat: { width: '18px', height: '12px' },
+    shuffle: { width: '19px', height: '12px' },
 };
 
 export const TRACK_FILTERS = [
-  { id: 1, type: 'author', text: 'исполнителю', content: authorsData },
-  { id: 2, type: 'year', text: 'году выпуска', content: yearsData },
-  { id: 3, type: 'genre', text: 'жанру', content: genresData }
+    { id: 1, type: 'author', text: 'исполнителю', content: authorsData },
+    { id: 2, type: 'year', text: 'году выпуска', content: yearsData },
+    { id: 3, type: 'genre', text: 'жанру', content: genresData },
 ];
 
 export const PLAYLISTS = [
-  { id: 0, content: playlistMy },
-  { id: 1, content: playlist1 },
-  { id: 2, content: playlist2 },
-  { id: 3, content: playlist3 }
+    { id: 0, content: playlistMy },
+    { id: 1, content: playlist1 },
+    { id: 2, content: playlist2 },
+    { id: 3, content: playlist3 },
 ];
 
 export const colsWidth = [
-  { id: 1, width: '447px' },
-  { id: 2, width: '321px' },
-  { id: 3, width: '245px' },
-  { id: 4, width: '60px' }
+    { id: 1, width: '447px' },
+    { id: 2, width: '321px' },
+    { id: 3, width: '245px' },
+    { id: 4, width: '60px' },
 ];

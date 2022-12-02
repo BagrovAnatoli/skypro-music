@@ -5,26 +5,25 @@ import allTracks from '../../data/tracksInfo.json';
 import * as S from './styles';
 
 function getTracksByPlylistId(id) {
-  if (id >= 0) {
-    const playlist = PLAYLISTS.find((list) => list.id === id);
-    if(playlist) {
-      return playlist.content;
+    if (id >= 0) {
+        const playlist = PLAYLISTS.find((list) => list.id === id);
+        if (playlist) {
+            return playlist.content;
+        }
     }
-  }
 
-  return allTracks;
+    return allTracks;
 }
 
 function Content({ playlistId }) {
+    const tracks = getTracksByPlylistId(playlistId);
 
-  const tracks = getTracksByPlylistId(playlistId);
- 
-  return (
-    <S.Container>
-      <PlaylistTitle />
-      <Playlist tracks={tracks} />
-    </S.Container>
-  );
+    return (
+        <S.Container>
+            <PlaylistTitle />
+            <Playlist tracks={tracks} />
+        </S.Container>
+    );
 }
 
 export default Content;

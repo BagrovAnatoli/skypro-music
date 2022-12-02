@@ -1,22 +1,23 @@
 /* eslint-disable no-debugger */
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
 import Container from './styles';
-import * as S from  '../login/styles';
+import * as S from '../login/styles';
 import logo from '../../img/logo-black.png';
-import { userSelector,
+import {
+    userSelector,
     userLoadingSelector,
     // userErrorSelector,
     // userErrorMessageSelector,
     userErrorResponseDataSelector,
-    allErrorsSelector } from '../../store/selectors/user';
+    allErrorsSelector,
+} from '../../store/selectors/user';
 
 // import {SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_ERROR} from '../../store/actions/types/user';
 // import {signupStartAC, signupSuccessAC, signupErrorAC} from '../../store/actions/creators/user';
-import {signup} from '../../store/actions/thunks/user';
+import { signup } from '../../store/actions/thunks/user';
 
 export function Signup() {
-
     const [login, setLogin] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,9 +33,8 @@ export function Signup() {
     const errorData = useSelector(userErrorResponseDataSelector);
     const errorDescriptions = useSelector(allErrorsSelector);
 
-
     useEffect(() => {
-        if(password !== repeatPassword) {
+        if (password !== repeatPassword) {
             console.log('пароли не совпадают');
         }
     }, [repeatPassword]);
@@ -51,45 +51,67 @@ export function Signup() {
 
     const onLoginChange = (e) => {
         setLogin(e.target.value);
-    }
+    };
 
     const onEmailChange = (e) => {
         setEmail(e.target.value);
-    }
+    };
 
     const onPasswordChange = (e) => {
         setPassword(e.target.value);
-    }
+    };
 
     const onRepaatPasswordChange = (e) => {
         setRepeatPassword(e.target.value);
-    }
+    };
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(`логин: ${login} email: ${email} пароль: ${password} пароль2: ${repeatPassword}`);
+        console.log(
+            `логин: ${login} email: ${email} пароль: ${password} пароль2: ${repeatPassword}`
+        );
         dispatch(signup(login, email, password));
         setLogin('');
         setEmail('');
         setPassword('');
         setRepeatPassword('');
-    }
+    };
 
     return (
         <Container>
             <S.FullHight>
                 <S.Form onSubmit={onFormSubmit}>
                     <S.LogoImage src={logo} alt="логотип" />
-                    <S.Input onChange={onLoginChange} name={LOGIN_FIELD_NAME} type="text" placeholder="Логин" />
-                    <S.Input onChange={onEmailChange} name={EMAIL_FIELD_NAME} type="text" placeholder="Email" />
-                    <S.Input onChange={onPasswordChange} name={PASSWORD_FIELD_NAME} type="password" placeholder="Пароль" />
-                    <S.Input onChange={onRepaatPasswordChange} name={REPEAT_PASSWORD_FIELD_NAME} type="password" placeholder="Повторите пароль" />
+                    <S.Input
+                        onChange={onLoginChange}
+                        name={LOGIN_FIELD_NAME}
+                        type="text"
+                        placeholder="Логин"
+                    />
+                    <S.Input
+                        onChange={onEmailChange}
+                        name={EMAIL_FIELD_NAME}
+                        type="text"
+                        placeholder="Email"
+                    />
+                    <S.Input
+                        onChange={onPasswordChange}
+                        name={PASSWORD_FIELD_NAME}
+                        type="password"
+                        placeholder="Пароль"
+                    />
+                    <S.Input
+                        onChange={onRepaatPasswordChange}
+                        name={REPEAT_PASSWORD_FIELD_NAME}
+                        type="password"
+                        placeholder="Повторите пароль"
+                    />
                     <S.PrimeButton>Зарегистрироваться</S.PrimeButton>
-                    { loading && <S.Loading>Отправка данных</S.Loading> }
-                    { errorData
-                        && errorDescriptions.map((description, index) => <S.Error key={index}>{description}</S.Error>)
-                    }
-                    
+                    {loading && <S.Loading>Отправка данных</S.Loading>}
+                    {errorData &&
+                        errorDescriptions.map((description, index) => (
+                            <S.Error key={index}>{description}</S.Error>
+                        ))}
                 </S.Form>
             </S.FullHight>
         </Container>
