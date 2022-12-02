@@ -12,15 +12,8 @@ import { cookies } from './utils/cookies';
 export function AppRoutes() {
     const [isAllowed, setIsAllowed] = useState(cookies.check('token'));
     const setIsAllowedHandler = () => {
-        console.log('setIsAllowedHandler');
         setIsAllowed(cookies.check('token'));
     };
-
-    // const isAllowed = () => {
-    //     console.log("is allowed check. return true");
-    //     return true;
-    // }
-    // console.log(cookie ? 'куки есть': 'кук нет');
 
     // ('Ktotolya', 'bagrov.anatoli@gmail.com', 'Skypro-Music')
     // {"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2ODE3MTk4NywiaWF0IjoxNjY4MDg1NTg3LCJqdGkiOiJiNzBjYjFlODNkM2M0YzMzOTc1Y2U2MzViMWU5ODQ0OCIsInVzZXJfaWQiOjMxfQ.giDkSYEAkjjdicreGshSvjNohCIV1D0zgGddwhnQxiY","access":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4MDg1ODg3LCJpYXQiOjE2NjgwODU1ODcsImp0aSI6ImRkMmQyOGMyZTQ2MTRlZTViMTNhMzBmMDBmN2I2OGNjIiwidXNlcl9pZCI6MzF9.cHLehDtVgaSxwi6AoSmLui0LzfKsP2OgjMxH3MxM9rQ"}

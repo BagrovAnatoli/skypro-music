@@ -1,4 +1,5 @@
 /* eslint-disable no-debugger */
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from './styles';
@@ -22,6 +23,7 @@ export function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const LOGIN_FIELD_NAME = 'login';
     const EMAIL_FIELD_NAME = 'email';
     const PASSWORD_FIELD_NAME = 'password';
@@ -33,19 +35,15 @@ export function Signup() {
     const errorData = useSelector(userErrorResponseDataSelector);
     const errorDescriptions = useSelector(allErrorsSelector);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        if (password !== repeatPassword) {
-            console.log('пароли не совпадают');
+        debugger;
+        if (user.id) {
+            navigate('/login');
         }
-    }, [repeatPassword]);
+    }, [user.id]);
 
-    // if (loading) {
-    //     return <p>Loading...</p>;
-    // }
-
-    // if (error) {
-    //     return <p>{error.message}</p>;
-    // }
 
     console.log(user);
 
@@ -67,14 +65,23 @@ export function Signup() {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
+        console.log(e);
+        setLogin(e.target[LOGIN_FIELD_NAME].value);
+        setEmail(e.target[EMAIL_FIELD_NAME].value);
+        setPassword(e.target[PASSWORD_FIELD_NAME].value);
+        setRepeatPassword(e.target[REPEAT_PASSWORD_FIELD_NAME].value);
         console.log(
-            `логин: ${login} email: ${email} пароль: ${password} пароль2: ${repeatPassword}`
+            `логин: ${login} 
+            email: ${email} 
+            пароль: ${password}`
         );
+        if (password !== repeatPassword) {
+            console.log('пароли не совпадают');
+            setErrorMessage('пароли не совпадают');
+            return;
+        }
+        setErrorMessage('');
         dispatch(signup(login, email, password));
-        setLogin('');
-        setEmail('');
-        setPassword('');
-        setRepeatPassword('');
     };
 
     return (
@@ -112,6 +119,7 @@ export function Signup() {
                         errorDescriptions.map((description, index) => (
                             <S.Error key={index}>{description}</S.Error>
                         ))}
+                    {errorMessage && <S.Error>{errorMessage}</S.Error>}
                 </S.Form>
             </S.FullHight>
         </Container>

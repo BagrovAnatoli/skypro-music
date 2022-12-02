@@ -59,9 +59,6 @@ export function Login({ setIsAllowedHandler }) {
         console.log(`form submit`);
         console.log(`email: ${email} пароль: ${password}`);
         await dispatch(login(email, password));
-        // setEmail('');
-        // setPassword('');
-        // navigate("/"); // "You should call navigate() in a React.useEffect(), not when your component is first rendered."
     };
 
     const redirectToSignin = () => {
