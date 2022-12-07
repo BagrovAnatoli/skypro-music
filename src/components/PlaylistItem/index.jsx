@@ -6,21 +6,10 @@ import TrackAlbum from '../TrackAlbum';
 import TrackTime from '../TrackTime';
 import * as S from './styles';
 
-function PlaylistItem({ title, author, album, time }) {
-    // const [isLoading, setIsLoading] = useState(true);
-
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setIsLoading(false);
-    //     }, 5000);
-    //     return () => {
-    //         clearTimeout(timer);
-    //     };
-    // }, []);
-
+function PlaylistItem({ title, author, album, time, onTrackClick }) {
     return (
         <S.PlaylistItem>
-            <S.Track>
+            <S.Track onClick={onTrackClick}>
                 <TrackTitle
                     image={title.image}
                     text={title.text}

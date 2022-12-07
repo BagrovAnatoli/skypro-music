@@ -1,11 +1,15 @@
 /* eslint-disable no-console */
 import { useRef, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { currentTrackFileSelector } from '../../store/selectors/catalog';
 import Controls from '../Controls';
 import TrackPlay from '../TrackPlay';
 import Volume from '../Volume';
 import * as S from './styles';
 
 function Bar() {
+    const trackFile = useSelector(currentTrackFileSelector);
+
     const [isPlaying, setIsPlaying] = useState(false);
     const [intervalId, setIntervalId] = useState(null);
     const [currentTime, setCurrentTime] = useState(0);
@@ -61,7 +65,7 @@ function Bar() {
         <>
             <S.Audio controls ref={audioRef}>
                 <track kind="captions" />
-                <source src="/music/song.mp3" type="audio/mpeg" />
+                <source src={trackFile} type="audio/mpeg" />
             </S.Audio>
             <S.Content>
                 <S.PlayerProgressWrap onClick={handleMove}>

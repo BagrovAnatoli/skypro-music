@@ -23,14 +23,14 @@ import {
     // GET_SELECTION_BY_ID_START,
     // GET_SELECTION_BY_ID_SUCCESS,
     // GET_SELECTION_BY_ID_ERROR,
-    // SHOW_BAR,
-    // HIDE_BAR
+    SET_CURRENT_TRACK_ID,
 } from '../actions/types/catalog';
 
 const initialState = {
     tracksLoading: false,
     tracksError: null,
     allTracks: [],
+    currentTrackId: null,
 };
 
 export default function catalogReducer(state = initialState, action) {
@@ -57,6 +57,13 @@ export default function catalogReducer(state = initialState, action) {
                 ...state,
                 tracksLoading: false,
                 tracksError: action.error,
+            };
+        }
+
+        case SET_CURRENT_TRACK_ID: {
+            return {
+                ...state,
+                currentTrackId: action.id,
             };
         }
 

@@ -1,8 +1,16 @@
+import { useDispatch } from 'react-redux';
+import { setCurrentTrackIdAC } from '../../store/actions/creators/catalog';
 import PlaylistItem from '../PlaylistItem';
 import PlaylistSkeletonItem from '../PlaylistSkeletonItem';
 import * as S from './styles';
 
 function Playlist({ tracks, loading }) {
+    const dispatch = useDispatch();
+
+    const onTrackClick = (id) => {
+        console.log(`слушать трек ${id}`);
+        dispatch(setCurrentTrackIdAC(id));
+    }
 
     const list = tracks.map(({ title, author, album, time, id }) => (
         <PlaylistItem
@@ -11,6 +19,7 @@ function Playlist({ tracks, loading }) {
             album={album}
             time={time}
             key={id}
+            onTrackClick={() => onTrackClick(id)}
         />
     ));
 

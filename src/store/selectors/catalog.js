@@ -7,6 +7,8 @@ export const tracksLoadingSelector = (store) => catalogSelector(store)?.tracksLo
 
 export const tracksErrorSelector = (store) => catalogSelector(store)?.tracksError;
 
+export const currentTrackIdSelector = (store) => catalogSelector(store)?.currentTrackId;
+
 export const allTracksSelector = (store) => catalogSelector(store)?.allTracks;
 
 export const allTracksParser = (store) => allTracksSelector(store).map(track => {
@@ -38,6 +40,12 @@ export const allTracksParser = (store) => allTracksSelector(store).map(track => 
         time,
     }
 });
+
+export const currentTrackFileSelector = (store) => {
+    const id = currentTrackIdSelector(store);
+    return allTracksSelector(store)
+    ?.find((trackInfo) => id === trackInfo.id).track_file;
+}
 
 
 // export const allErrorsSelector = (store) => {

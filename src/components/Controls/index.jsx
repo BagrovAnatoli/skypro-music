@@ -51,7 +51,7 @@ function Controls({ togglePlay, isPlaying }) {
                         alt={alt}
                         xlinkHref={xlinkHref}
                         width={CONTROLS_SIZES[name].width}
-                        heght={CONTROLS_SIZES[name].height}
+                        height={CONTROLS_SIZES[name].height}
                         cursor={cursor}
                         onClick={onClick}
                         key={name}

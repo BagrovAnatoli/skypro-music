@@ -21,8 +21,7 @@ import {
     GET_SELECTION_BY_ID_START,
     GET_SELECTION_BY_ID_SUCCESS,
     GET_SELECTION_BY_ID_ERROR,
-    SHOW_BAR,
-    HIDE_BAR
+    SET_CURRENT_TRACK_ID,
 } from '../types/catalog';
 
 export const addToFavoriteStartAC = () => ({
@@ -132,10 +131,7 @@ export const getSelectionByIdErrorAC = (error) => ({
     error,
 });
 
-export const showBarAC = () => ({
-    type: SHOW_BAR,
-});
-
-export const hideBarAC = () => ({
-    type: HIDE_BAR,
+export const setCurrentTrackIdAC = (id) => ({
+    type: SET_CURRENT_TRACK_ID,
+    id,
 });
