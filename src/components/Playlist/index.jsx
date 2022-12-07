@@ -1,7 +1,9 @@
 import PlaylistItem from '../PlaylistItem';
+import PlaylistSkeletonItem from '../PlaylistSkeletonItem';
 import * as S from './styles';
 
-function Playlist({ tracks }) {
+function Playlist({ tracks, loading }) {
+
     const list = tracks.map(({ title, author, album, time, id }) => (
         <PlaylistItem
             title={title}
@@ -12,7 +14,13 @@ function Playlist({ tracks }) {
         />
     ));
 
-    return <S.ContentPlaylist>{list}</S.ContentPlaylist>;
+    const skeletonList = Array(10).fill().map(() => <PlaylistSkeletonItem/>);
+    
+    return (
+        <S.ContentPlaylist>
+            {loading === true ? skeletonList : list}
+        </S.ContentPlaylist>
+    );
 }
 
 export default Playlist;
