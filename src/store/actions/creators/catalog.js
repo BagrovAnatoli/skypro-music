@@ -22,6 +22,7 @@ import {
     GET_SELECTION_BY_ID_SUCCESS,
     GET_SELECTION_BY_ID_ERROR,
     SET_CURRENT_TRACK_ID,
+    SET_CURRENT_TRACK,
 } from '../types/catalog';
 
 export const addToFavoriteStartAC = () => ({
@@ -134,4 +135,11 @@ export const getSelectionByIdErrorAC = (error) => ({
 export const setCurrentTrackIdAC = (id) => ({
     type: SET_CURRENT_TRACK_ID,
     id,
+});
+
+export const setCurrentTrackAC = (payload) => ({
+    type: SET_CURRENT_TRACK,
+    id: payload.id,
+    author: payload.author,
+    album: payload.album,
 });

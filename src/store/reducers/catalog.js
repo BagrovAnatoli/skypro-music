@@ -24,6 +24,7 @@ import {
     // GET_SELECTION_BY_ID_SUCCESS,
     // GET_SELECTION_BY_ID_ERROR,
     SET_CURRENT_TRACK_ID,
+    SET_CURRENT_TRACK,
 } from '../actions/types/catalog';
 
 const initialState = {
@@ -31,6 +32,8 @@ const initialState = {
     tracksError: null,
     allTracks: [],
     currentTrackId: null,
+    currentTrackAuthor: '',
+    currentTrackAlbum: '',
 };
 
 export default function catalogReducer(state = initialState, action) {
@@ -64,6 +67,15 @@ export default function catalogReducer(state = initialState, action) {
             return {
                 ...state,
                 currentTrackId: action.id,
+            };
+        }
+
+        case SET_CURRENT_TRACK: {
+            return {
+                ...state,
+                currentTrackId: action.id,
+                currentTrackAuthor: action.author,
+                currentTrackAlbum: action.album,
             };
         }
 

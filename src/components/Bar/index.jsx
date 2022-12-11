@@ -9,6 +9,7 @@ import * as S from './styles';
 
 function Bar() {
     const trackFile = useSelector(currentTrackFileSelector);
+    console.log(trackFile);
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [intervalId, setIntervalId] = useState(null);
@@ -17,6 +18,22 @@ function Bar() {
     const [progressWidth, setProgressWidth] = useState(0);
     const [progressClick, setProgressClick] = useState(0);
     const audioRef = useRef(null);
+
+    const handleStop = () => {
+        console.log('stop');
+        audioRef.current.pause();
+        clearInterval(intervalId);
+        setIsPlaying(false);
+    };
+
+    useEffect(() => {
+        if(isPlaying) {
+            handleStop();
+        } 
+        audioRef.current = new Audio(trackFile);
+        setCurrentTime(0);
+
+    }, [trackFile]);
 
     useEffect(() => {
         setProgressWidth((currentTime / trackDuration) * 100);
@@ -44,13 +61,6 @@ function Bar() {
         setIsPlaying(true);
     };
 
-    const handleStop = () => {
-        console.log('stop');
-        audioRef.current.pause();
-        clearInterval(intervalId);
-        setIsPlaying(false);
-    };
-
     const togglePlay = isPlaying ? handleStop : handleStart;
 
     const handleMove = (event) => {
@@ -61,28 +71,24 @@ function Bar() {
         setProgressWidth((currentTime / trackDuration) * 100);
     };
 
+
+
     return (
-        <>
-            <S.Audio controls ref={audioRef}>
-                <track kind="captions" />
-                <source src={trackFile} type="audio/mpeg" />
-            </S.Audio>
-            <S.Content>
-                <S.PlayerProgressWrap onClick={handleMove}>
-                    <S.PlayerProgress width={progressWidth} />
-                </S.PlayerProgressWrap>
-                <S.PlayerBlock>
-                    <S.Player>
-                        <Controls
-                            togglePlay={togglePlay}
-                            isPlaying={isPlaying}
-                        />
-                        <TrackPlay />
-                    </S.Player>
-                    <Volume />
-                </S.PlayerBlock>
-            </S.Content>
-        </>
+        <S.Content>
+            <S.PlayerProgressWrap onClick={handleMove}>
+                <S.PlayerProgress width={progressWidth} />
+            </S.PlayerProgressWrap>
+            <S.PlayerBlock>
+                <S.Player>
+                    <Controls
+                        togglePlay={togglePlay}
+                        isPlaying={isPlaying}
+                    />
+                    <TrackPlay />
+                </S.Player>
+                <Volume />
+            </S.PlayerBlock>
+        </S.Content>
     );
 }
 

@@ -47,8 +47,8 @@ export const currentTrackFileSelector = (store) => {
     ?.find((trackInfo) => id === trackInfo.id).track_file;
 }
 
+export const currentTrackAuthorSelector = (store) => catalogSelector(store)
+?.currentTrackAuthor;
 
-// export const allErrorsSelector = (store) => {
-//     const data = userErrorResponseDataSelector(store);
-//     return data ? objValuesToArray(data) : [];
-// };
+export const currentTrackAlbumSelector = (store) => catalogSelector(store)
+?.currentTrackAlbum;
