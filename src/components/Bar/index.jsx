@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-console */
 import { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -26,32 +27,33 @@ function Bar() {
         setIsPlaying(false);
     };
 
-    useEffect(() => {
-        if(isPlaying) {
-            handleStop();
-        } 
-        audioRef.current = new Audio(trackFile);
-        setCurrentTime(0);
+    // const handleStart = () => {
+    //     console.log('start');
+    //     audioRef.current.play();
+    //     setTrackDuration(audioRef.current.duration);
+    //     const newIntervalId = setInterval(() => {
+    //         const time = audioRef.current.currentTime;
+    //         setCurrentTime(time);
+    //         if (audioRef.current.ended) {
+    //             clearInterval(newIntervalId);
+    //             setIsPlaying(false);
+    //         }
+    //     }, 1000);
+    //     setIntervalId(newIntervalId);
 
-    }, [trackFile]);
+    //     setIsPlaying(true);
+    // };
 
-    useEffect(() => {
-        setProgressWidth((currentTime / trackDuration) * 100);
-    }, [currentTime, trackDuration]);
-
-    useEffect(() => {
-        audioRef.current.currentTime = progressClick * trackDuration;
-        setProgressWidth(progressClick * 100);
-    }, [progressClick, trackDuration]);
-
-    const handleStart = () => {
+    const start = (audio = audioRef.current) => {
+        debugger;
         console.log('start');
-        audioRef.current.play();
-        setTrackDuration(audioRef.current.duration);
+        audio.play();
+        console.log(`audio.duration ${audio.duration}`);
+        setTrackDuration(audio.duration);
         const newIntervalId = setInterval(() => {
-            const time = audioRef.current.currentTime;
+            const time = audio.currentTime;
             setCurrentTime(time);
-            if (audioRef.current.ended) {
+            if (audio.ended) {
                 clearInterval(newIntervalId);
                 setIsPlaying(false);
             }
@@ -59,7 +61,39 @@ function Bar() {
         setIntervalId(newIntervalId);
 
         setIsPlaying(true);
+    }
+
+    useEffect(() => {
+        if(isPlaying) {
+            handleStop();
+        } 
+        audioRef.current = new Audio(trackFile);
+        setCurrentTime(0);
+        start(audioRef.current);
+
+    }, [trackFile]);
+
+    
+
+    const handleStart = () => {
+        start(audioRef.current);
     };
+
+    useEffect(() => {
+        setProgressWidth((currentTime / trackDuration) * 100);
+    }, [currentTime, trackDuration]);
+
+    useEffect(() => {
+        console.log('audioRef.current');
+        console.log(audioRef.current);
+        console.log('audioRef.current.currentTime');
+        console.log(audioRef.current.currentTime);
+        console.log(`progressClick ${progressClick} * trackDuration ${trackDuration}`);
+        audioRef.current.currentTime = progressClick * trackDuration;
+        setProgressWidth(progressClick * 100);
+    }, [progressClick, trackDuration]);
+
+    
 
     const togglePlay = isPlaying ? handleStop : handleStart;
 
