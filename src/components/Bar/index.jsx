@@ -20,11 +20,15 @@ function Bar() {
     const [progressClick, setProgressClick] = useState(0);
     const audioRef = useRef(null);
 
-    const handleStop = () => {
+    const stop = (audio = audioRef.current) => {
         console.log('stop');
-        audioRef.current.pause();
+        audio.pause();
         clearInterval(intervalId);
         setIsPlaying(false);
+    };
+
+    const handleStop = () => {
+        stop(audioRef.current);
     };
 
     // const handleStart = () => {
@@ -45,13 +49,13 @@ function Bar() {
     // };
 
     const start = (audio = audioRef.current) => {
-        debugger;
         console.log('start');
         audio.play();
         console.log(`audio.duration ${audio.duration}`);
         setTrackDuration(audio.duration);
         const newIntervalId = setInterval(() => {
             const time = audio.currentTime;
+            console.log(`setCurrentTime(time); ${  time}`);
             setCurrentTime(time);
             if (audio.ended) {
                 clearInterval(newIntervalId);
@@ -65,11 +69,14 @@ function Bar() {
 
     useEffect(() => {
         if(isPlaying) {
-            handleStop();
+            stop(audioRef.current);
         } 
         audioRef.current = new Audio(trackFile);
         setCurrentTime(0);
-        start(audioRef.current);
+        audioRef.current.onloadedmetadata = function() {
+            console.log(`audioRef.current.duration ${audioRef.current.duration}`);
+            start(audioRef.current);
+        };
 
     }, [trackFile]);
 
