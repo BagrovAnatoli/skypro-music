@@ -30,6 +30,7 @@ export const allTracksParser = (store) => allTracksSelector(store).map(track => 
         link: "http://",
     };
     const time = {
+        seconds: track.duration_in_seconds,
         text: secondsToText(track.duration_in_seconds),
     };
     return {
@@ -52,3 +53,6 @@ export const currentTrackAuthorSelector = (store) => catalogSelector(store)
 
 export const currentTrackAlbumSelector = (store) => catalogSelector(store)
 ?.currentTrackAlbum;
+
+export const currentTrackDurationSelector = (store) => catalogSelector(store)
+?.currentTrackDuration;

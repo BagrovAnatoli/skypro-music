@@ -7,9 +7,9 @@ import * as S from './styles';
 function Playlist({ tracks, loading }) {
     const dispatch = useDispatch();
 
-    const onTrackClick = (id, author, album) => {
+    const onTrackClick = (id, author, album, duration) => {
         console.log(`слушать трек ${id}`);
-        dispatch(setCurrentTrackAC({id, author, album}));
+        dispatch(setCurrentTrackAC({id, author, album, duration}));
     }
 
     const list = tracks.map(({ title, author, album, time, id }) => (
@@ -19,7 +19,7 @@ function Playlist({ tracks, loading }) {
             album={album}
             time={time}
             key={id}
-            onTrackClick={() => onTrackClick(id, author.text, album.text)}
+            onTrackClick={() => onTrackClick(id, author.text, album.text, time.seconds)}
         />
     ));
 

@@ -34,6 +34,7 @@ const initialState = {
     currentTrackId: null,
     currentTrackAuthor: '',
     currentTrackAlbum: '',
+    currentTrackDuration: null,
 };
 
 export default function catalogReducer(state = initialState, action) {
@@ -76,6 +77,7 @@ export default function catalogReducer(state = initialState, action) {
                 currentTrackId: action.id,
                 currentTrackAuthor: action.author,
                 currentTrackAlbum: action.album,
+                currentTrackDuration: action.duration,
             };
         }
 

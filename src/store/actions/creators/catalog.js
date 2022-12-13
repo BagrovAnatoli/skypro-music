@@ -142,4 +142,5 @@ export const setCurrentTrackAC = (payload) => ({
     id: payload.id,
     author: payload.author,
     album: payload.album,
+    duration: payload.duration,
 });
