@@ -11,7 +11,7 @@ import * as S from './styles';
 function Bar() {
     const trackFile = useSelector(currentTrackFileSelector);
     const trackDuration = useSelector(currentTrackDurationSelector);
-    console.log(trackFile);
+    // console.log(trackFile);
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [intervalId, setIntervalId] = useState(null);
@@ -22,22 +22,27 @@ function Bar() {
 
     const stop = (audio = audioRef.current) => {
         console.log('stop');
+        console.log(`isPlaying before pause ${isPlaying}`);
         audio.pause();
+        console.log(`isPlaying after pause ${isPlaying}`);
         clearInterval(intervalId);
         setIsPlaying(false);
     };
 
     const handleStop = () => {
+        console.log('handleStop');
+        console.log(`isPlaying before stop ${isPlaying}`);
         stop(audioRef.current);
+        console.log(`isPlaying after stop ${isPlaying}`);
     };
 
     const start = (audio = audioRef.current) => {
         console.log('start');
+        console.log(`isPlaying  ${isPlaying}`);
         audio.play();
-        console.log(`audio.duration ${audio.duration}`);
         const newIntervalId = setInterval(() => {
             const time = audio.currentTime;
-            console.log(`setCurrentTime(time); ${  time}`);
+            // console.log(`setCurrentTime(time); ${  time}`);
             setCurrentTime(time);
             if (audio.ended) {
                 clearInterval(newIntervalId);
@@ -47,26 +52,27 @@ function Bar() {
         setIntervalId(newIntervalId);
 
         setIsPlaying(true);
+        console.log(`isPlaying  after setIsPlaying ${isPlaying}`);
     }
 
     useEffect(() => {
+        console.log(`useEffect trackFile. isPlaying  ${isPlaying}`);
         if(isPlaying) {
             stop(audioRef.current);
+            setCurrentTime(0);
         } 
         audioRef.current = new Audio(trackFile);
         setCurrentTime(0);
         start(audioRef.current);
-        // audioRef.current.onloadedmetadata = function() {
-        //     console.log(`audioRef.current.duration ${audioRef.current.duration}`);
-        //     start(audioRef.current);
-        // };
-
     }, [trackFile]);
 
     
 
     const handleStart = () => {
+        console.log('handleStart');
+        console.log(`isPlaying before start ${isPlaying}`);
         start(audioRef.current);
+        console.log(`isPlaying after start ${isPlaying}`);
     };
 
     useEffect(() => {
@@ -74,14 +80,18 @@ function Bar() {
     }, [currentTime, trackDuration]);
 
     useEffect(() => {
-        console.log('audioRef.current');
-        console.log(audioRef.current);
-        console.log('audioRef.current.currentTime');
-        console.log(audioRef.current.currentTime);
-        console.log(`progressClick ${progressClick} * trackDuration ${trackDuration}`);
+        // console.log('audioRef.current');
+        // console.log(audioRef.current);
+        // console.log('audioRef.current.currentTime');
+        // console.log(audioRef.current.currentTime);
+        // console.log(`progressClick ${progressClick} * trackDuration ${trackDuration}`);
         audioRef.current.currentTime = progressClick * trackDuration;
         setProgressWidth(progressClick * 100);
     }, [progressClick, trackDuration]);
+
+    useEffect(() => {
+        console.log(`useEffect isPlaying ${isPlaying}`);
+    }, [isPlaying]);
 
     
 
