@@ -1,17 +1,27 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
 // import { useRef, useState, useEffect } from 'react';
-// import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 // import { currentTrackFileSelector, currentTrackDurationSelector } from '../../store/selectors/catalog';
+import { currentTrackFileSelector } from '../../store/selectors/catalog';
 import Controls from '../Controls';
 import TrackPlay from '../TrackPlay';
 import Volume from '../Volume';
 import * as S from './styles';
 
 function Bar() {
-    // const trackFile = useSelector(currentTrackFileSelector);
+    console.log('Bar');
+
+    const trackFile = useSelector(currentTrackFileSelector);
+    console.log(trackFile);
+
+    useEffect(()=>{
+        console.log('Bar useEffect');
+        console.log(`trackFile  ${trackFile}`);
+    },[trackFile]);
+
     // const trackDuration = useSelector(currentTrackDurationSelector);
-    // // console.log(trackFile);
 
     // const [isPlaying, setIsPlaying] = useState(false);
     const isPlaying = null;
