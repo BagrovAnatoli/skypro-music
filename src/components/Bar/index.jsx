@@ -1,7 +1,6 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
-// import { useRef, useState, useEffect } from 'react';
-import { useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 // import { currentTrackFileSelector, currentTrackDurationSelector } from '../../store/selectors/catalog';
 import { currentTrackFileSelector } from '../../store/selectors/catalog';
@@ -13,29 +12,39 @@ import * as S from './styles';
 function Bar() {
     console.log('Bar');
 
-    let trackFile = useSelector(currentTrackFileSelector);
+    const trackFile = useSelector(currentTrackFileSelector);
     console.log(trackFile);
-
-    const cleanComponent = () => {
-        trackFile = null;
-    }
-
-    useEffect(()=>{
-        console.log('Bar useEffect');
-        console.log(`trackFile  ${trackFile}`);
-        return cleanComponent;
-    });
 
     // const trackDuration = useSelector(currentTrackDurationSelector);
 
-    // const [isPlaying, setIsPlaying] = useState(false);
-    const isPlaying = null;
+    const [isPlaying, setIsPlaying] = useState(false);
     // const [intervalId, setIntervalId] = useState(null);
     // const [currentTime, setCurrentTime] = useState(0);
     // const [progressWidth, setProgressWidth] = useState(0);
     const progressWidth = null;
     // const [progressClick, setProgressClick] = useState(0);
-    // const audioRef = useRef(null);
+    const audioRef = useRef(null);
+    
+    useEffect(() => {
+        if(isPlaying) {
+            audioRef.current.pause();
+        }
+        audioRef.current = new Audio(trackFile);
+        audioRef.current.play();
+        setIsPlaying(true);
+    },[trackFile]);
+
+    useEffect(() => {
+        if (audioRef.current) {
+          if (isPlaying) {
+            audioRef.current.play();
+            // audioRef.current.loop = repeat;
+            // audioRef.current.volume = volume / 100;
+          } else {
+            audioRef.current.pause();
+          }
+        }
+      }, [isPlaying]);
 
     // const stop = (audio = audioRef.current) => {
     //     console.log('stop');
@@ -46,12 +55,10 @@ function Bar() {
     //     setIsPlaying(false);
     // };
 
-    // const handleStop = () => {
-    //     console.log('handleStop');
-    //     console.log(`isPlaying before stop ${isPlaying}`);
-    //     stop(audioRef.current);
-    //     console.log(`isPlaying after stop ${isPlaying}`);
-    // };
+    const handleStop = () => {
+        console.log('handleStop');
+        setIsPlaying(false);
+    };
 
     // const start = (audio = audioRef.current) => {
     //     console.log('start');
@@ -85,12 +92,10 @@ function Bar() {
 
     
 
-    // const handleStart = () => {
-    //     console.log('handleStart');
-    //     console.log(`isPlaying before start ${isPlaying}`);
-    //     start(audioRef.current);
-    //     console.log(`isPlaying after start ${isPlaying}`);
-    // };
+    const handleStart = () => {
+        console.log('handleStart');
+        setIsPlaying(true);
+    };
 
     // useEffect(() => {
     //     setProgressWidth((currentTime / trackDuration) * 100);
@@ -112,8 +117,7 @@ function Bar() {
 
     
 
-    // const togglePlay = isPlaying ? handleStop : handleStart;
-    const togglePlay = null;
+    const togglePlay = isPlaying ? handleStop : handleStart;
 
     // const handleMove = (event) => {
     //     const rect = event.currentTarget.getBoundingClientRect();
