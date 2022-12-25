@@ -13,13 +13,18 @@ import * as S from './styles';
 function Bar() {
     console.log('Bar');
 
-    const trackFile = useSelector(currentTrackFileSelector);
+    let trackFile = useSelector(currentTrackFileSelector);
     console.log(trackFile);
+
+    const cleanComponent = () => {
+        trackFile = null;
+    }
 
     useEffect(()=>{
         console.log('Bar useEffect');
         console.log(`trackFile  ${trackFile}`);
-    },[trackFile]);
+        return cleanComponent;
+    });
 
     // const trackDuration = useSelector(currentTrackDurationSelector);
 
