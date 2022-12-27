@@ -25,6 +25,7 @@ import {
     // GET_SELECTION_BY_ID_ERROR,
     SET_CURRENT_TRACK_ID,
     SET_CURRENT_TRACK,
+    SET_PLAYLIST_SIZE,
 } from '../actions/types/catalog';
 
 const initialState = {
@@ -35,6 +36,7 @@ const initialState = {
     currentTrackAuthor: '',
     currentTrackAlbum: '',
     currentTrackDuration: null,
+    playlistSize: 0,
 };
 
 export default function catalogReducer(state = initialState, action) {
@@ -78,6 +80,15 @@ export default function catalogReducer(state = initialState, action) {
                 currentTrackAuthor: action.author,
                 currentTrackAlbum: action.album,
                 currentTrackDuration: action.duration,
+                currentTrackIndex: action.index,
+            };
+        }
+
+        case SET_PLAYLIST_SIZE: {
+            console.log(`action size ${action.size}`);
+            return {
+                ...state,
+                playlistSize: action.size,
             };
         }
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTracks } from '../../store/actions/thunks/catalog';
+// import { setPlaylistSizeAC } from '../../store/actions/creators/catalog';
 import PlaylistTitle from '../PlaylistTitle';
 import Playlist from '../Playlist';
 // import { PLAYLISTS } from '../../constants';
@@ -37,8 +38,6 @@ function Content({ playlistId }) {
     useEffect(() => {
         dispatch(getTracks());
     }, []);
-    
-    
 
     return (
         <S.Container>

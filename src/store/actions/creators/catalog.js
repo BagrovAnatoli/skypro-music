@@ -23,6 +23,7 @@ import {
     GET_SELECTION_BY_ID_ERROR,
     SET_CURRENT_TRACK_ID,
     SET_CURRENT_TRACK,
+    SET_PLAYLIST_SIZE,
 } from '../types/catalog';
 
 export const addToFavoriteStartAC = () => ({
@@ -143,4 +144,10 @@ export const setCurrentTrackAC = (payload) => ({
     author: payload.author,
     album: payload.album,
     duration: payload.duration,
+    index: payload.index,
+});
+
+export const setPlaylistSizeAC = (size) => ({
+    type: SET_PLAYLIST_SIZE,
+    size,
 });
