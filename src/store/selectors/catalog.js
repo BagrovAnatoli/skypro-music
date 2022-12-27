@@ -9,38 +9,46 @@ export const tracksErrorSelector = (store) => catalogSelector(store)?.tracksErro
 
 export const currentTrackIdSelector = (store) => catalogSelector(store)?.currentTrackId;
 
+export const currentTrackIndexSelector = (store) => catalogSelector(store)?.currentTrackIndex;
+
+export const playlistSizeSelector = (store) => catalogSelector(store)?.playlistSize;
+
 export const allTracksSelector = (store) => catalogSelector(store)?.allTracks;
 
-export const allTracksParser = (store) => allTracksSelector(store).map(track => {
+const parserTrack = (loadedTrack) => {
     const title = {
         image: {
             alt: "Логотип",
-            path: track.logo,
+            path: loadedTrack.logo,
         },
-        text: track.name,
+        text: loadedTrack.name,
         link: "http://",
         spanText: "",
     };
     const author = {
-        text: track.author,
+        text: loadedTrack.author,
         link: "http://",
     };
     const album = {
-        text: track.album,
+        text: loadedTrack.album,
         link: "http://",
     };
     const time = {
-        seconds: track.duration_in_seconds,
-        text: secondsToText(track.duration_in_seconds),
+        seconds: loadedTrack.duration_in_seconds,
+        text: secondsToText(loadedTrack.duration_in_seconds),
     };
     return {
-        id: track.id,
+        id: loadedTrack.id,
         title,
         author,
         album,
         time,
     }
-});
+}
+
+export const allTracksParser = (store) => allTracksSelector(store).map(parserTrack);
+
+export const trackParserByIndex = (index) => (store) => parserTrack(allTracksSelector(store)[index]);
 
 export const currentTrackFileSelector = (store) => {
     const id = currentTrackIdSelector(store);
