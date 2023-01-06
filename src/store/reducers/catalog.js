@@ -20,9 +20,9 @@ import {
     // GET_SELECTION_START,
     // GET_SELECTION_SUCCESS,
     // GET_SELECTION_ERROR,
-    // GET_SELECTION_BY_ID_START,
-    // GET_SELECTION_BY_ID_SUCCESS,
-    // GET_SELECTION_BY_ID_ERROR,
+    GET_SELECTION_BY_ID_START,
+    GET_SELECTION_BY_ID_SUCCESS,
+    GET_SELECTION_BY_ID_ERROR,
     SET_CURRENT_TRACK_ID,
     SET_CURRENT_TRACK,
 } from '../actions/types/catalog';
@@ -63,6 +63,31 @@ export default function catalogReducer(state = initialState, action) {
                 tracksError: action.error,
             };
         }
+
+        case GET_SELECTION_BY_ID_START: {
+            return {
+                ...state,
+                tracksLoading: true,
+            };
+        }
+
+        case GET_SELECTION_BY_ID_SUCCESS: {
+            return {
+                ...state,
+                tracksLoading: false,
+                tracksError: null,
+                allTracks: action.tracks,
+            };
+        }
+
+        case GET_SELECTION_BY_ID_ERROR: {
+            return {
+                ...state,
+                tracksLoading: false,
+                tracksError: action.error,
+            };
+        }
+
 
         case SET_CURRENT_TRACK_ID: {
             return {

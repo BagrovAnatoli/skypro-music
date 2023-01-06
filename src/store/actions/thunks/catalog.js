@@ -83,12 +83,12 @@ export const getTrack = (id) => async (dispatch) => {
 };
 
 
-export const getSelections = () => async (dispatch) => {
+export const getSelections = (id) => async (dispatch) => {
 
     dispatch(getSelectionByIdStartAC());
 
     try {
-        const response = await catalogAPI.selection();
+        const response = await catalogAPI.selection(id);
         dispatch(getSelectionByIdSuccessAC(response));
     } catch (error) {
         dispatch(getSelectionByIdErrorAC(error));

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getTracks } from '../../store/actions/thunks/catalog';
+import { getTracks, getSelections } from '../../store/actions/thunks/catalog';
 import PlaylistTitle from '../PlaylistTitle';
 import Playlist from '../Playlist';
 // import { PLAYLISTS } from '../../constants';
@@ -35,7 +35,11 @@ function Content({ playlistId }) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getTracks());
+        if (playlistId >= 0) {
+            dispatch(getSelections(playlistId));
+        } else {
+            dispatch(getTracks());
+        }
     }, []);
     
     
