@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+<<<<<<< HEAD
 import { getTracks, getSelections } from '../../store/actions/thunks/catalog';
+=======
+import { getTracks } from '../../store/actions/thunks/catalog';
+// import { setPlaylistSizeAC } from '../../store/actions/creators/catalog';
+>>>>>>> b633539539ae53af1e19dcee5d2252df3b2a3c02
 import PlaylistTitle from '../PlaylistTitle';
 import Playlist from '../Playlist';
 // import { PLAYLISTS } from '../../constants';
@@ -41,8 +46,6 @@ function Content({ playlistId }) {
             dispatch(getTracks());
         }
     }, []);
-    
-    
 
     return (
         <S.Container>

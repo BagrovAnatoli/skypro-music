@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 // import { currentTrackFileSelector, currentTrackDurationSelector } from '../../store/selectors/catalog';
-import { currentTrackFileSelector } from '../../store/selectors/catalog';
+import { currentTrackFileSelector, playlistSizeSelector, trackParserByIndex, currentTrackIndexSelector } from '../../store/selectors/catalog';
 import Controls from '../Controls';
 import TrackPlay from '../TrackPlay';
 import Volume from '../Volume';
@@ -14,6 +14,8 @@ function Bar() {
 
     const trackFile = useSelector(currentTrackFileSelector);
     console.log(trackFile);
+    const trackIndex = useSelector(currentTrackIndexSelector);
+    const tracksLength = useSelector(playlistSizeSelector);
 
     // const trackDuration = useSelector(currentTrackDurationSelector);
 
@@ -118,6 +120,12 @@ function Bar() {
     
 
     const togglePlay = isPlaying ? handleStop : handleStart;
+    const handleNext = () => {
+        console.log('handleNext');
+        trackIndex
+        dispatch(setCurrentTrackAC({id, author, album, duration, index}));
+        setIsPlaying(true);
+    };
 
     // const handleMove = (event) => {
     //     const rect = event.currentTarget.getBoundingClientRect();
