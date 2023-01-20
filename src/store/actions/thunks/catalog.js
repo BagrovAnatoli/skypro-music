@@ -1,4 +1,5 @@
 /* eslint-disable no-debugger */
+
 import {
     addToFavoriteStartAC,
     addToFavoriteSuccessAC,
@@ -20,8 +21,12 @@ import {
     getSelectionErrorAC,
     getSelectionByIdStartAC,
     getSelectionByIdSuccessAC,
-    getSelectionByIdErrorAC
+    getSelectionByIdErrorAC,
+    // setCurrentTrackIdAC,
+    setCurrentTrackAC
 } from '../creators/catalog';
+
+import { trackParserById } from '../../selectors/catalog';
 
 import { catalogAPI } from '../../../api/api';
 
@@ -105,4 +110,16 @@ export const getSelection = (id) => async (dispatch) => {
     } catch (error) {
         dispatch(getSelectionErrorAC(error));
     }
+};
+
+export const setActiveTrackById = (id) => (dispatch) => {
+    const trackInfo = trackParserById(id);
+    dispatch(setCurrentTrackAC({
+        id,
+        title: trackInfo.title,
+        author: trackInfo.author,
+        album: trackInfo.album,
+        time: trackInfo.time,
+    }));
+
 };

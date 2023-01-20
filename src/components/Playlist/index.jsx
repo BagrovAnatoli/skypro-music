@@ -14,19 +14,19 @@ function Playlist({ tracks, loading }) {
         }
     }, [loading]);
 
-    const onTrackClick = (id, author, album, duration, index) => {
+    const onTrackClick = (id, author, album, duration) => {
         console.log(`слушать трек ${id}`);
-        dispatch(setCurrentTrackAC({id, author, album, duration, index}));
+        dispatch(setCurrentTrackAC({id, author, album, duration}));
     }
 
-    const list = tracks.map(({ title, author, album, time, id }, trackIndex) => (
+    const list = tracks.map(({ title, author, album, time, id }) => (
         <PlaylistItem
             title={title}
             author={author}
             album={album}
             time={time}
             key={id}
-            onTrackClick={() => onTrackClick(id, author.text, album.text, time.seconds, trackIndex)}
+            onTrackClick={() => onTrackClick(id, author.text, album.text, time.seconds)}
         />
     ));
 

@@ -50,6 +50,10 @@ export const allTracksParser = (store) => allTracksSelector(store).map(parserTra
 
 export const trackParserByIndex = (index) => (store) => parserTrack(allTracksSelector(store)[index]);
 
+export const trackParserById = (id) => (store) => parserTrack(allTracksSelector(store)
+    ?.find((trackInfo) => id === trackInfo.id).track_file);
+
+
 export const currentTrackFileSelector = (store) => {
     const id = currentTrackIdSelector(store);
     return allTracksSelector(store)

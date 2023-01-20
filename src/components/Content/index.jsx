@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-<<<<<<< HEAD
+
 import { getTracks, getSelections } from '../../store/actions/thunks/catalog';
-=======
-import { getTracks } from '../../store/actions/thunks/catalog';
+
 // import { setPlaylistSizeAC } from '../../store/actions/creators/catalog';
->>>>>>> b633539539ae53af1e19dcee5d2252df3b2a3c02
+
 import PlaylistTitle from '../PlaylistTitle';
 import Playlist from '../Playlist';
 // import { PLAYLISTS } from '../../constants';
@@ -32,7 +31,7 @@ import {
 
 function Content({ playlistId }) {
     // const tracks = getTracksByPlylistId(playlistId);
-    console.log(playlistId);
+    console.log(`playlistId: ${playlistId}`); // undefined at MainPage
 
     const tracks = useSelector(allTracksParser);
     const loading = useSelector(tracksLoadingSelector);

@@ -1,9 +1,11 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-console */
 import { useRef, useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-// import { currentTrackFileSelector, currentTrackDurationSelector } from '../../store/selectors/catalog';
-import { currentTrackFileSelector, playlistSizeSelector, trackParserByIndex, currentTrackIndexSelector } from '../../store/selectors/catalog';
+// import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { currentTrackFileSelector } from '../../store/selectors/catalog';
+// import { currentTrackFileSelector, playlistSizeSelector, currentTrackIndexSelector } from '../../store/selectors/catalog';
+import { setActiveTrackById } from '../../store/actions/thunks/catalog';
 import Controls from '../Controls';
 import TrackPlay from '../TrackPlay';
 import Volume from '../Volume';
@@ -12,10 +14,12 @@ import * as S from './styles';
 function Bar() {
     console.log('Bar');
 
+    const dispatch = useDispatch();
+
     const trackFile = useSelector(currentTrackFileSelector);
     console.log(trackFile);
-    const trackIndex = useSelector(currentTrackIndexSelector);
-    const tracksLength = useSelector(playlistSizeSelector);
+    // const trackIndex = useSelector(currentTrackIndexSelector);
+    // const tracksLength = useSelector(playlistSizeSelector);
 
     // const trackDuration = useSelector(currentTrackDurationSelector);
 
@@ -122,8 +126,13 @@ function Bar() {
     const togglePlay = isPlaying ? handleStop : handleStart;
     const handleNext = () => {
         console.log('handleNext');
-        trackIndex
-        dispatch(setCurrentTrackAC({id, author, album, duration, index}));
+        dispatch(setActiveTrackById(14));
+        setIsPlaying(true);
+    };
+
+    const handlePrevious = () => {
+        console.log('handlePrevious');
+        dispatch(setActiveTrackById(9));
         setIsPlaying(true);
     };
 
@@ -148,6 +157,8 @@ function Bar() {
                 <S.Player>
                     <Controls
                         togglePlay={togglePlay}
+                        onNext={handleNext}
+                        onPrevious={handlePrevious}
                         isPlaying={isPlaying}
                     />
                     <TrackPlay />
