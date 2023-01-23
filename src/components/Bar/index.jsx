@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
-import { currentTrackFileSelector } from '../../store/selectors/catalog';
+import { currentTrackFileSelector, allTracksIds, currentTrackIdSelector } from '../../store/selectors/catalog';
 // import { currentTrackFileSelector, playlistSizeSelector, currentTrackIndexSelector } from '../../store/selectors/catalog';
 import { setActiveTrackById } from '../../store/actions/thunks/catalog';
 import Controls from '../Controls';
@@ -17,7 +17,11 @@ function Bar() {
     const dispatch = useDispatch();
 
     const trackFile = useSelector(currentTrackFileSelector);
+    const tracksIds = useSelector(allTracksIds);
+    const currentTrackId = useSelector(currentTrackIdSelector);
     console.log(trackFile);
+    console.log(tracksIds);
+    console.log(currentTrackId);
     // const trackIndex = useSelector(currentTrackIndexSelector);
     // const tracksLength = useSelector(playlistSizeSelector);
 

@@ -105,7 +105,6 @@ export default function catalogReducer(state = initialState, action) {
                 currentTrackAuthor: action.author,
                 currentTrackAlbum: action.album,
                 currentTrackDuration: action.duration,
-                currentTrackIndex: action.index,
             };
         }
 

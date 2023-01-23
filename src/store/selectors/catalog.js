@@ -9,8 +9,6 @@ export const tracksErrorSelector = (store) => catalogSelector(store)?.tracksErro
 
 export const currentTrackIdSelector = (store) => catalogSelector(store)?.currentTrackId;
 
-export const currentTrackIndexSelector = (store) => catalogSelector(store)?.currentTrackIndex;
-
 export const playlistSizeSelector = (store) => catalogSelector(store)?.playlistSize;
 
 export const allTracksSelector = (store) => catalogSelector(store)?.allTracks;
@@ -46,7 +44,9 @@ const parserTrack = (loadedTrack) => {
     }
 }
 
-export const allTracksParser = (store) => allTracksSelector(store).map(parserTrack);
+export const allTracksParser = (store) => allTracksSelector(store).map(parserTrack); // массив треков, удобный для компоненты плейлиста
+
+export const allTracksIds = (store) => allTracksSelector(store).map((track) => track.id); // массив id-шек
 
 export const trackParserByIndex = (index) => (store) => parserTrack(allTracksSelector(store)[index]);
 
