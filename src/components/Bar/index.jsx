@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
-import { currentTrackFileSelector, allTracksIds, currentTrackIdSelector } from '../../store/selectors/catalog';
+import { currentTrackFileSelector, allTracksIds, currentTrackIdSelector, playlistSizeSelector } from '../../store/selectors/catalog';
 // import { currentTrackFileSelector, playlistSizeSelector, currentTrackIndexSelector } from '../../store/selectors/catalog';
 import { setActiveTrackById } from '../../store/actions/thunks/catalog';
 import Controls from '../Controls';
@@ -19,9 +19,11 @@ function Bar() {
     const trackFile = useSelector(currentTrackFileSelector);
     const tracksIds = useSelector(allTracksIds);
     const currentTrackId = useSelector(currentTrackIdSelector);
+    const playlistSizeSe = useSelector(playlistSizeSelector);
     console.log(trackFile);
     console.log(tracksIds);
     console.log(currentTrackId);
+    console.log(playlistSizeSe);
     // const trackIndex = useSelector(currentTrackIndexSelector);
     // const tracksLength = useSelector(playlistSizeSelector);
 
@@ -128,15 +130,32 @@ function Bar() {
     
 
     const togglePlay = isPlaying ? handleStop : handleStart;
+
     const handleNext = () => {
         console.log('handleNext');
-        dispatch(setActiveTrackById(14));
+        const currentIndex = tracksIds.indexOf(currentTrackId);
+        if(currentIndex === -1) {
+            return;
+        }
+        if(currentIndex === tracksIds.length - 1) { // если трек последний, 
+            dispatch(setActiveTrackById(tracksIds[0])); // то следующим пусть играет первый
+        } else {
+            dispatch(setActiveTrackById(tracksIds[currentIndex + 1]));
+        }
         setIsPlaying(true);
     };
 
     const handlePrevious = () => {
         console.log('handlePrevious');
-        dispatch(setActiveTrackById(9));
+        const currentIndex = tracksIds.indexOf(currentTrackId);
+        if(currentIndex === -1) {
+            return;
+        }
+        if(currentIndex === 0) { // если трек первый, 
+            dispatch(setActiveTrackById(tracksIds[tracksIds.length - 1])); // то следующим пусть играет последний
+        } else {
+            dispatch(setActiveTrackById(tracksIds[currentIndex - 1]));
+        }
         setIsPlaying(true);
     };
 
