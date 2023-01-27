@@ -30,7 +30,7 @@ function Playlist({ tracks, loading }) {
         />
     ));
 
-    const skeletonList = Array(10).fill().map(() => <PlaylistSkeletonItem/>);
+    const skeletonList = Array(10).fill().map((item,index) => <PlaylistSkeletonItem key={index}/>);
     
     return (
         <S.ContentPlaylist>

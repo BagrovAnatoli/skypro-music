@@ -14,6 +14,9 @@ function Track() {
     const author = useSelector(currentTrackAuthorSelector);
     const album = useSelector(currentTrackAlbumSelector);
 
+    console.log(`author`);
+    console.log(author);
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);

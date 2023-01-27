@@ -115,15 +115,15 @@ export const getSelection = (id) => async (dispatch) => {
 export const setActiveTrackById = (id) => (dispatch) => {
     console.log('store');
     console.log(store);
-    const trackInfo = trackParserById(id)(store);
+    const trackInfo = trackParserById(id)(store.getState());
     console.log('trackInfo setActiveTrackById thunk');
     console.log(trackInfo);
     dispatch(setCurrentTrackAC({
         id,
-        title: trackInfo.title,
-        author: trackInfo.author,
-        album: trackInfo.album,
-        time: trackInfo.time,
+        title: trackInfo.title.text,
+        author: trackInfo.author.text,
+        album: trackInfo.album.text,
+        time: trackInfo.time.seconds,
     }));
 
 };

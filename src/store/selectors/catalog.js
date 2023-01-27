@@ -51,16 +51,14 @@ export const allTracksIds = (store) => allTracksSelector(store).map((track) => t
 export const trackParserByIndex = (index) => (store) => parserTrack(allTracksSelector(store)[index]);
 
 export const trackParserById = (id) => (store) => {
-    console.log('trackParserById');
+    console.log('trackParserById store');
     console.log(store);
-    console.log('allTracksSelector func');
-    console.log(allTracksSelector);
     const allTracks = allTracksSelector(store);
     console.log('allTracks');
     console.log(allTracks);
-    console.log(parserTrack(allTracksSelector(store)?.find((trackInfo) => id === trackInfo.id).track_file));
+    console.log(parserTrack(allTracksSelector(store)?.find((trackInfo) => id === trackInfo.id)));
     return parserTrack(allTracksSelector(store)
-    ?.find((trackInfo) => id === trackInfo.id).track_file);
+    ?.find((trackInfo) => id === trackInfo.id));
 }
 
 
