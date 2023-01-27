@@ -1,5 +1,5 @@
 /* eslint-disable no-debugger */
-
+import { store } from '../../store';
 import {
     addToFavoriteStartAC,
     addToFavoriteSuccessAC,
@@ -113,7 +113,11 @@ export const getSelection = (id) => async (dispatch) => {
 };
 
 export const setActiveTrackById = (id) => (dispatch) => {
-    const trackInfo = trackParserById(id);
+    console.log('store');
+    console.log(store);
+    const trackInfo = trackParserById(id)(store);
+    console.log('trackInfo setActiveTrackById thunk');
+    console.log(trackInfo);
     dispatch(setCurrentTrackAC({
         id,
         title: trackInfo.title,
