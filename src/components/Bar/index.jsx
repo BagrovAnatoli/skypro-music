@@ -30,30 +30,48 @@ function Bar() {
     // const trackDuration = useSelector(currentTrackDurationSelector);
 
     const [isPlaying, setIsPlaying] = useState(false);
-    // const [intervalId, setIntervalId] = useState(null);
+    const [intervalId, setIntervalId] = useState(null);
     // const [currentTime, setCurrentTime] = useState(0);
     // const [progressWidth, setProgressWidth] = useState(0);
     const progressWidth = null;
     // const [progressClick, setProgressClick] = useState(0);
     const audioRef = useRef(null);
+
+    const startTimer = () => {
+        const newIntervalId = setInterval(() => {
+            const time = audioRef.current.currentTime;
+            console.log(`setCurrentTime(time); ${  time}`);
+            // setCurrentTime(time);
+            if (audioRef.current.ended) {
+                clearInterval(newIntervalId);
+                setIsPlaying(false);
+            }
+        }, 1000);
+        setIntervalId(newIntervalId);
+        console.log(intervalId);
+    }
     
     useEffect(() => {
         if(isPlaying) {
             audioRef.current.pause();
+            audioRef.current = new Audio(trackFile);
+            audioRef.current.play();
+        } else {
+            audioRef.current = new Audio(trackFile);
+            setIsPlaying(true);
         }
-        audioRef.current = new Audio(trackFile);
-        audioRef.current.play();
-        setIsPlaying(true);
     },[trackFile]);
 
     useEffect(() => {
         if (audioRef.current) {
           if (isPlaying) {
             audioRef.current.play();
+            startTimer();
             // audioRef.current.loop = repeat;
             // audioRef.current.volume = volume / 100;
           } else {
             audioRef.current.pause();
+            clearInterval(intervalId);
           }
         }
       }, [isPlaying]);
@@ -90,17 +108,6 @@ function Bar() {
     //     setIsPlaying(true);
     //     console.log(`isPlaying  after setIsPlaying ${isPlaying}`);
     // }
-
-    // useEffect(() => {
-    //     console.log(`useEffect trackFile. isPlaying  ${isPlaying}`);
-    //     if(isPlaying) {
-    //         stop(audioRef.current);
-    //         setCurrentTime(0);
-    //     } 
-    //     audioRef.current = new Audio(trackFile);
-    //     setCurrentTime(0);
-    //     start(audioRef.current);
-    // }, [trackFile]);
 
     
 
