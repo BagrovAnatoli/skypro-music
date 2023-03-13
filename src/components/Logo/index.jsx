@@ -1,14 +1,19 @@
-import logo from '../../img/logo.png';
+import SkyProLogo from '../LogoSVG';
 import * as S from './styles';
+import { useThemeContext } from '../../contexts/theme';
 
 function Logo() {
-  return (
-    <S.NavLogo>
-      <a href="/">
-        <S.LogoImage src={logo} alt="логотип" />
-      </a>
-    </S.NavLogo>
-  );
+    const { themeName } = useThemeContext();
+
+    const color = themeName === 'dark' ? 'white' : 'black';
+
+    return (
+        <S.NavLogo>
+            <a href="/">
+                <SkyProLogo color={color} />
+            </a>
+        </S.NavLogo>
+    );
 }
 
 export default Logo;
